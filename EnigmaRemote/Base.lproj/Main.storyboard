@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="317" y="235"/>
         </scene>
-        <!--View Controller - Playing-->
+        <!--Playing View Controller - Playing-->
         <scene sceneID="E5s-FH-dTJ">
             <objects>
-                <viewController id="Cw3-Xu-SvT" sceneMemberID="viewController">
+                <viewController id="Cw3-Xu-SvT" customClass="PlayingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tSR-hw-KtR"/>
                         <viewControllerLayoutGuide type="bottom" id="feB-7L-UMl"/>
@@ -141,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="851" y="517"/>
         </scene>
-        <!--View Controller - Timers-->
+        <!--Timers View Controller - Timers-->
         <scene sceneID="ESs-0c-a2n">
             <objects>
-                <viewController id="7CR-qh-FGM" sceneMemberID="viewController">
+                <viewController id="7CR-qh-FGM" customClass="TimersViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bw7-zQ-t6X"/>
                         <viewControllerLayoutGuide type="bottom" id="Cpr-Lr-Hin"/>
@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="851" y="1125"/>
         </scene>
-        <!--View Controller - Settings-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="zFD-d0-RNq">
             <objects>
-                <viewController id="0Ef-3R-Usn" sceneMemberID="viewController">
+                <viewController id="0Ef-3R-Usn" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4r0-ht-Do9"/>
                         <viewControllerLayoutGuide type="bottom" id="bh4-lY-OJt"/>

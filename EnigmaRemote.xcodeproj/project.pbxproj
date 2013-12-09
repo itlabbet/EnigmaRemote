@@ -23,6 +23,9 @@
 		5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF48C18564DEF00289D13 /* Readme.txt */; };
 		5DDDF490185651EB00289D13 /* BouquetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF48F185651EB00289D13 /* BouquetsViewController.m */; };
 		5DDDF493185651FF00289D13 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF492185651FF00289D13 /* ChannelViewController.m */; };
+		5DDDF4961856568900289D13 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF4951856568900289D13 /* SettingsViewController.m */; };
+		5DDDF4991856569900289D13 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF4981856569900289D13 /* PlayingViewController.m */; };
+		5DDDF49C1856570200289D13 /* TimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF49B1856570200289D13 /* TimersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,12 @@
 		5DDDF48F185651EB00289D13 /* BouquetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouquetsViewController.m; sourceTree = "<group>"; };
 		5DDDF491185651FF00289D13 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
 		5DDDF492185651FF00289D13 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
+		5DDDF4941856568900289D13 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		5DDDF4951856568900289D13 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		5DDDF4971856569900289D13 /* PlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingViewController.h; sourceTree = "<group>"; };
+		5DDDF4981856569900289D13 /* PlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingViewController.m; sourceTree = "<group>"; };
+		5DDDF49A1856570200289D13 /* TimersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimersViewController.h; sourceTree = "<group>"; };
+		5DDDF49B1856570200289D13 /* TimersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +136,12 @@
 				5DDDF48F185651EB00289D13 /* BouquetsViewController.m */,
 				5DDDF491185651FF00289D13 /* ChannelViewController.h */,
 				5DDDF492185651FF00289D13 /* ChannelViewController.m */,
+				5DDDF4941856568900289D13 /* SettingsViewController.h */,
+				5DDDF4951856568900289D13 /* SettingsViewController.m */,
+				5DDDF4971856569900289D13 /* PlayingViewController.h */,
+				5DDDF4981856569900289D13 /* PlayingViewController.m */,
+				5DDDF49A1856570200289D13 /* TimersViewController.h */,
+				5DDDF49B1856570200289D13 /* TimersViewController.m */,
 			);
 			path = EnigmaRemote;
 			sourceTree = "<group>";
@@ -259,7 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */,
+				5DDDF4991856569900289D13 /* PlayingViewController.m in Sources */,
+				5DDDF49C1856570200289D13 /* TimersViewController.m in Sources */,
 				5DDDF46418564C7100289D13 /* main.m in Sources */,
+				5DDDF4961856568900289D13 /* SettingsViewController.m in Sources */,
 				5DDDF493185651FF00289D13 /* ChannelViewController.m in Sources */,
 				5DDDF490185651EB00289D13 /* BouquetsViewController.m in Sources */,
 			);
