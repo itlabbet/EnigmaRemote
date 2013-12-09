@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ChannelViewController.h
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 09/12/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ChannelViewController : UIViewController
 
 @end
