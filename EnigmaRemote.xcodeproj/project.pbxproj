@@ -131,7 +131,6 @@
 				5DDDF46718564C7100289D13 /* AppDelegate.m */,
 				5DDDF46918564C7100289D13 /* Main.storyboard */,
 				5DDDF46F18564C7100289D13 /* Images.xcassets */,
-				5DDDF45E18564C7100289D13 /* Supporting Files */,
 				5DDDF48E185651EB00289D13 /* BouquetsViewController.h */,
 				5DDDF48F185651EB00289D13 /* BouquetsViewController.m */,
 				5DDDF491185651FF00289D13 /* ChannelViewController.h */,
@@ -142,6 +141,7 @@
 				5DDDF4981856569900289D13 /* PlayingViewController.m */,
 				5DDDF49A1856570200289D13 /* TimersViewController.h */,
 				5DDDF49B1856570200289D13 /* TimersViewController.m */,
+				5DDDF45E18564C7100289D13 /* Supporting Files */,
 			);
 			path = EnigmaRemote;
 			sourceTree = "<group>";
@@ -222,6 +222,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Niklas Andersson";
 				TargetAttributes = {
+					5DDDF45318564C7000289D13 = {
+						DevelopmentTeam = 36WB7WTQX2;
+					};
 					5DDDF47418564C7100289D13 = {
 						TestTargetID = 5DDDF45318564C7000289D13;
 					};
@@ -364,6 +367,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -396,6 +400,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -406,10 +411,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
 				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -419,10 +427,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
 				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -488,6 +499,7 @@
 				5DDDF48818564C7100289D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DDDF48918564C7100289D13 /* Build configuration list for PBXNativeTarget "EnigmaRemoteTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +508,7 @@
 				5DDDF48B18564C7100289D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

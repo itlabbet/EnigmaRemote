@@ -18,3 +18,15 @@ Betyget 5 ges för:
 -----------------
 - Genomarbetad och fullständig dokumentation av kod - Funktionellt och grafiskt enligt iOS Guidlines
 - Välpolerad applikation.
+
+
+Guidelines:
+----------
+https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html
+https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOS/DesignPatterns.html#//apple_ref/doc/uid/TP40011343-CH5-SW1
+
+Övrigt:
+------
+- Source Control
+- Intrumentation
+- 
