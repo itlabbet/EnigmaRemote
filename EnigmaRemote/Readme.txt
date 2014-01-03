@@ -30,3 +30,21 @@ https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapi
 - Source Control
 - Intrumentation
 - 
+
+Egna ord för projektförslaget:
+-----------------------------
+Funktioner som ska ingå i applikationen för att fjärrstyra TV-boxen är:
+• Köras på en iPhone med iOS 7
+• Slå av och på boxen (standby)
+• Visa kanallista
+• Byta kanal
+• Visa metainformation om det program som visas
+• Visa allmän information om tv-boxen
+
+Applikationen skall ha ett tilltalande användargränssnitt, med ikoner, grafik, färgval och använda sig av flera köer för att upplevas som snabbt och responsivt.
+
+Applikationen ska testas och verifieras på riktig hårdvara för att kunna verifiera sin funktion mot flera mjukvaruversioner av digitalboxen, som finns utspridda på olika geografiska områden.
+
+Använda referenser:
+------------------
+- http://www.stewgleadow.com/blog/2012/05/18/tolerant-json-parsing-for-ios/
