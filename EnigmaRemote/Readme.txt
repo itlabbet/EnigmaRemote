@@ -48,3 +48,4 @@ Applikationen ska testas och verifieras på riktig hårdvara för att kunna v
 Använda referenser:
 ------------------
 - http://www.stewgleadow.com/blog/2012/05/18/tolerant-json-parsing-for-ios/
+- http://dream.reichholf.net/wiki/Enigma2:WebInterface
