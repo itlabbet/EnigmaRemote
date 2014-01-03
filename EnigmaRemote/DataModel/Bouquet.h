@@ -1,5 +1,5 @@
 //
-//  EnigmaClient.h
+//  Bouquet.h
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 03/01/14.
@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EnigmaClient : NSObject
+@interface Bouquet : NSObject
 
-+(NSArray *)bouquets;
-    
 @end

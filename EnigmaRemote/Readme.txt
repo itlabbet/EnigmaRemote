@@ -29,7 +29,7 @@ https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapi
 ------
 - Source Control
 - Intrumentation
-- 
+- Kommentera koden som Apple gör i sina exempel
 
 Egna ord för projektförslaget:
 -----------------------------
@@ -47,5 +47,9 @@ Applikationen ska testas och verifieras på riktig hårdvara för att kunna v
 
 Använda referenser:
 ------------------
-- http://www.stewgleadow.com/blog/2012/05/18/tolerant-json-parsing-for-ios/
+- http://www.stewgleadow.com/blog/2012/05/18/tolerant-json-parsing-for-ios/ - funkar ej med json
+- https://developer.apple.com/library/ios/samplecode/SeismicXML/Introduction/Intro.html
+- http://www.raywenderlich.com/553/xml-tutorial-for-ios-how-to-choose-the-best-xml-parser-for-your-iphone-project
 - http://dream.reichholf.net/wiki/Enigma2:WebInterface
+- http://dream.reichholf.net/e2web/
+

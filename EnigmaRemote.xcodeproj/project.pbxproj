@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D69182B18777472004EEBEE /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69182A18777472004EEBEE /* Bouquet.m */; };
+		5D69182F187774ED004EEBEE /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69182E187774ED004EEBEE /* Channel.m */; };
 		5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45718564C7100289D13 /* Foundation.framework */; };
 		5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45918564C7100289D13 /* CoreGraphics.framework */; };
 		5DDDF45C18564C7100289D13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45B18564C7100289D13 /* UIKit.framework */; };
@@ -27,6 +29,7 @@
 		5DFDC3EA1876F57500703E54 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3E41876F57500703E54 /* SettingsViewController.m */; };
 		5DFDC3EB1876F57500703E54 /* TimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3E61876F57500703E54 /* TimersViewController.m */; };
 		5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */; };
+		5DFDC3F618771E3000703E54 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3F518771E3000703E54 /* XMLReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D69182918777472004EEBEE /* Bouquet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bouquet.h; path = DataModel/Bouquet.h; sourceTree = "<group>"; };
+		5D69182A18777472004EEBEE /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bouquet.m; path = DataModel/Bouquet.m; sourceTree = "<group>"; };
+		5D69182D187774ED004EEBEE /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = DataModel/Channel.h; sourceTree = "<group>"; };
+		5D69182E187774ED004EEBEE /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = DataModel/Channel.m; sourceTree = "<group>"; };
 		5DDDF45418564C7100289D13 /* EnigmaRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnigmaRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDDF45718564C7100289D13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DDDF45918564C7100289D13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -70,6 +77,8 @@
 		5DFDC3E61876F57500703E54 /* TimersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimersViewController.m; path = ViewControllers/TimersViewController.m; sourceTree = "<group>"; };
 		5DFDC3ED1876F5EF00703E54 /* EnigmaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnigmaClient.h; path = EnigmaClient/EnigmaClient.h; sourceTree = "<group>"; };
 		5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnigmaClient.m; path = EnigmaClient/EnigmaClient.m; sourceTree = "<group>"; };
+		5DFDC3F418771E3000703E54 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = XMLReader/XMLReader.h; sourceTree = "<group>"; };
+		5DFDC3F518771E3000703E54 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = XMLReader/XMLReader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D69182C18777479004EEBEE /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5D69182918777472004EEBEE /* Bouquet.h */,
+				5D69182A18777472004EEBEE /* Bouquet.m */,
+				5D69182D187774ED004EEBEE /* Channel.h */,
+				5D69182E187774ED004EEBEE /* Channel.m */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
 		5DDDF44B18564C7000289D13 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +150,8 @@
 		5DDDF45D18564C7100289D13 /* EnigmaRemote */ = {
 			isa = PBXGroup;
 			children = (
+				5DFDC3F318771E1800703E54 /* XMLReader */,
+				5D69182C18777479004EEBEE /* DataModel */,
 				5DFDC3EC1876F5CE00703E54 /* EnigmaClient */,
 				5DFDC3DC1876F55600703E54 /* Images */,
 				5DFDC3DB1876F54D00703E54 /* ViewControllers */,
@@ -202,6 +224,15 @@
 				5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */,
 			);
 			name = EnigmaClient;
+			sourceTree = "<group>";
+		};
+		5DFDC3F318771E1800703E54 /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				5DFDC3F418771E3000703E54 /* XMLReader.h */,
+				5DFDC3F518771E3000703E54 /* XMLReader.m */,
+			);
+			name = XMLReader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +338,14 @@
 			files = (
 				5DFDC3E91876F57500703E54 /* PlayingViewController.m in Sources */,
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
+				5D69182F187774ED004EEBEE /* Channel.m in Sources */,
 				5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */,
+				5D69182B18777472004EEBEE /* Bouquet.m in Sources */,
 				5DFDC3EB1876F57500703E54 /* TimersViewController.m in Sources */,
 				5DDDF46418564C7100289D13 /* main.m in Sources */,
 				5DFDC3EA1876F57500703E54 /* SettingsViewController.m in Sources */,
 				5DFDC3E81876F57500703E54 /* ChannelViewController.m in Sources */,
+				5DFDC3F618771E3000703E54 /* XMLReader.m in Sources */,
 				5DFDC3E71876F57500703E54 /* BouquetsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
