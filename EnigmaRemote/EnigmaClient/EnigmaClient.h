@@ -11,5 +11,7 @@
 @interface EnigmaClient : NSObject
 
 +(NSArray *)bouquets;
+
++(NSArray *)channelsFor:(NSString *)serviceReference;
     
 @end

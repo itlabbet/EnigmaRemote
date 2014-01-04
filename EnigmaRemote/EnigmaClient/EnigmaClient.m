@@ -42,8 +42,10 @@
 
 
 #import "EnigmaClient.h"
+#import "NSString+URLEncode.h"
 #import "GDataXMLNode.h"
 #import "Bouquet.h"
+#import "Channel.h"
 
 @implementation EnigmaClient
     
@@ -101,7 +103,60 @@
 }
 
 
-
++(NSArray *)channelsFor:(NSString *)serviceReference
+{
+    NSString *url = [NSString stringWithFormat:@"http://192.168.10.12/web/getservices?sRef=%@", [serviceReference urlencode]];
+    
+    NSURL *myURL = [[NSURL alloc] initWithString:url];
+    NSData *channelData = [[NSData alloc] initWithContentsOfURL:myURL];
+    NSMutableArray *channels = [[NSMutableArray alloc] init];
+    
+    if (channelData == nil)
+    {
+        return nil;
+    }
+    
+    NSError *error = nil;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:channelData options:0 error:&error];
+    
+    if (doc == nil)
+    {
+        return nil;
+    }
+    
+    
+    NSArray *channelElements = [doc nodesForXPath:@"//e2servicelist/e2service" error:nil];
+    
+    for (GDataXMLElement *channelElement in channelElements)
+    {
+        Channel *channel = nil;
+        NSString *serviceReference;
+        NSString *serviceName;
+        
+        // Reference
+        NSArray *references = [channelElement elementsForName:@"e2servicereference"];
+        if (references.count > 0)
+        {
+            GDataXMLElement *firstReference = (GDataXMLElement *) [references objectAtIndex:0];
+            serviceReference = firstReference.stringValue;
+        } else continue;
+        
+        // Reference
+        NSArray *names = [channelElement elementsForName:@"e2servicename"];
+        if (names.count > 0)
+        {
+            GDataXMLElement *firstName = (GDataXMLElement *) [names objectAtIndex:0];
+            serviceName = firstName.stringValue;
+        } else continue;
+        
+        channel = [[Channel alloc] initWithreference:serviceReference andName:serviceName];
+        
+        [channels addObject:channel];
+        
+    }
+    
+    return channels;
+}
 
 @end
 

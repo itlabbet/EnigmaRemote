@@ -1,5 +1,5 @@
 //
-//  ChannelViewController.h
+//  ChannelsViewController.h
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 09/12/13.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChannelViewController : UIViewController
+@interface ChannelsViewController : UIViewController
+
+@property (nonatomic, copy) NSString* serviceReference;
 
 @end

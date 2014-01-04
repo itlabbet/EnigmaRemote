@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D26DC0018786BD400CAD0B6 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */; };
 		5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBD1878287F004FCDD5 /* Bouquet.m */; };
 		5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBF1878287F004FCDD5 /* Channel.m */; };
 		5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */; };
-		5D4E1FCD18782890004FCDD5 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC518782890004FCDD5 /* ChannelViewController.m */; };
+		5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */; };
 		5D4E1FCE18782890004FCDD5 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC718782890004FCDD5 /* PlayingViewController.m */; };
 		5D4E1FCF18782890004FCDD5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC918782890004FCDD5 /* SettingsViewController.m */; };
 		5D4E1FD018782890004FCDD5 /* TimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FCB18782890004FCDD5 /* TimersViewController.m */; };
@@ -44,14 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D26DBFE18786BD400CAD0B6 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncode.h"; path = "External/URLEncode/NSString+URLEncode.h"; sourceTree = "<group>"; };
+		5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncode.m"; path = "External/URLEncode/NSString+URLEncode.m"; sourceTree = "<group>"; };
 		5D4E1FBC1878287F004FCDD5 /* Bouquet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bouquet.h; path = Models/Bouquet.h; sourceTree = "<group>"; };
 		5D4E1FBD1878287F004FCDD5 /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bouquet.m; path = Models/Bouquet.m; sourceTree = "<group>"; };
 		5D4E1FBE1878287F004FCDD5 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Models/Channel.h; sourceTree = "<group>"; };
 		5D4E1FBF1878287F004FCDD5 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Models/Channel.m; sourceTree = "<group>"; };
 		5D4E1FC218782890004FCDD5 /* BouquetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BouquetsViewController.h; path = Controllers/BouquetsViewController.h; sourceTree = "<group>"; };
 		5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BouquetsViewController.m; path = Controllers/BouquetsViewController.m; sourceTree = "<group>"; };
-		5D4E1FC418782890004FCDD5 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelViewController.h; path = Controllers/ChannelViewController.h; sourceTree = "<group>"; };
-		5D4E1FC518782890004FCDD5 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewController.m; path = Controllers/ChannelViewController.m; sourceTree = "<group>"; };
+		5D4E1FC418782890004FCDD5 /* ChannelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelsViewController.h; path = Controllers/ChannelsViewController.h; sourceTree = "<group>"; };
+		5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelsViewController.m; path = Controllers/ChannelsViewController.m; sourceTree = "<group>"; };
 		5D4E1FC618782890004FCDD5 /* PlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingViewController.h; path = Controllers/PlayingViewController.h; sourceTree = "<group>"; };
 		5D4E1FC718782890004FCDD5 /* PlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingViewController.m; path = Controllers/PlayingViewController.m; sourceTree = "<group>"; };
 		5D4E1FC818782890004FCDD5 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controllers/SettingsViewController.h; sourceTree = "<group>"; };
@@ -108,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D26DBFC18786B4E00CAD0B6 /* URLEncode */ = {
+			isa = PBXGroup;
+			children = (
+				5D26DBFE18786BD400CAD0B6 /* NSString+URLEncode.h */,
+				5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */,
+			);
+			name = URLEncode;
+			sourceTree = "<group>";
+		};
 		5D4E1FBB1878280E004FCDD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,7 @@
 		5D4E1FD1187828AB004FCDD5 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				5D26DBFC18786B4E00CAD0B6 /* URLEncode */,
 				5D52A6C818784D6100BF03EF /* GDataXML */,
 			);
 			name = External;
@@ -228,8 +241,8 @@
 			children = (
 				5D4E1FC218782890004FCDD5 /* BouquetsViewController.h */,
 				5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */,
-				5D4E1FC418782890004FCDD5 /* ChannelViewController.h */,
-				5D4E1FC518782890004FCDD5 /* ChannelViewController.m */,
+				5D4E1FC418782890004FCDD5 /* ChannelsViewController.h */,
+				5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */,
 				5D4E1FC618782890004FCDD5 /* PlayingViewController.h */,
 				5D4E1FC718782890004FCDD5 /* PlayingViewController.m */,
 				5D4E1FC818782890004FCDD5 /* SettingsViewController.h */,
@@ -360,10 +373,11 @@
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
 				5D4E1FCE18782890004FCDD5 /* PlayingViewController.m in Sources */,
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
-				5D4E1FCD18782890004FCDD5 /* ChannelViewController.m in Sources */,
+				5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */,
 				5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */,
 				5D52A6CB18784D6100BF03EF /* GDataXMLNode.m in Sources */,
 				5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */,
+				5D26DC0018786BD400CAD0B6 /* NSString+URLEncode.m in Sources */,
 				5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */,
 				5D4E1FCF18782890004FCDD5 /* SettingsViewController.m in Sources */,
 				5DDDF46418564C7100289D13 /* main.m in Sources */,

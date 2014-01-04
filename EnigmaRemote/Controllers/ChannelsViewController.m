@@ -1,27 +1,27 @@
 //
-//  BouquetsViewController.m
+//  ChannelsViewController.m
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 09/12/13.
 //  Copyright (c) 2013 Niklas Andersson. All rights reserved.
 //
 
-#import "BouquetsViewController.h"
+#import "ChannelsViewController.h"
 #import "EnigmaClient.h"
-#import "Bouquet.h"
+#import "Channel.h"
 
-@interface BouquetsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ChannelsViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) NSArray *bouquets;
+@property (strong, nonatomic) NSArray *channels;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-    
+
 @end
 
-@implementation BouquetsViewController
+@implementation ChannelsViewController
 
-- (void)setBouquets:(NSArray *)bouquets
+- (void)setChannels:(NSArray *)channels
 {
-    _bouquets = bouquets;
+    _channels = channels;
     
     [self.tableView reloadData];
 }
@@ -33,10 +33,10 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self loadBouquets];
+    [self loadChannels];
 }
 
-- (void)loadBouquets
+- (void)loadChannels
 {
     //[self.refreshControl beginRefreshing];
     
@@ -44,31 +44,31 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
-        NSArray *bouquets = [EnigmaClient bouquets];
+        NSArray *channels = [EnigmaClient channelsFor:self.serviceReference];
         //NSArray* sortedJobs = [self sort:unsortedJobs];
         //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
-            self.bouquets = bouquets;
+            self.channels = channels;
             //[self.refreshControl endRefreshing];
         });
     });
-
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.bouquets count];
+    return [self.channels count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BouquetCell" forIndexPath:indexPath];
-    Bouquet *bouquet = self.bouquets[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChannelCell" forIndexPath:indexPath];
+    Channel *channel = self.channels[indexPath.row];
     
-    cell.textLabel.text = bouquet.name;
-
+    cell.textLabel.text = channel.name;
+    
     return cell;
 }
 
@@ -80,18 +80,18 @@
         
         if (indexPath)
         {
-            if ([[segue identifier] isEqualToString:@"showChannels" ])
+            if ([[segue identifier] isEqualToString:@"showChannel" ])
             {
                 if ([segue.destinationViewController respondsToSelector:@selector(setServiceReference:)])
                 {
-                    Bouquet *bouquet = [self.bouquets objectAtIndex:indexPath.row];
-                    
+                    Channel *channel = [self.channels objectAtIndex:indexPath.row];
+                    /*
                     [segue.destinationViewController performSelector:@selector(setServiceReference:) withObject:bouquet.reference];
+                     */
                 }
             }
         }
     }
 }
-
 
 @end
