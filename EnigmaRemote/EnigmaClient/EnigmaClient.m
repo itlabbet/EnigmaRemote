@@ -42,87 +42,64 @@
 
 
 #import "EnigmaClient.h"
-#import "XMLReader.h"
+#import "GDataXMLNode.h"
+#import "Bouquet.h"
 
 @implementation EnigmaClient
     
 +(NSArray *)bouquets
 {
     NSURL *myURL = [[NSURL alloc] initWithString:@"http://192.168.10.12/web/getservices"];
-    
-    // NSURL *myURI = [NSURL URLWithString:@"/autotimer/set" relativeToURL:_baseAddress];
-    
     NSData *bouquetData = [[NSData alloc] initWithContentsOfURL:myURL];
+    NSMutableArray *bouquets = [[NSMutableArray alloc] init];
     
-    if (bouquetData)
+    if (bouquetData == nil)
     {
-        NSError *error;
-        
-        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLData:bouquetData error:&error];
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:xmlDictionary
-                                                           options:kNilOptions
-                                                             error:&error];
-        
-        if (! jsonData)
-        {
-            NSLog(@"Got an error: %@", error);
-        }
-        else
-        {
-            NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-            
-            NSLog(@"%@",jsonString);
-            
-            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-            
-            NSArray *bouquets = [[json objectForKey:@"e2servicelist"] objectForKey:@"e2service"];
-         
-            return bouquets;
-            
-            // TODO: convert bouquets to real objects
-        }
+        return nil;
     }
     
-    return nil;
+    NSError *error = nil;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:bouquetData options:0 error:&error];
+        
+    if (doc == nil)
+    {
+        return nil;
+    }
+    
+    
+    NSArray *bouquetElements = [doc nodesForXPath:@"//e2servicelist/e2service" error:nil];
+    
+    for (GDataXMLElement *bouquetElement in bouquetElements)
+    {
+        Bouquet *bouquet = nil;
+        NSString *serviceReference;
+        NSString *serviceName;
+        
+        // Reference
+        NSArray *references = [bouquetElement elementsForName:@"e2servicereference"];
+        if (references.count > 0)
+        {
+            GDataXMLElement *firstReference = (GDataXMLElement *) [references objectAtIndex:0];
+            serviceReference = firstReference.stringValue;
+        } else continue;
+        
+        // Reference
+        NSArray *names = [bouquetElement elementsForName:@"e2servicename"];
+        if (names.count > 0)
+        {
+            GDataXMLElement *firstName = (GDataXMLElement *) [names objectAtIndex:0];
+            serviceName = firstName.stringValue;
+        } else continue;
+
+        bouquet = [[Bouquet alloc] initWithreference:serviceReference andName:serviceName];
+        
+        [bouquets addObject:bouquet];
+        
+    }
+    
+    return bouquets;
 }
 
-+(NSArray *)bouquets_bck
-{
-    NSURL *myURL = [[NSURL alloc] initWithString:@"http://192.168.10.12/web/getservices"];
-    
-    NSData *bouquetData = [[NSData alloc] initWithContentsOfURL:myURL];
-    
-    if (bouquetData)
-    {
-        NSError *error;
-        
-        NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLData:bouquetData error:&error];
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:xmlDictionary
-                                                           options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                             error:&error];
-        
-        if (! jsonData)
-        {
-            NSLog(@"Got an error: %@", error);
-        }
-        else
-        {
-            NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-            
-            NSLog(@"%@",jsonString);
-            
-            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-            
-            NSArray *bouquets = [[json objectForKey:@"e2servicelist"] objectForKey:@"e2service"];
-            
-            return bouquets;
-            
-            // TODO: convert bouquets to real objects
-        }
-    }
-    
-    return nil;
-}
 
 
 

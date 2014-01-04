@@ -10,4 +10,17 @@
 
 @implementation Bouquet
 
+-(instancetype)initWithreference:(NSString *)reference andName:(NSString *)name
+{
+    self = [super init];
+    
+    if (self)
+    {
+        _reference = reference;
+        _name = name;
+    }
+    
+    return self;
+}
+
 @end

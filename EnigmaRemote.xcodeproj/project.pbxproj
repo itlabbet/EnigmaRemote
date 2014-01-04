@@ -31,7 +31,6 @@
 		5DDDF48318564C7100289D13 /* EnigmaRemoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF48218564C7100289D13 /* EnigmaRemoteTests.m */; };
 		5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF48C18564DEF00289D13 /* Readme.txt */; };
 		5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */; };
-		5DFDC3F618771E3000703E54 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3F518771E3000703E54 /* XMLReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +81,6 @@
 		5DDDF48C18564DEF00289D13 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Readme.txt; path = EnigmaRemote/Readme.txt; sourceTree = "<group>"; };
 		5DFDC3ED1876F5EF00703E54 /* EnigmaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnigmaClient.h; path = EnigmaClient/EnigmaClient.h; sourceTree = "<group>"; };
 		5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnigmaClient.m; path = EnigmaClient/EnigmaClient.m; sourceTree = "<group>"; };
-		5DFDC3F418771E3000703E54 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = XMLReader/XMLReader.h; sourceTree = "<group>"; };
-		5DFDC3F518771E3000703E54 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = XMLReader/XMLReader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				5D52A6C818784D6100BF03EF /* GDataXML */,
-				5DFDC3F318771E1800703E54 /* XMLReader */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -260,15 +256,6 @@
 			name = EnigmaClient;
 			sourceTree = "<group>";
 		};
-		5DFDC3F318771E1800703E54 /* XMLReader */ = {
-			isa = PBXGroup;
-			children = (
-				5DFDC3F418771E3000703E54 /* XMLReader.h */,
-				5DFDC3F518771E3000703E54 /* XMLReader.m */,
-			);
-			name = XMLReader;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,7 +367,6 @@
 				5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */,
 				5D4E1FCF18782890004FCDD5 /* SettingsViewController.m in Sources */,
 				5DDDF46418564C7100289D13 /* main.m in Sources */,
-				5DFDC3F618771E3000703E54 /* XMLReader.m in Sources */,
 				5D4E1FD018782890004FCDD5 /* TimersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

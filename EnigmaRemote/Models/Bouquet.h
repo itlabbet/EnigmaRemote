@@ -10,4 +10,9 @@
 
 @interface Bouquet : NSObject
 
+@property (strong, nonatomic, readonly) NSString *reference;
+@property (strong, nonatomic, readonly) NSString *name;
+
+-(instancetype)initWithreference:(NSString *)reference andName:(NSString *)name;
+
 @end

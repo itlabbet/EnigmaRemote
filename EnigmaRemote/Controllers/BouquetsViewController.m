@@ -8,9 +8,9 @@
 
 #import "BouquetsViewController.h"
 #import "EnigmaClient.h"
+#import "Bouquet.h"
 
 @interface BouquetsViewController () <UITableViewDataSource, UITableViewDelegate>
-
 
 @property (strong, nonatomic) NSArray *bouquets;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -65,14 +65,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BouquetCell" forIndexPath:indexPath];
-    id bouquet = self.bouquets[indexPath.row];
+    Bouquet *bouquet = self.bouquets[indexPath.row];
     
-    id bouquetNameId = [bouquet objectForKey:@"e2servicename"];
-    
-    NSString *name = [NSString stringWithFormat:@"%@", bouquetNameId];
-    NSString *cleanedName = [name stringByTrimmingCharactersInSet: [NSCharacterSet newlineCharacterSet]];
-
-    cell.textLabel.text = cleanedName;
+    cell.textLabel.text = bouquet.name;
 
     return cell;
 }
