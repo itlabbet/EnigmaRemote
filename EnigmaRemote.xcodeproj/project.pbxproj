@@ -14,6 +14,8 @@
 		5D4E1FCE18782890004FCDD5 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC718782890004FCDD5 /* PlayingViewController.m */; };
 		5D4E1FCF18782890004FCDD5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC918782890004FCDD5 /* SettingsViewController.m */; };
 		5D4E1FD018782890004FCDD5 /* TimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FCB18782890004FCDD5 /* TimersViewController.m */; };
+		5D52A6CB18784D6100BF03EF /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */; };
+		5D52A6CD187850E800BF03EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D52A6CC187850E800BF03EF /* libxml2.dylib */; };
 		5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45718564C7100289D13 /* Foundation.framework */; };
 		5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45918564C7100289D13 /* CoreGraphics.framework */; };
 		5DDDF45C18564C7100289D13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45B18564C7100289D13 /* UIKit.framework */; };
@@ -57,6 +59,9 @@
 		5D4E1FC918782890004FCDD5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controllers/SettingsViewController.m; sourceTree = "<group>"; };
 		5D4E1FCA18782890004FCDD5 /* TimersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimersViewController.h; path = Controllers/TimersViewController.h; sourceTree = "<group>"; };
 		5D4E1FCB18782890004FCDD5 /* TimersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimersViewController.m; path = Controllers/TimersViewController.m; sourceTree = "<group>"; };
+		5D52A6C918784D6100BF03EF /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		5D52A6CC187850E800BF03EF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5DDDF45418564C7100289D13 /* EnigmaRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnigmaRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDDF45718564C7100289D13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DDDF45918564C7100289D13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D52A6CD187850E800BF03EF /* libxml2.dylib in Frameworks */,
 				5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */,
 				5DDDF45C18564C7100289D13 /* UIKit.framework in Frameworks */,
 				5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */,
@@ -115,9 +121,20 @@
 		5D4E1FD1187828AB004FCDD5 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				5D52A6C818784D6100BF03EF /* GDataXML */,
 				5DFDC3F318771E1800703E54 /* XMLReader */,
 			);
 			name = External;
+			sourceTree = "<group>";
+		};
+		5D52A6C818784D6100BF03EF /* GDataXML */ = {
+			isa = PBXGroup;
+			children = (
+				5D52A6C918784D6100BF03EF /* GDataXMLNode.h */,
+				5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */,
+			);
+			name = GDataXML;
+			path = External/GDataXML;
 			sourceTree = "<group>";
 		};
 		5D69182C18777479004EEBEE /* Models */ = {
@@ -154,6 +171,7 @@
 		5DDDF45618564C7100289D13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D52A6CC187850E800BF03EF /* libxml2.dylib */,
 				5DDDF45718564C7100289D13 /* Foundation.framework */,
 				5DDDF45918564C7100289D13 /* CoreGraphics.framework */,
 				5DDDF45B18564C7100289D13 /* UIKit.framework */,
@@ -357,6 +375,7 @@
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
 				5D4E1FCD18782890004FCDD5 /* ChannelViewController.m in Sources */,
 				5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */,
+				5D52A6CB18784D6100BF03EF /* GDataXMLNode.m in Sources */,
 				5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */,
 				5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */,
 				5D4E1FCF18782890004FCDD5 /* SettingsViewController.m in Sources */,
@@ -445,6 +464,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -479,6 +503,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;

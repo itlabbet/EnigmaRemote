@@ -56,4 +56,5 @@ Använda referenser:
 - http://dream.reichholf.net/wiki/Enigma2:WebInterface
 - http://dream.reichholf.net/e2web/
 - http://www.raywenderlich.com/46988/ios-design-patterns 
+- http://www.raywenderlich.com/49311/advanced-table-view-animations-tutorial-drop-in-cards
 
