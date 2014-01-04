@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D69182B18777472004EEBEE /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69182A18777472004EEBEE /* Bouquet.m */; };
-		5D69182F187774ED004EEBEE /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69182E187774ED004EEBEE /* Channel.m */; };
+		5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBD1878287F004FCDD5 /* Bouquet.m */; };
+		5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBF1878287F004FCDD5 /* Channel.m */; };
+		5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */; };
+		5D4E1FCD18782890004FCDD5 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC518782890004FCDD5 /* ChannelViewController.m */; };
+		5D4E1FCE18782890004FCDD5 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC718782890004FCDD5 /* PlayingViewController.m */; };
+		5D4E1FCF18782890004FCDD5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC918782890004FCDD5 /* SettingsViewController.m */; };
+		5D4E1FD018782890004FCDD5 /* TimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FCB18782890004FCDD5 /* TimersViewController.m */; };
 		5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45718564C7100289D13 /* Foundation.framework */; };
 		5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45918564C7100289D13 /* CoreGraphics.framework */; };
 		5DDDF45C18564C7100289D13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45B18564C7100289D13 /* UIKit.framework */; };
@@ -23,11 +28,6 @@
 		5DDDF48118564C7100289D13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF47F18564C7100289D13 /* InfoPlist.strings */; };
 		5DDDF48318564C7100289D13 /* EnigmaRemoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF48218564C7100289D13 /* EnigmaRemoteTests.m */; };
 		5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF48C18564DEF00289D13 /* Readme.txt */; };
-		5DFDC3E71876F57500703E54 /* BouquetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3DE1876F57500703E54 /* BouquetsViewController.m */; };
-		5DFDC3E81876F57500703E54 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3E01876F57500703E54 /* ChannelViewController.m */; };
-		5DFDC3E91876F57500703E54 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3E21876F57500703E54 /* PlayingViewController.m */; };
-		5DFDC3EA1876F57500703E54 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3E41876F57500703E54 /* SettingsViewController.m */; };
-		5DFDC3EB1876F57500703E54 /* TimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3E61876F57500703E54 /* TimersViewController.m */; };
 		5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */; };
 		5DFDC3F618771E3000703E54 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3F518771E3000703E54 /* XMLReader.m */; };
 /* End PBXBuildFile section */
@@ -43,10 +43,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D69182918777472004EEBEE /* Bouquet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bouquet.h; path = DataModel/Bouquet.h; sourceTree = "<group>"; };
-		5D69182A18777472004EEBEE /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bouquet.m; path = DataModel/Bouquet.m; sourceTree = "<group>"; };
-		5D69182D187774ED004EEBEE /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = DataModel/Channel.h; sourceTree = "<group>"; };
-		5D69182E187774ED004EEBEE /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = DataModel/Channel.m; sourceTree = "<group>"; };
+		5D4E1FBC1878287F004FCDD5 /* Bouquet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bouquet.h; path = Models/Bouquet.h; sourceTree = "<group>"; };
+		5D4E1FBD1878287F004FCDD5 /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bouquet.m; path = Models/Bouquet.m; sourceTree = "<group>"; };
+		5D4E1FBE1878287F004FCDD5 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Models/Channel.h; sourceTree = "<group>"; };
+		5D4E1FBF1878287F004FCDD5 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Models/Channel.m; sourceTree = "<group>"; };
+		5D4E1FC218782890004FCDD5 /* BouquetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BouquetsViewController.h; path = Controllers/BouquetsViewController.h; sourceTree = "<group>"; };
+		5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BouquetsViewController.m; path = Controllers/BouquetsViewController.m; sourceTree = "<group>"; };
+		5D4E1FC418782890004FCDD5 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelViewController.h; path = Controllers/ChannelViewController.h; sourceTree = "<group>"; };
+		5D4E1FC518782890004FCDD5 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewController.m; path = Controllers/ChannelViewController.m; sourceTree = "<group>"; };
+		5D4E1FC618782890004FCDD5 /* PlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingViewController.h; path = Controllers/PlayingViewController.h; sourceTree = "<group>"; };
+		5D4E1FC718782890004FCDD5 /* PlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingViewController.m; path = Controllers/PlayingViewController.m; sourceTree = "<group>"; };
+		5D4E1FC818782890004FCDD5 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controllers/SettingsViewController.h; sourceTree = "<group>"; };
+		5D4E1FC918782890004FCDD5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controllers/SettingsViewController.m; sourceTree = "<group>"; };
+		5D4E1FCA18782890004FCDD5 /* TimersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimersViewController.h; path = Controllers/TimersViewController.h; sourceTree = "<group>"; };
+		5D4E1FCB18782890004FCDD5 /* TimersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimersViewController.m; path = Controllers/TimersViewController.m; sourceTree = "<group>"; };
 		5DDDF45418564C7100289D13 /* EnigmaRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnigmaRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDDF45718564C7100289D13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DDDF45918564C7100289D13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,16 +75,6 @@
 		5DDDF48018564C7100289D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DDDF48218564C7100289D13 /* EnigmaRemoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnigmaRemoteTests.m; sourceTree = "<group>"; };
 		5DDDF48C18564DEF00289D13 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Readme.txt; path = EnigmaRemote/Readme.txt; sourceTree = "<group>"; };
-		5DFDC3DD1876F57500703E54 /* BouquetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BouquetsViewController.h; path = ViewControllers/BouquetsViewController.h; sourceTree = "<group>"; };
-		5DFDC3DE1876F57500703E54 /* BouquetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BouquetsViewController.m; path = ViewControllers/BouquetsViewController.m; sourceTree = "<group>"; };
-		5DFDC3DF1876F57500703E54 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelViewController.h; path = ViewControllers/ChannelViewController.h; sourceTree = "<group>"; };
-		5DFDC3E01876F57500703E54 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewController.m; path = ViewControllers/ChannelViewController.m; sourceTree = "<group>"; };
-		5DFDC3E11876F57500703E54 /* PlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingViewController.h; path = ViewControllers/PlayingViewController.h; sourceTree = "<group>"; };
-		5DFDC3E21876F57500703E54 /* PlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingViewController.m; path = ViewControllers/PlayingViewController.m; sourceTree = "<group>"; };
-		5DFDC3E31876F57500703E54 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewControllers/SettingsViewController.h; sourceTree = "<group>"; };
-		5DFDC3E41876F57500703E54 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ViewControllers/SettingsViewController.m; sourceTree = "<group>"; };
-		5DFDC3E51876F57500703E54 /* TimersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimersViewController.h; path = ViewControllers/TimersViewController.h; sourceTree = "<group>"; };
-		5DFDC3E61876F57500703E54 /* TimersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimersViewController.m; path = ViewControllers/TimersViewController.m; sourceTree = "<group>"; };
 		5DFDC3ED1876F5EF00703E54 /* EnigmaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnigmaClient.h; path = EnigmaClient/EnigmaClient.h; sourceTree = "<group>"; };
 		5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnigmaClient.m; path = EnigmaClient/EnigmaClient.m; sourceTree = "<group>"; };
 		5DFDC3F418771E3000703E54 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = XMLReader/XMLReader.h; sourceTree = "<group>"; };
@@ -105,15 +105,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D69182C18777479004EEBEE /* DataModel */ = {
+		5D4E1FBB1878280E004FCDD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5D69182918777472004EEBEE /* Bouquet.h */,
-				5D69182A18777472004EEBEE /* Bouquet.m */,
-				5D69182D187774ED004EEBEE /* Channel.h */,
-				5D69182E187774ED004EEBEE /* Channel.m */,
 			);
-			name = DataModel;
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5D4E1FD1187828AB004FCDD5 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5DFDC3F318771E1800703E54 /* XMLReader */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		5D69182C18777479004EEBEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D4E1FBC1878287F004FCDD5 /* Bouquet.h */,
+				5D4E1FBD1878287F004FCDD5 /* Bouquet.m */,
+				5D4E1FBE1878287F004FCDD5 /* Channel.h */,
+				5D4E1FBF1878287F004FCDD5 /* Channel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		5DDDF44B18564C7000289D13 = {
@@ -150,11 +165,12 @@
 		5DDDF45D18564C7100289D13 /* EnigmaRemote */ = {
 			isa = PBXGroup;
 			children = (
-				5DFDC3F318771E1800703E54 /* XMLReader */,
-				5D69182C18777479004EEBEE /* DataModel */,
+				5D4E1FD1187828AB004FCDD5 /* External */,
+				5D4E1FBB1878280E004FCDD5 /* Views */,
+				5D69182C18777479004EEBEE /* Models */,
 				5DFDC3EC1876F5CE00703E54 /* EnigmaClient */,
 				5DFDC3DC1876F55600703E54 /* Images */,
-				5DFDC3DB1876F54D00703E54 /* ViewControllers */,
+				5DFDC3DB1876F54D00703E54 /* Controllers */,
 				5DDDF46618564C7100289D13 /* AppDelegate.h */,
 				5DDDF46718564C7100289D13 /* AppDelegate.m */,
 				5DDDF46918564C7100289D13 /* Main.storyboard */,
@@ -193,21 +209,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5DFDC3DB1876F54D00703E54 /* ViewControllers */ = {
+		5DFDC3DB1876F54D00703E54 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5DFDC3DD1876F57500703E54 /* BouquetsViewController.h */,
-				5DFDC3DE1876F57500703E54 /* BouquetsViewController.m */,
-				5DFDC3DF1876F57500703E54 /* ChannelViewController.h */,
-				5DFDC3E01876F57500703E54 /* ChannelViewController.m */,
-				5DFDC3E11876F57500703E54 /* PlayingViewController.h */,
-				5DFDC3E21876F57500703E54 /* PlayingViewController.m */,
-				5DFDC3E31876F57500703E54 /* SettingsViewController.h */,
-				5DFDC3E41876F57500703E54 /* SettingsViewController.m */,
-				5DFDC3E51876F57500703E54 /* TimersViewController.h */,
-				5DFDC3E61876F57500703E54 /* TimersViewController.m */,
+				5D4E1FC218782890004FCDD5 /* BouquetsViewController.h */,
+				5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */,
+				5D4E1FC418782890004FCDD5 /* ChannelViewController.h */,
+				5D4E1FC518782890004FCDD5 /* ChannelViewController.m */,
+				5D4E1FC618782890004FCDD5 /* PlayingViewController.h */,
+				5D4E1FC718782890004FCDD5 /* PlayingViewController.m */,
+				5D4E1FC818782890004FCDD5 /* SettingsViewController.h */,
+				5D4E1FC918782890004FCDD5 /* SettingsViewController.m */,
+				5D4E1FCA18782890004FCDD5 /* TimersViewController.h */,
+				5D4E1FCB18782890004FCDD5 /* TimersViewController.m */,
 			);
-			name = ViewControllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		5DFDC3DC1876F55600703E54 /* Images */ = {
@@ -336,17 +352,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DFDC3E91876F57500703E54 /* PlayingViewController.m in Sources */,
+				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
+				5D4E1FCE18782890004FCDD5 /* PlayingViewController.m in Sources */,
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
-				5D69182F187774ED004EEBEE /* Channel.m in Sources */,
+				5D4E1FCD18782890004FCDD5 /* ChannelViewController.m in Sources */,
+				5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */,
 				5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */,
-				5D69182B18777472004EEBEE /* Bouquet.m in Sources */,
-				5DFDC3EB1876F57500703E54 /* TimersViewController.m in Sources */,
+				5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */,
+				5D4E1FCF18782890004FCDD5 /* SettingsViewController.m in Sources */,
 				5DDDF46418564C7100289D13 /* main.m in Sources */,
-				5DFDC3EA1876F57500703E54 /* SettingsViewController.m in Sources */,
-				5DFDC3E81876F57500703E54 /* ChannelViewController.m in Sources */,
 				5DFDC3F618771E3000703E54 /* XMLReader.m in Sources */,
-				5DFDC3E71876F57500703E54 /* BouquetsViewController.m in Sources */,
+				5D4E1FD018782890004FCDD5 /* TimersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

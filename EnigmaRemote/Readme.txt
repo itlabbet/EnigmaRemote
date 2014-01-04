@@ -30,6 +30,9 @@ https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapi
 - Source Control
 - Intrumentation
 - Kommentera koden som Apple gör i sina exempel
+- Följ MVC!
+- Singleton pattern för inställningar?
+    - http://www.raywenderlich.com/45942/intro-object-oriented-design-part-2
 
 Egna ord för projektförslaget:
 -----------------------------
@@ -52,4 +55,5 @@ Använda referenser:
 - http://www.raywenderlich.com/553/xml-tutorial-for-ios-how-to-choose-the-best-xml-parser-for-your-iphone-project
 - http://dream.reichholf.net/wiki/Enigma2:WebInterface
 - http://dream.reichholf.net/e2web/
+- http://www.raywenderlich.com/46988/ios-design-patterns 
 
