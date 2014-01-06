@@ -47,6 +47,13 @@
 #import "Bouquet.h"
 #import "Channel.h"
 
+
+@interface EnigmaClient ()
+{
+    NSURL *_baseUrl;
+}
+@end
+
 @implementation EnigmaClient
 
 + (EnigmaClient *)sharedInstance
@@ -71,7 +78,7 @@
     if (self)
     {
         // TODO: get from settings instead.
-        _baseUrl = @"http://192.168.10.8";
+        _baseUrl = [[NSURL alloc] initWithString:@"http://192.168.10.8"];
         
         // if not settings - return nil
     }
@@ -81,37 +88,90 @@
 
 - (PowerState)powerState
 {
-    PowerState state = PowerStateUnknown;
+    NSString *powerStateStr;
     
-    return state;
+    NSURL *stateUrl = [[NSURL alloc] initWithString:@"/web/powerstate" relativeToURL:_baseUrl];
+    NSData *stateData = [[NSData alloc] initWithContentsOfURL:stateUrl];
+    
+    if (stateData == nil)
+    {
+        return PowerStateOff;
+    }
+    
+    NSError *error = nil;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:stateData options:0 error:&error];
+    
+    if (doc == nil)
+    {
+        // The server returned non xml answer
+        return PowerStateUnknown;
+    }
+    
+    
+    NSArray *stateElements = [doc nodesForXPath:@"//e2powerstate" error:nil];
+    
+    for (GDataXMLElement *stateElement in stateElements)
+    {
+        NSArray *instandByStates = [stateElement elementsForName:@"e2instandby"];
+        if (instandByStates.count > 0)
+        {
+            GDataXMLElement *firstState = (GDataXMLElement *) [instandByStates objectAtIndex:0];
+            powerStateStr = firstState.stringValue;
+        } else continue;
+    }
+    
+    if ([powerStateStr isEqualToString:@"true"])
+    {
+        return PowerStateStandBy;
+    }
+    
+    if ([powerStateStr isEqualToString:@"true"])
+    {
+        return PowerStateOn;
+    }
+    
+    
+    return PowerStateUnknown;
 }
 
-- (void)setPowerState:(PowerState)state
+- (void)performAction:(BoxCommandAction)command
 {
-    switch (state)
+    NSURL *bouquetsUrl = nil;
+    
+    switch (command)
     {
-        case PowerStateStandBy:
-            
+        case BoxCommandReboot:
+            bouquetsUrl = [[NSURL alloc] initWithString:@"/web/powerstate?newstate=2" relativeToURL:_baseUrl];
             break;
-        case PowerStateRestart:
             
+        case BoxCommandRestart:
+            bouquetsUrl = [[NSURL alloc] initWithString:@"/web/powerstate?newstate=3" relativeToURL:_baseUrl];
             break;
-        case PowerStateReboot:
             
+        case BoxCommandShutDown:
+            bouquetsUrl= [[NSURL alloc] initWithString:@"/web/powerstate?newstate=1" relativeToURL:_baseUrl];
             break;
-        case PowerStateShutDown:
             
+        case BoxCommandToggleStandBy:
+            bouquetsUrl = [[NSURL alloc] initWithString:@"/web/powerstate?newstate=0" relativeToURL:_baseUrl];
             break;
             
         default:
             break;
     }
+    
+    if (bouquetsUrl == nil)
+    {
+        return;
+    }
+    
+    NSData *resultData = [[NSData alloc] initWithContentsOfURL:bouquetsUrl];
 }
 
 - (NSArray *)bouquets
 {
-    NSURL *myURL = [[NSURL alloc] initWithString:@"http://192.168.10.12/web/getservices"];
-    NSData *bouquetData = [[NSData alloc] initWithContentsOfURL:myURL];
+    NSURL *bouquetsUrl = [[NSURL alloc] initWithString:@"/web/getservices" relativeToURL:_baseUrl];
+    NSData *bouquetData = [[NSData alloc] initWithContentsOfURL:bouquetsUrl];
     NSMutableArray *bouquets = [[NSMutableArray alloc] init];
     
     if (bouquetData == nil)
@@ -164,10 +224,10 @@
 
 - (NSArray *)channelsFor:(NSString *)serviceReference
 {
-    NSString *url = [NSString stringWithFormat:@"http://192.168.10.12/web/getservices?sRef=%@", [serviceReference urlencode]];
+    NSString *channelsUrlStr = [NSString stringWithFormat:@"/web/getservices?sRef=%@", [serviceReference urlencode]];
     
-    NSURL *myURL = [[NSURL alloc] initWithString:url];
-    NSData *channelData = [[NSData alloc] initWithContentsOfURL:myURL];
+    NSURL *channelsUrl = [[NSURL alloc] initWithString:channelsUrlStr relativeToURL:_baseUrl];
+    NSData *channelData = [[NSData alloc] initWithContentsOfURL:channelsUrl];
     NSMutableArray *channels = [[NSMutableArray alloc] init];
     
     if (channelData == nil)
@@ -220,11 +280,11 @@
 - (void)zapTo:(NSString *)serviceReference
 {
     
-    NSString *url = [NSString stringWithFormat:@"http://192.168.10.12/web/zap?sRef=%@",
+    NSString *zapUrlStr = [NSString stringWithFormat:@"/web/zap?sRef=%@",
                      [serviceReference urlencode]];
     
-    NSURL *myURL = [[NSURL alloc] initWithString:url];
-    NSData *result = [[NSData alloc] initWithContentsOfURL:myURL];
+    NSURL *zapUrl = [[NSURL alloc] initWithString:zapUrlStr relativeToURL:_baseUrl];
+    NSData *result = [[NSData alloc] initWithContentsOfURL:zapUrl];
     
     // TODO: check if zap was done...
     

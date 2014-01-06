@@ -11,24 +11,28 @@
 
 typedef enum
 {
-    PowerStateUnknown,
-    PowerStateStandBy,
-    PowerStateShutDown,
-    PowerStateReboot,
-    PowerStateRestart
-    
+    PowerStateUnknown,  // unknown state
+    PowerStateOff,      // Box is turned off or server software not running
+    PowerStateOn,       // Box is on and is currenlty streaming a channel
+    PowerStateStandBy   // Box is powered on but in stand by
 }PowerState;
 
-@interface EnigmaClient : NSObject
+typedef enum
 {
-    NSString *_baseUrl;
-}
+    BoxCommandToggleStandBy,    // Toggle PowerState between PowerStateOn and PowerStateStandBy
+    BoxCommandShutDown,         // Shut down the box completely - will require local access to turn it back in by pressing powerbutton
+    BoxCommandReboot,           // Reboot the box operating system
+    BoxCommandRestart,          // Restart the box TV-specific processes (no operating system restart)
+}BoxCommandAction;
+
+
+@interface EnigmaClient : NSObject
 
 + (EnigmaClient *) sharedInstance;
 
 - (PowerState)powerState;
 
-- (void)setPowerState:(PowerState)state;
+- (void)performAction:(BoxCommandAction)command;
 
 - (NSArray *)bouquets;
 
