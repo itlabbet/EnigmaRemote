@@ -50,7 +50,7 @@
 
 @interface EnigmaClient ()
 {
-    NSURL *_baseUrl;
+    NSString *_baseUrl;
 }
 @end
 
@@ -78,7 +78,7 @@
     if (self)
     {
         // TODO: get from settings instead.
-        _baseUrl = [[NSURL alloc] initWithString:@"http://192.168.10.8"];
+        _baseUrl = @"http://192.168.10.12";
         
         // if not settings - return nil
     }
@@ -90,7 +90,7 @@
 {
     NSString *powerStateStr;
     
-    NSURL *stateUrl = [[NSURL alloc] initWithString:@"/web/powerstate" relativeToURL:_baseUrl];
+    NSURL *stateUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/powerstate"]];
     NSData *stateData = [[NSData alloc] initWithContentsOfURL:stateUrl];
     
     if (stateData == nil)
@@ -141,19 +141,19 @@
     switch (command)
     {
         case BoxCommandReboot:
-            bouquetsUrl = [[NSURL alloc] initWithString:@"/web/powerstate?newstate=2" relativeToURL:_baseUrl];
+            bouquetsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/powerstate?newstate=2"]];
             break;
             
         case BoxCommandRestart:
-            bouquetsUrl = [[NSURL alloc] initWithString:@"/web/powerstate?newstate=3" relativeToURL:_baseUrl];
+            bouquetsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/powerstate?newstate=3"]];
             break;
             
         case BoxCommandShutDown:
-            bouquetsUrl= [[NSURL alloc] initWithString:@"/web/powerstate?newstate=1" relativeToURL:_baseUrl];
+            bouquetsUrl= [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/powerstate?newstate=1"]];
             break;
             
         case BoxCommandToggleStandBy:
-            bouquetsUrl = [[NSURL alloc] initWithString:@"/web/powerstate?newstate=0" relativeToURL:_baseUrl];
+            bouquetsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/powerstate?newstate=0"]];
             break;
             
         default:
@@ -170,7 +170,7 @@
 
 - (NSArray *)bouquets
 {
-    NSURL *bouquetsUrl = [[NSURL alloc] initWithString:@"/web/getservices" relativeToURL:_baseUrl];
+    NSURL *bouquetsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/getservices"]];
     NSData *bouquetData = [[NSData alloc] initWithContentsOfURL:bouquetsUrl];
     NSMutableArray *bouquets = [[NSMutableArray alloc] init];
     
@@ -226,7 +226,7 @@
 {
     NSString *channelsUrlStr = [NSString stringWithFormat:@"/web/getservices?sRef=%@", [serviceReference urlencode]];
     
-    NSURL *channelsUrl = [[NSURL alloc] initWithString:channelsUrlStr relativeToURL:_baseUrl];
+    NSURL *channelsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:channelsUrlStr]];
     NSData *channelData = [[NSData alloc] initWithContentsOfURL:channelsUrl];
     NSMutableArray *channels = [[NSMutableArray alloc] init];
     
@@ -283,8 +283,8 @@
     NSString *zapUrlStr = [NSString stringWithFormat:@"/web/zap?sRef=%@",
                      [serviceReference urlencode]];
     
-    NSURL *zapUrl = [[NSURL alloc] initWithString:zapUrlStr relativeToURL:_baseUrl];
-    NSData *result = [[NSData alloc] initWithContentsOfURL:zapUrl];
+    NSURL *zapUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:zapUrlStr]];
+    NSData *resultData = [[NSData alloc] initWithContentsOfURL:zapUrl];
     
     // TODO: check if zap was done...
     
