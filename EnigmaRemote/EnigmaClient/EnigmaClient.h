@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ChannelEPG.h"
 
 typedef enum
 {
@@ -39,5 +39,7 @@ typedef enum
 - (NSArray *)channelsFor:(NSString *)serviceReference;
 
 - (void)zapTo:(NSString *)serviceReference;
+
+- (ChannelEPG *)channelEPGFor:(NSString *)serviceReference;
     
 @end

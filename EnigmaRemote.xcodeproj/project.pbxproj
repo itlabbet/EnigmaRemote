@@ -10,6 +10,7 @@
 		5D26DC0018786BD400CAD0B6 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */; };
 		5D26DC0318799BEF00CAD0B6 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26DC0218799BEF00CAD0B6 /* ChannelViewController.m */; };
 		5D443213187B004200A098F1 /* BoxControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D443212187B004200A098F1 /* BoxControlViewController.m */; };
+		5D443219187B3A4B00A098F1 /* ChannelEPG.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D443218187B3A4B00A098F1 /* ChannelEPG.m */; };
 		5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBD1878287F004FCDD5 /* Bouquet.m */; };
 		5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBF1878287F004FCDD5 /* Channel.m */; };
 		5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */; };
@@ -53,6 +54,8 @@
 		5D26DC0218799BEF00CAD0B6 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewController.m; path = Controllers/ChannelViewController.m; sourceTree = "<group>"; };
 		5D443211187B004200A098F1 /* BoxControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxControlViewController.h; path = Controllers/BoxControlViewController.h; sourceTree = "<group>"; };
 		5D443212187B004200A098F1 /* BoxControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxControlViewController.m; path = Controllers/BoxControlViewController.m; sourceTree = "<group>"; };
+		5D443217187B3A4B00A098F1 /* ChannelEPG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelEPG.h; sourceTree = "<group>"; };
+		5D443218187B3A4B00A098F1 /* ChannelEPG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelEPG.m; sourceTree = "<group>"; };
 		5D4E1FBC1878287F004FCDD5 /* Bouquet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bouquet.h; path = Models/Bouquet.h; sourceTree = "<group>"; };
 		5D4E1FBD1878287F004FCDD5 /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bouquet.m; path = Models/Bouquet.m; sourceTree = "<group>"; };
 		5D4E1FBE1878287F004FCDD5 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Models/Channel.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				5D4E1FBD1878287F004FCDD5 /* Bouquet.m */,
 				5D4E1FBE1878287F004FCDD5 /* Channel.h */,
 				5D4E1FBF1878287F004FCDD5 /* Channel.m */,
+				5D443217187B3A4B00A098F1 /* ChannelEPG.h */,
+				5D443218187B3A4B00A098F1 /* ChannelEPG.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D443219187B3A4B00A098F1 /* ChannelEPG.m in Sources */,
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
 				5D4E1FCE18782890004FCDD5 /* PlayingViewController.m in Sources */,
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,

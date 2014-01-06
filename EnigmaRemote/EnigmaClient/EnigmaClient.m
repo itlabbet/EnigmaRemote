@@ -46,6 +46,7 @@
 #import "GDataXMLNode.h"
 #import "Bouquet.h"
 #import "Channel.h"
+#import "ChannelEPG.h"
 
 
 @interface EnigmaClient ()
@@ -172,12 +173,12 @@
 {
     NSURL *bouquetsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/getservices"]];
     NSData *bouquetData = [[NSData alloc] initWithContentsOfURL:bouquetsUrl];
-    NSMutableArray *bouquets = [[NSMutableArray alloc] init];
     
     if (bouquetData == nil)
     {
         return nil;
     }
+    
     
     NSError *error = nil;
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:bouquetData options:0 error:&error];
@@ -187,6 +188,8 @@
         return nil;
     }
     
+    
+    NSMutableArray *bouquets = [[NSMutableArray alloc] init];
     
     NSArray *bouquetElements = [doc nodesForXPath:@"//e2servicelist/e2service" error:nil];
     
@@ -204,7 +207,7 @@
             serviceReference = firstReference.stringValue;
         } else continue;
         
-        // Reference
+        // Name
         NSArray *names = [bouquetElement elementsForName:@"e2servicename"];
         if (names.count > 0)
         {
@@ -228,12 +231,13 @@
     
     NSURL *channelsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:channelsUrlStr]];
     NSData *channelData = [[NSData alloc] initWithContentsOfURL:channelsUrl];
-    NSMutableArray *channels = [[NSMutableArray alloc] init];
     
     if (channelData == nil)
     {
         return nil;
     }
+    
+    NSMutableArray *channels = [[NSMutableArray alloc] init];
     
     NSError *error = nil;
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:channelData options:0 error:&error];
@@ -260,7 +264,7 @@
             serviceReference = firstReference.stringValue;
         } else continue;
         
-        // Reference
+        // Name
         NSArray *names = [channelElement elementsForName:@"e2servicename"];
         if (names.count > 0)
         {
@@ -290,6 +294,124 @@
     
 }
 
+- (ChannelEPG *)channelEPGFor:(NSString *)serviceReference;
+{
+    ChannelEPG *channelEPG = nil;
+    
+    NSString *epgUrlStr = [NSString stringWithFormat:@"/web/epgservice?sRef=%@", [serviceReference urlencode]];
+    
+    NSURL *epgUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:epgUrlStr]];
+    NSData *epgData = [[NSData alloc] initWithContentsOfURL:epgUrl];
+    
+    if (epgData == nil)
+    {
+        return nil;
+    }
+    
+    
+    NSError *error = nil;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:epgData options:0 error:&error];
+    
+    if (doc == nil)
+    {
+        return nil;
+    }
+    
+    NSMutableArray *epgs = [[NSMutableArray alloc] init];
+    
+    NSArray *epgElements = [doc nodesForXPath:@"//e2eventlist/e2event" error:nil];
+    
+    for (GDataXMLElement *epgElement in epgElements)
+    {
+        NSString *eventId;
+        NSString *eventStart;
+        NSString *eventDuration;
+        NSString *eventCurrentTime;
+        NSString *eventTitle;
+        NSString *eventDescription;
+        NSString *eventExtendedDescription;
+        NSString *eventServiceReference;
+        NSString *eventServiceName;
+        
+        // Fetch EPG element values from XML
+        
+        NSArray *eventIds = [epgElement elementsForName:@"e2eventid"];
+        if (eventIds.count > 0)
+        {
+            // TODO: always use firstObject instead of objectAtIndex:0
+            eventId = [[eventIds firstObject] stringValue];
+        }
+        
+        NSArray *starts = [epgElement elementsForName:@"e2eventstart"];
+        if (starts.count > 0)
+        {
+            GDataXMLElement *first = (GDataXMLElement *) [starts objectAtIndex:0];
+            eventStart = first.stringValue;
+        }
+        
+        NSArray *durations = [epgElement elementsForName:@"e2eventduration"];
+        if (durations.count > 0)
+        {
+            GDataXMLElement *first = (GDataXMLElement *) [durations objectAtIndex:0];
+            eventDuration = first.stringValue;
+        }
+        
+        NSArray *currentTimes = [epgElement elementsForName:@"e2eventcurrenttime"];
+        if (currentTimes.count > 0)
+        {
+            GDataXMLElement *first = (GDataXMLElement *) [currentTimes objectAtIndex:0];
+            eventCurrentTime = first.stringValue;
+        }
+        
+        NSArray *titles = [epgElement elementsForName:@"e2eventtitle"];
+        if (titles.count > 0)
+        {
+            GDataXMLElement *first = (GDataXMLElement *) [titles objectAtIndex:0];
+            eventTitle = first.stringValue;
+        }
+        
+        NSArray *descriptions = [epgElement elementsForName:@"e2eventdescription"];
+        if (descriptions.count > 0)
+        {
+            GDataXMLElement *first = (GDataXMLElement *) [descriptions objectAtIndex:0];
+            eventDescription = first.stringValue;
+        }
+        
+        NSArray *extendeds = [epgElement elementsForName:@"e2eventdescriptionextended"];
+        if (extendeds.count > 0)
+        {
+            GDataXMLElement *first = (GDataXMLElement *) [extendeds objectAtIndex:0];
+            eventExtendedDescription = first.stringValue;
+        }
+        
+        NSArray *references = [epgElement elementsForName:@"e2eventservicereference"];
+        if (references.count > 0)
+        {
+            GDataXMLElement *first = (GDataXMLElement *) [references objectAtIndex:0];
+            serviceReference = first.stringValue;
+        }
+        
+        NSArray *names = [epgElement elementsForName:@"e2eventservicename"];
+        if (names.count > 0)
+        {
+            GDataXMLElement *first = (GDataXMLElement *) [names objectAtIndex:0];
+            eventServiceName = first.stringValue;
+        }
+        
+        
+        EPGEvent *epgEvent = [[EPGEvent alloc] initWithAllProperties:.........];
+        
+        [epgs addObject:epgEvent];
+        
+    }
+    
+    // TODO: verify size == 2 of epgs
+    
+    channelEPG = [[ChannelEPG alloc] initWithCurrentEvent:[epgs firstObject] andNextEvent:[epgs lastObject]];
+    
+    
+    return channelEPG;
+}
 
 @end
 

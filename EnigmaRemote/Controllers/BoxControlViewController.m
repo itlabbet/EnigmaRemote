@@ -10,6 +10,7 @@
 #import "EnigmaClient.h"
 
 @interface BoxControlViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *currentPowerStateLabel;
 
 @end
 
@@ -27,6 +28,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Actions
+
 - (IBAction)toggleStandBy:(id)sender
 {
     [[EnigmaClient sharedInstance] performAction:BoxCommandToggleStandBy];
@@ -46,5 +50,8 @@
 {
     [[EnigmaClient sharedInstance] performAction:BoxCommandShutDown];
 }
+
+
+
 
 @end
