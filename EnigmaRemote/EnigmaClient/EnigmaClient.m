@@ -48,8 +48,67 @@
 #import "Channel.h"
 
 @implementation EnigmaClient
+
++ (EnigmaClient *)sharedInstance
+{
+    // 1
+    static EnigmaClient *_sharedInstance = nil;
     
-+ (NSArray *)bouquets
+    // 2
+    static dispatch_once_t oncePredicate;
+    
+    // 3
+    dispatch_once(&oncePredicate, ^{
+        _sharedInstance = [[EnigmaClient alloc] init];
+    });
+    return _sharedInstance;
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        // TODO: get from settings instead.
+        _baseUrl = @"http://192.168.10.8";
+        
+        // if not settings - return nil
+    }
+    
+    return self;
+}
+
+- (PowerState)powerState
+{
+    PowerState state = PowerStateUnknown;
+    
+    return state;
+}
+
+- (void)setPowerState:(PowerState)state
+{
+    switch (state)
+    {
+        case PowerStateStandBy:
+            
+            break;
+        case PowerStateRestart:
+            
+            break;
+        case PowerStateReboot:
+            
+            break;
+        case PowerStateShutDown:
+            
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (NSArray *)bouquets
 {
     NSURL *myURL = [[NSURL alloc] initWithString:@"http://192.168.10.12/web/getservices"];
     NSData *bouquetData = [[NSData alloc] initWithContentsOfURL:myURL];
@@ -103,7 +162,7 @@
 }
 
 
-+ (NSArray *)channelsFor:(NSString *)serviceReference
+- (NSArray *)channelsFor:(NSString *)serviceReference
 {
     NSString *url = [NSString stringWithFormat:@"http://192.168.10.12/web/getservices?sRef=%@", [serviceReference urlencode]];
     
@@ -158,7 +217,7 @@
     return channels;
 }
 
-+ (void)zapTo:(NSString *)serviceReference
+- (void)zapTo:(NSString *)serviceReference
 {
     
     NSString *url = [NSString stringWithFormat:@"http://192.168.10.12/web/zap?sRef=%@",

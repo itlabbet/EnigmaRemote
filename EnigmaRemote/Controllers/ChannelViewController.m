@@ -20,7 +20,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [EnigmaClient zapTo:self.channel.reference];
+    [[EnigmaClient sharedInstance] zapTo:self.channel.reference];
 }
 
 - (void)didReceiveMemoryWarning

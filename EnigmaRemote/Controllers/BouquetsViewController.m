@@ -46,7 +46,7 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
-        NSArray *bouquets = [EnigmaClient bouquets];
+        NSArray *bouquets = [[EnigmaClient sharedInstance] bouquets];
         //NSArray* sortedJobs = [self sort:unsortedJobs];
         //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
         

@@ -8,12 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef enum
+{
+    PowerStateUnknown,
+    PowerStateStandBy,
+    PowerStateShutDown,
+    PowerStateReboot,
+    PowerStateRestart
+    
+}PowerState;
+
 @interface EnigmaClient : NSObject
+{
+    NSString *_baseUrl;
+}
 
-+ (NSArray *)bouquets;
++ (EnigmaClient *) sharedInstance;
 
-+ (NSArray *)channelsFor:(NSString *)serviceReference;
+- (PowerState)powerState;
 
-+ (void)zapTo:(NSString *)serviceReference;
+- (void)setPowerState:(PowerState)state;
+
+- (NSArray *)bouquets;
+
+- (NSArray *)channelsFor:(NSString *)serviceReference;
+
+- (void)zapTo:(NSString *)serviceReference;
     
 @end
