@@ -10,8 +10,10 @@
 
 @interface EnigmaClient : NSObject
 
-+(NSArray *)bouquets;
++ (NSArray *)bouquets;
 
-+(NSArray *)channelsFor:(NSString *)serviceReference;
++ (NSArray *)channelsFor:(NSString *)serviceReference;
+
++ (void)zapTo:(NSString *)serviceReference;
     
 @end

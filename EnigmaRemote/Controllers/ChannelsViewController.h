@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Bouquet.h"
 
 @interface ChannelsViewController : UIViewController
 
-@property (nonatomic, copy) NSString* serviceReference;
+@property (nonatomic, strong) Bouquet* bouquet;
 
 @end

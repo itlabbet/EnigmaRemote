@@ -7,6 +7,7 @@
 //
 
 #import "ChannelsViewController.h"
+#import "ChannelViewController.h"   // To remove undeclared selector warning
 #import "EnigmaClient.h"
 #import "Channel.h"
 
@@ -44,7 +45,7 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
-        NSArray *channels = [EnigmaClient channelsFor:self.serviceReference];
+        NSArray *channels = [EnigmaClient channelsFor:self.bouquet.reference];
         //NSArray* sortedJobs = [self sort:unsortedJobs];
         //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
         
@@ -82,12 +83,11 @@
         {
             if ([[segue identifier] isEqualToString:@"showChannel" ])
             {
-                if ([segue.destinationViewController respondsToSelector:@selector(setServiceReference:)])
+                if ([segue.destinationViewController respondsToSelector:@selector(setChannel:)])
                 {
                     Channel *channel = [self.channels objectAtIndex:indexPath.row];
-                    /*
-                    [segue.destinationViewController performSelector:@selector(setServiceReference:) withObject:bouquet.reference];
-                     */
+                    
+                    [segue.destinationViewController performSelector:@selector(setChannel:) withObject:channel];
                 }
             }
         }

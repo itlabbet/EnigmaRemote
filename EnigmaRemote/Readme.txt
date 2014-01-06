@@ -11,7 +11,9 @@ Momentet ger betyget 3 om resultatet:
 Betyget 4 ges för:
 -----------------
 - Väl genomfört projekt
-- Strukturerad och välskriven kod
+- Strukturerad och välskriven kod 
+    - inga varningar 
+    - inga TODO:s etc 
 
 
 Betyget 5 ges för:

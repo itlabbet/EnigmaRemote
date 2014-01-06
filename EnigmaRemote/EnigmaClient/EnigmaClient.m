@@ -49,7 +49,7 @@
 
 @implementation EnigmaClient
     
-+(NSArray *)bouquets
++ (NSArray *)bouquets
 {
     NSURL *myURL = [[NSURL alloc] initWithString:@"http://192.168.10.12/web/getservices"];
     NSData *bouquetData = [[NSData alloc] initWithContentsOfURL:myURL];
@@ -103,7 +103,7 @@
 }
 
 
-+(NSArray *)channelsFor:(NSString *)serviceReference
++ (NSArray *)channelsFor:(NSString *)serviceReference
 {
     NSString *url = [NSString stringWithFormat:@"http://192.168.10.12/web/getservices?sRef=%@", [serviceReference urlencode]];
     
@@ -157,6 +157,20 @@
     
     return channels;
 }
+
++ (void)zapTo:(NSString *)serviceReference
+{
+    
+    NSString *url = [NSString stringWithFormat:@"http://192.168.10.12/web/zap?sRef=%@",
+                     [serviceReference urlencode]];
+    
+    NSURL *myURL = [[NSURL alloc] initWithString:url];
+    NSData *result = [[NSData alloc] initWithContentsOfURL:myURL];
+    
+    // TODO: check if zap was done...
+    
+}
+
 
 @end
 

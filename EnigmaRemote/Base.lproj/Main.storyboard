@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="1730" y="-48"/>
         </scene>
-        <!--View Controller-->
+        <!--Channel View Controller-->
         <scene sceneID="FZk-fI-ePI">
             <objects>
-                <viewController id="Bus-Rx-tbV" sceneMemberID="viewController">
+                <viewController id="Bus-Rx-tbV" customClass="ChannelViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f2L-Tx-mNS"/>
                         <viewControllerLayoutGuide type="bottom" id="Kwj-6b-7Ws"/>

@@ -7,8 +7,10 @@
 //
 
 #import "BouquetsViewController.h"
+#import "ChannelsViewController.h"  // needed to remove undeclared selecor warning...
 #import "EnigmaClient.h"
 #import "Bouquet.h"
+
 
 @interface BouquetsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -82,11 +84,13 @@
         {
             if ([[segue identifier] isEqualToString:@"showChannels" ])
             {
-                if ([segue.destinationViewController respondsToSelector:@selector(setServiceReference:)])
+                // TODO: bli kvitt denna varning!
+                if ([segue.destinationViewController respondsToSelector:@selector(setBouquet:)])
                 {
                     Bouquet *bouquet = [self.bouquets objectAtIndex:indexPath.row];
                     
-                    [segue.destinationViewController performSelector:@selector(setServiceReference:) withObject:bouquet.reference];
+                    // TODO: bli kvitt denna varning!
+                    [segue.destinationViewController performSelector:@selector(setBouquet:) withObject:bouquet];
                 }
             }
         }
