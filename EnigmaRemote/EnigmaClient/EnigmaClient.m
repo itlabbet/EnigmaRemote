@@ -283,6 +283,7 @@
         return;
     }
     
+    // TODO: hantera returdata från boxen för att kolla att rewuesten hanterades korrekt.
     NSData *resultData = [[NSData alloc] initWithContentsOfURL:bouquetsUrl];
 }
 
