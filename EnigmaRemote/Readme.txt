@@ -39,7 +39,7 @@ https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapi
 Egna ord för projektförslaget:
 -----------------------------
 Funktioner som ska ingå i applikationen för att fjärrstyra TV-boxen är:
-• Köras på en iPhone med iOS 7
+• Köras på en iPhone med iOS 7 - både 4, 4s och 5 (olika skärmstorlekar)
 • Slå av och på boxen (standby)
 • Visa kanallista
 • Byta kanal

@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DeviceInfo.h"
 #import "ChannelEPG.h"
+
+// TODO: Perform full documentation of all API:s
+// Använd eventuellt ett specifikt kommentarsspråk för att gena dokumentation...
+// https://github.com/tomaz/appledoc
 
 typedef enum
 {
@@ -31,6 +36,8 @@ typedef enum
 @interface EnigmaClient : NSObject
 
 + (EnigmaClient *) sharedInstance;
+
+- (DeviceInfo *)deviceinfo;
 
 - (PowerState)powerState;
 

@@ -48,6 +48,7 @@
 #import "Channel.h"
 #import "ChannelEPG.h"
 
+// TODO: gör konstanter av alla strängar som används i koden
 
 @interface EnigmaClient ()
 {
@@ -59,18 +60,16 @@
 
 + (EnigmaClient *)sharedInstance
 {
-    // 1
     static EnigmaClient *_sharedInstance = nil;
     
-    // 2
     static dispatch_once_t oncePredicate;
     
-    // 3
     dispatch_once(&oncePredicate, ^{
         _sharedInstance = [[EnigmaClient alloc] init];
     });
     return _sharedInstance;
 }
+
 
 -(instancetype)init
 {
@@ -85,6 +84,124 @@
     }
     
     return self;
+}
+
+- (DeviceInfo *)deviceinfo
+{
+    // TODO: dokumentera upp denna ordentligt
+    
+    DeviceInfo *deviceInfo = nil;
+    NSURL *infoUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/deviceinfo"]];
+    NSData *infoData = [[NSData alloc] initWithContentsOfURL:infoUrl];
+    
+    if (infoData == nil)
+    {
+        return nil;
+    }
+    
+    NSError *error = nil;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:infoData options:0 error:&error];
+    
+    if (doc == nil)
+    {
+        // The server returned non xml answer
+        return nil;
+    }
+    
+    
+    NSArray *infoElements = [doc nodesForXPath:@"//e2deviceinfo" error:nil];
+    
+    NSString *enigmaVersion;
+    NSString *imageVersion;
+    NSString *webifVersion;
+    NSString *fpVersion;
+    NSString *deviceName;
+    
+    
+    for (GDataXMLElement *infoElement in infoElements)
+    {
+        enigmaVersion = [self valueOfElement:infoElement forKey:@"e2enigmaversion"];
+        imageVersion = [self valueOfElement:infoElement forKey:@"e2imageversion"];
+        webifVersion = [self valueOfElement:infoElement forKey:@"e2webifversion"];
+        fpVersion = [self valueOfElement:infoElement forKey:@"e2fpversion"];
+        deviceName = [self valueOfElement:infoElement forKey:@"e2devicename"];
+        
+        
+    }
+    
+    NSString *tunerName;
+    NSString *tunerModel;
+    
+    NSArray *frontEndElements = [doc nodesForXPath:@"//e2deviceinfo/e2frontends/e2frontend" error:nil];
+    
+    for (GDataXMLElement *frontEndElement in frontEndElements)
+    {
+        tunerName = [self valueOfElement:frontEndElement forKey:@"e2name"];
+        tunerModel = [self valueOfElement:frontEndElement forKey:@"e2model"];
+    }
+
+    
+    
+    NSString *interfaceName;
+    NSString *macAddress;
+    NSString *dchpEnabledStr;
+    NSString *ipAddress;
+    NSString *gateway;
+    NSString *netmask;
+    
+    NSArray *networkElements = [doc nodesForXPath:@"//e2deviceinfo/e2network/e2interface" error:nil];
+    
+    for (GDataXMLElement *networkElement in networkElements)
+    {
+        interfaceName = [self valueOfElement:networkElement forKey:@"e2name"];
+        macAddress = [self valueOfElement:networkElement forKey:@"e2mac"];
+        dchpEnabledStr = [self valueOfElement:networkElement forKey:@"e2dhcp"];
+        ipAddress = [self valueOfElement:networkElement forKey:@"e2ip"];
+        gateway = [self valueOfElement:networkElement forKey:@"e2gateway"];
+        netmask = [self valueOfElement:networkElement forKey:@"e2netmask"];
+    }
+    
+    
+    NSString *hddModel;
+    NSString *hddCapacity;
+    NSString *hddFree;
+    
+    NSArray *hddElements = [doc nodesForXPath:@"//e2deviceinfo/e2hdds/e2hdd" error:nil];
+    
+    for (GDataXMLElement *hddElement in hddElements)
+    {
+        hddModel = [self valueOfElement:hddElement forKey:@"e2model"];
+        hddCapacity = [self valueOfElement:hddElement forKey:@"e2capacity"];
+        hddFree = [self valueOfElement:hddElement forKey:@"e2free"];
+
+    }
+
+    
+    // Convert to real data types
+    
+    BOOL dhcpEnabled = [[dchpEnabledStr lowercaseString] isEqualToString:@"true"];
+    
+    // Create device info model
+    deviceInfo = [[DeviceInfo alloc] initWith:enigmaVersion
+                                imageVersion:imageVersion
+                                 webifVersion:webifVersion
+                                    fpVersion:fpVersion
+                                   deviceName:deviceName
+                                    tunerName:tunerName
+                                   tunerModel:tunerModel
+                                 intefaceName:interfaceName
+                                   macAddress:macAddress
+                                         dchpEnabled:dhcpEnabled
+                                    ipAddress:ipAddress
+                                      gateway:gateway
+                                      netmask:netmask
+                                     hddModel:hddModel
+                                  hddCapacity:hddCapacity
+                                      hddFree:hddFree];
+    
+    
+    
+    return deviceInfo;
 }
 
 - (PowerState)powerState
@@ -335,70 +452,19 @@
         
         // Fetch EPG element values from XML
         
-        NSArray *eventIds = [epgElement elementsForName:@"e2eventid"];
-        if (eventIds.count > 0)
-        {
-            // TODO: always use firstObject instead of objectAtIndex:0
-            eventIdStr = [[eventIds firstObject] stringValue];
-        }
+        eventIdStr = [self valueOfElement:epgElement forKey:@"e2eventid"];
+        eventStartStr = [self valueOfElement:epgElement forKey:@"e2eventstart"];
+        eventDurationStr = [self valueOfElement:epgElement forKey:@"e2eventduration"];
+        eventCurrentTimeStr = [self valueOfElement:epgElement forKey:@"e2eventcurrenttime"];
+        eventTitle = [self valueOfElement:epgElement forKey:@"e2eventtitle"];
+        eventDescription = [self valueOfElement:epgElement forKey:@"e2eventdescription"];
+        eventExtendedDescription = [self valueOfElement:epgElement forKey:@"e2eventdescriptionextended"];
+        eventServiceReference = [self valueOfElement:epgElement forKey:@"e2eventservicereference"];
+        eventServiceName = [self valueOfElement:epgElement forKey:@"e2eventservicename"];
         
-        NSArray *starts = [epgElement elementsForName:@"e2eventstart"];
-        if (starts.count > 0)
-        {
-            GDataXMLElement *first = (GDataXMLElement *) [starts objectAtIndex:0];
-            eventStartStr = first.stringValue;
-        }
-        
-        NSArray *durations = [epgElement elementsForName:@"e2eventduration"];
-        if (durations.count > 0)
-        {
-            GDataXMLElement *first = (GDataXMLElement *) [durations objectAtIndex:0];
-            eventDurationStr = first.stringValue;
-        }
-        
-        NSArray *currentTimes = [epgElement elementsForName:@"e2eventcurrenttime"];
-        if (currentTimes.count > 0)
-        {
-            GDataXMLElement *first = (GDataXMLElement *) [currentTimes objectAtIndex:0];
-            eventCurrentTimeStr = first.stringValue;
-        }
-        
-        NSArray *titles = [epgElement elementsForName:@"e2eventtitle"];
-        if (titles.count > 0)
-        {
-            GDataXMLElement *first = (GDataXMLElement *) [titles objectAtIndex:0];
-            eventTitle = first.stringValue;
-        }
-        
-        NSArray *descriptions = [epgElement elementsForName:@"e2eventdescription"];
-        if (descriptions.count > 0)
-        {
-            GDataXMLElement *first = (GDataXMLElement *) [descriptions objectAtIndex:0];
-            eventDescription = first.stringValue;
-        }
-        
-        NSArray *extendeds = [epgElement elementsForName:@"e2eventdescriptionextended"];
-        if (extendeds.count > 0)
-        {
-            GDataXMLElement *first = (GDataXMLElement *) [extendeds objectAtIndex:0];
-            eventExtendedDescription = first.stringValue;
-        }
-        
-        NSArray *references = [epgElement elementsForName:@"e2eventservicereference"];
-        if (references.count > 0)
-        {
-            GDataXMLElement *first = (GDataXMLElement *) [references objectAtIndex:0];
-            eventServiceReference = first.stringValue;
-        }
-        
-        NSArray *names = [epgElement elementsForName:@"e2eventservicename"];
-        if (names.count > 0)
-        {
-            GDataXMLElement *first = (GDataXMLElement *) [names objectAtIndex:0];
-            eventServiceName = first.stringValue;
-        }
         
         // Convert string values to real data types
+        
         NSNumber *tempEventId = [[NSNumber alloc]initWithLongLong:[eventIdStr longLongValue]];
         NSUInteger eventId = [tempEventId unsignedIntegerValue];
         NSNumber *tempStartTime = [[NSNumber alloc]initWithLongLong:[eventStartStr longLongValue]];
@@ -406,6 +472,8 @@
         NSTimeInterval duration = [eventDurationStr doubleValue];
         NSNumber *tempCurrentTime = [[NSNumber alloc]initWithLongLong:[eventCurrentTimeStr longLongValue]];
         NSDate *currentTime = [NSDate dateWithTimeIntervalSince1970:[tempCurrentTime unsignedIntegerValue]];
+        
+        // Create the epg object
         
         EPGEvent *epgEvent = [[EPGEvent alloc] initWith:eventId
                                               startTime:startTime
@@ -427,6 +495,21 @@
     
     
     return channelEPG;
+}
+
+#pragma mark - Helpers
+
+- (NSString *)valueOfElement:(GDataXMLElement *)element forKey:(NSString *)key
+{
+    NSString *value = @"";
+    NSArray *elements = [element elementsForName:key];
+    
+    if (elements.count > 0)
+    {
+        value = [[elements firstObject] stringValue];
+    }
+    
+    return value;
 }
 
 @end
