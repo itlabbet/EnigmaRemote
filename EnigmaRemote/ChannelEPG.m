@@ -8,6 +8,16 @@
 
 #import "ChannelEPG.h"
 
+
+@interface ChannelEPG ()
+
+@property (nonatomic, strong, readwrite) EPGEvent *currentEvent;
+@property (nonatomic, strong, readwrite) EPGEvent *nextEvent;
+
+@end
+
+
+
 @implementation ChannelEPG
 
 - (instancetype)initWithCurrentEvent:(EPGEvent *)current andNextEvent:(EPGEvent *)next

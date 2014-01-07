@@ -399,8 +399,8 @@
         }
         
         
-        EPGEvent *epgEvent = [[EPGEvent alloc] initWithAllProperties:.........];
-        
+        //EPGEvent *epgEvent = [[EPGEvent alloc] initWith:eventId date:<#(NSDate *)#> duration:<#(NSUInteger)#> currentTime:<#(NSDate *)#> title:<#(NSString *)#> description:<#(NSString *)#> extendedDescription:<#(NSString *)#> reference:<#(NSString *)#> serviceName:<#(NSString *)#>:.........];
+        EPGEvent *epgEvent;
         [epgs addObject:epgEvent];
         
     }
