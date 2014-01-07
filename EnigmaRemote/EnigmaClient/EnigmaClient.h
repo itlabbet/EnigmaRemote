@@ -15,6 +15,7 @@ typedef enum
     PowerStateOff,      // Box is turned off or server software not running
     PowerStateOn,       // Box is on and is currenlty streaming a channel
     PowerStateStandBy   // Box is powered on but in stand by
+
 }PowerState;
 
 typedef enum
@@ -23,6 +24,7 @@ typedef enum
     BoxCommandShutDown,         // Shut down the box completely - will require local access to turn it back in by pressing powerbutton
     BoxCommandReboot,           // Reboot the box operating system
     BoxCommandRestart,          // Restart the box TV-specific processes (no operating system restart)
+
 }BoxCommandAction;
 
 

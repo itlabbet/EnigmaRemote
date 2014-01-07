@@ -13,7 +13,7 @@
 // Redeclaration opf properties as readwrite
 @property (nonatomic, readwrite) NSUInteger eventId;
 @property (nonatomic, strong, readwrite) NSDate *startTime;
-@property (nonatomic, readwrite) NSUInteger duration; // TODO: använd datatyp för tidslängs om det finns
+@property (nonatomic, readwrite) NSTimeInterval duration;
 @property (nonatomic, strong, readwrite) NSDate *currentTime;
 @property (nonatomic, copy, readwrite) NSString *title;
 @property (nonatomic, copy, readwrite) NSString *description;
@@ -29,7 +29,7 @@
 
 - (instancetype)initWith:(NSUInteger)eventId
                     startTime:(NSDate *)startTime
-                duration:(NSUInteger)duration
+                duration:(NSTimeInterval)duration
              currentTime:(NSDate *)currentTime
                    title:(NSString *)title
              description:(NSString *)description

@@ -323,10 +323,10 @@
     
     for (GDataXMLElement *epgElement in epgElements)
     {
-        NSString *eventId;
-        NSString *eventStart;
-        NSString *eventDuration;
-        NSString *eventCurrentTime;
+        NSString *eventIdStr;
+        NSString *eventStartStr;
+        NSString *eventDurationStr;
+        NSString *eventCurrentTimeStr;
         NSString *eventTitle;
         NSString *eventDescription;
         NSString *eventExtendedDescription;
@@ -339,28 +339,28 @@
         if (eventIds.count > 0)
         {
             // TODO: always use firstObject instead of objectAtIndex:0
-            eventId = [[eventIds firstObject] stringValue];
+            eventIdStr = [[eventIds firstObject] stringValue];
         }
         
         NSArray *starts = [epgElement elementsForName:@"e2eventstart"];
         if (starts.count > 0)
         {
             GDataXMLElement *first = (GDataXMLElement *) [starts objectAtIndex:0];
-            eventStart = first.stringValue;
+            eventStartStr = first.stringValue;
         }
         
         NSArray *durations = [epgElement elementsForName:@"e2eventduration"];
         if (durations.count > 0)
         {
             GDataXMLElement *first = (GDataXMLElement *) [durations objectAtIndex:0];
-            eventDuration = first.stringValue;
+            eventDurationStr = first.stringValue;
         }
         
         NSArray *currentTimes = [epgElement elementsForName:@"e2eventcurrenttime"];
         if (currentTimes.count > 0)
         {
             GDataXMLElement *first = (GDataXMLElement *) [currentTimes objectAtIndex:0];
-            eventCurrentTime = first.stringValue;
+            eventCurrentTimeStr = first.stringValue;
         }
         
         NSArray *titles = [epgElement elementsForName:@"e2eventtitle"];
@@ -398,9 +398,25 @@
             eventServiceName = first.stringValue;
         }
         
+        // Convert string values to real data types
+        NSNumber *tempEventId = [[NSNumber alloc]initWithLongLong:[eventIdStr longLongValue]];
+        NSUInteger eventId = [tempEventId unsignedIntegerValue];
+        NSNumber *tempStartTime = [[NSNumber alloc]initWithLongLong:[eventStartStr longLongValue]];
+        NSDate *startTime = [NSDate dateWithTimeIntervalSince1970:[tempStartTime unsignedIntegerValue]];
+        NSTimeInterval duration = [eventDurationStr doubleValue];
+        NSNumber *tempCurrentTime = [[NSNumber alloc]initWithLongLong:[eventCurrentTimeStr longLongValue]];
+        NSDate *currentTime = [NSDate dateWithTimeIntervalSince1970:[tempCurrentTime unsignedIntegerValue]];
         
-        //EPGEvent *epgEvent = [[EPGEvent alloc] initWith:eventId date:<#(NSDate *)#> duration:<#(NSUInteger)#> currentTime:<#(NSDate *)#> title:<#(NSString *)#> description:<#(NSString *)#> extendedDescription:<#(NSString *)#> reference:<#(NSString *)#> serviceName:<#(NSString *)#>:.........];
-        EPGEvent *epgEvent;
+        EPGEvent *epgEvent = [[EPGEvent alloc] initWith:eventId
+                                              startTime:startTime
+                                               duration:duration
+                                            currentTime:currentTime
+                                                  title:eventTitle
+                                            description:eventDescription
+                                    extendedDescription:eventExtendedDescription
+                                              reference:serviceReference
+                                            serviceName:eventServiceName];
+        
         [epgs addObject:epgEvent];
         
     }

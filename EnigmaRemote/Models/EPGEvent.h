@@ -12,7 +12,7 @@
 
 @property (nonatomic, readonly) NSUInteger eventId;
 @property (nonatomic, strong, readonly) NSDate *startTime;
-@property (nonatomic, readonly) NSUInteger duration; // TODO: använd datatyp för tidslängs om det finns
+@property (nonatomic, readonly) NSTimeInterval duration;
 @property (nonatomic, strong, readonly) NSDate *currentTime;
 @property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, copy, readonly) NSString *description;
@@ -22,7 +22,7 @@
 
 - (instancetype)initWith:(NSUInteger)eventId
                     startTime:(NSDate *)startTime
-                duration:(NSUInteger)duration
+                duration:(NSTimeInterval)duration
              currentTime:(NSDate *)date
                    title:(NSString *)title
              description:(NSString *)description

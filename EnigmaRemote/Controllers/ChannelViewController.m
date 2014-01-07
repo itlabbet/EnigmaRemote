@@ -27,7 +27,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [[EnigmaClient sharedInstance] zapTo:self.channel.reference];
+    //[[EnigmaClient sharedInstance] zapTo:self.channel.reference];
+    
+    [self loadEPG];
 }
 
 #pragma mark - Internal
