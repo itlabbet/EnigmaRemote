@@ -388,7 +388,7 @@
         if (references.count > 0)
         {
             GDataXMLElement *first = (GDataXMLElement *) [references objectAtIndex:0];
-            serviceReference = first.stringValue;
+            eventServiceReference = first.stringValue;
         }
         
         NSArray *names = [epgElement elementsForName:@"e2eventservicename"];
