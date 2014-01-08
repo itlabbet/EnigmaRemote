@@ -22,6 +22,8 @@
 		5D4E1FD018782890004FCDD5 /* TimersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FCB18782890004FCDD5 /* TimersViewController.m */; };
 		5D52A6CB18784D6100BF03EF /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */; };
 		5D52A6CD187850E800BF03EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D52A6CC187850E800BF03EF /* libxml2.dylib */; };
+		5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664690187DF81900DA1B1B /* ApplicationSettings.m */; };
+		5D664694187DF89200DA1B1B /* BoxConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664693187DF89200DA1B1B /* BoxConnection.m */; };
 		5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45718564C7100289D13 /* Foundation.framework */; };
 		5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45918564C7100289D13 /* CoreGraphics.framework */; };
 		5DDDF45C18564C7100289D13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45B18564C7100289D13 /* UIKit.framework */; };
@@ -79,6 +81,10 @@
 		5D52A6C918784D6100BF03EF /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		5D52A6CC187850E800BF03EF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		5D66468F187DF81900DA1B1B /* ApplicationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationSettings.h; sourceTree = "<group>"; };
+		5D664690187DF81900DA1B1B /* ApplicationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationSettings.m; sourceTree = "<group>"; };
+		5D664692187DF89200DA1B1B /* BoxConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxConnection.h; sourceTree = "<group>"; };
+		5D664693187DF89200DA1B1B /* BoxConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxConnection.m; sourceTree = "<group>"; };
 		5DDDF45418564C7100289D13 /* EnigmaRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnigmaRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDDF45718564C7100289D13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DDDF45918564C7100289D13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +167,17 @@
 			path = External/GDataXML;
 			sourceTree = "<group>";
 		};
+		5D66468E187DF7ED00DA1B1B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5D664692187DF89200DA1B1B /* BoxConnection.h */,
+				5D664693187DF89200DA1B1B /* BoxConnection.m */,
+				5D66468F187DF81900DA1B1B /* ApplicationSettings.h */,
+				5D664690187DF81900DA1B1B /* ApplicationSettings.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		5D69182C18777479004EEBEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +230,7 @@
 		5DDDF45D18564C7100289D13 /* EnigmaRemote */ = {
 			isa = PBXGroup;
 			children = (
+				5D66468E187DF7ED00DA1B1B /* Settings */,
 				5D4E1FD1187828AB004FCDD5 /* External */,
 				5D4E1FBB1878280E004FCDD5 /* Views */,
 				5D69182C18777479004EEBEE /* Models */,
@@ -395,10 +413,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D664694187DF89200DA1B1B /* BoxConnection.m in Sources */,
 				5D443219187B3A4B00A098F1 /* ChannelEPG.m in Sources */,
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
 				5D4E1FCE18782890004FCDD5 /* PlayingViewController.m in Sources */,
 				5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */,
+				5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */,
 				5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */,
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
 				5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */,
