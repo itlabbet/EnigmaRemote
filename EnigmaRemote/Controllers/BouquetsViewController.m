@@ -38,6 +38,20 @@
     [self loadBouquets];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.tableView flashScrollIndicators];
+}
+
 - (void)loadBouquets
 {
     //[self.refreshControl beginRefreshing];
