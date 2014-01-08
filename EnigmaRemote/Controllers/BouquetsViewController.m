@@ -28,13 +28,19 @@
     [self.tableView reloadData];
 }
 
+- (void)loadView
+{
+    [super loadView];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
     [self loadBouquets];
 }
 
