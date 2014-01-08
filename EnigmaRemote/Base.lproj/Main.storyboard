@@ -16,17 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zcm-cg-LRq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zcm-cg-LRq">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BouquetCell" id="vt4-11-bFd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BouquetCell" textLabel="NX8-E0-Tiq" style="IBUITableViewCellStyleDefault" id="vt4-11-bFd">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vt4-11-bFd" id="JUs-dG-8fM">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NX8-E0-Tiq">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="D5N-uX-5vz" kind="push" identifier="showChannels" id="Zde-be-K3N"/>
@@ -36,6 +45,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Zcm-cg-LRq" secondAttribute="trailing" id="Fxz-VY-GuD"/>
+                            <constraint firstAttribute="bottom" secondItem="Zcm-cg-LRq" secondAttribute="bottom" id="LlY-Ig-8XF"/>
+                            <constraint firstItem="Zcm-cg-LRq" firstAttribute="leading" secondItem="akB-3N-s0Q" secondAttribute="leading" id="e6S-HS-06Y"/>
+                            <constraint firstItem="Zcm-cg-LRq" firstAttribute="top" secondItem="akB-3N-s0Q" secondAttribute="top" id="rNn-mm-c6M"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="abN-yn-x2U"/>
                     <connections>
@@ -58,7 +73,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uu0-NS-uTa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uu0-NS-uTa">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,6 +93,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uu0-NS-uTa" firstAttribute="top" secondItem="e22-RP-oTj" secondAttribute="top" id="7Xb-S0-qYO"/>
+                            <constraint firstItem="uu0-NS-uTa" firstAttribute="leading" secondItem="e22-RP-oTj" secondAttribute="leading" id="JYa-qc-tD4"/>
+                            <constraint firstAttribute="trailing" secondItem="uu0-NS-uTa" secondAttribute="trailing" id="pRb-zV-gIY"/>
+                            <constraint firstAttribute="bottom" secondItem="uu0-NS-uTa" secondAttribute="bottom" id="t7B-eS-hpV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HH4-bv-biU"/>
                     <connections>
