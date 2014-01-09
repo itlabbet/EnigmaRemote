@@ -147,7 +147,7 @@
                         <sections>
                             <tableViewSection headerTitle="Kanal" id="YD0-VK-0Yp">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="WBv-FV-5sW" style="IBUITableViewCellStyleDefault" id="35S-p9-x6V">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="WBv-FV-5sW" style="IBUITableViewCellStyleDefault" id="35S-p9-x6V">
                                         <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="35S-p9-x6V" id="FET-Hb-bhG">
@@ -168,7 +168,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Just nu" id="mBi-mK-K3C">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="B2u-3T-NKS" detailTextLabel="3nF-4U-eJL" style="IBUITableViewCellStyleSubtitle" id="am3-rG-XSf">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="B2u-3T-NKS" detailTextLabel="3nF-4U-eJL" style="IBUITableViewCellStyleSubtitle" id="am3-rG-XSf">
                                         <rect key="frame" x="0.0" y="147" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="am3-rG-XSf" id="Z7K-oI-d1Z">
@@ -192,29 +192,36 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="dYq-Z2-rOu" style="IBUITableViewCellStyleDefault" id="OZD-an-QII">
-                                        <rect key="frame" x="0.0" y="191" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="OZD-an-QII">
+                                        <rect key="frame" x="0.0" y="191" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OZD-an-QII" id="Iwr-N8-5Yb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dYq-Z2-rOu">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp2-6C-HyX">
+                                                    <rect key="frame" x="15" y="5" width="290" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bp2-6C-HyX" firstAttribute="leading" secondItem="Iwr-N8-5Yb" secondAttribute="leading" constant="15" id="9ef-JF-QRg"/>
+                                                <constraint firstItem="Bp2-6C-HyX" firstAttribute="top" secondItem="Iwr-N8-5Yb" secondAttribute="top" constant="5" id="GjO-yg-rag"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bp2-6C-HyX" secondAttribute="bottom" constant="5" id="HnX-Et-2z3"/>
+                                                <constraint firstItem="Bp2-6C-HyX" firstAttribute="centerX" secondItem="Iwr-N8-5Yb" secondAttribute="centerX" id="JqZ-py-bex"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Nästa" id="SQu-hw-cVe">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="iEw-Ty-d3d" detailTextLabel="UtE-j6-y2W" style="IBUITableViewCellStyleSubtitle" id="vUS-TY-sY9">
-                                        <rect key="frame" x="0.0" y="283" width="320" height="44"/>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="iEw-Ty-d3d" detailTextLabel="UtE-j6-y2W" style="IBUITableViewCellStyleSubtitle" id="vUS-TY-sY9">
+                                        <rect key="frame" x="0.0" y="389" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vUS-TY-sY9" id="eZp-5H-9Pp">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -237,21 +244,28 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="a1c-8A-Frh" style="IBUITableViewCellStyleDefault" id="Zk2-7I-moo">
-                                        <rect key="frame" x="0.0" y="327" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="Zk2-7I-moo">
+                                        <rect key="frame" x="0.0" y="433" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zk2-7I-moo" id="dss-h1-sMI">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a1c-8A-Frh">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3T-yb-dtg">
+                                                    <rect key="frame" x="15" y="5" width="290" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="b3T-yb-dtg" secondAttribute="bottom" constant="5" id="6EQ-RM-4go"/>
+                                                <constraint firstItem="b3T-yb-dtg" firstAttribute="leading" secondItem="dss-h1-sMI" secondAttribute="leading" constant="15" id="WJF-Y9-Gbs"/>
+                                                <constraint firstItem="b3T-yb-dtg" firstAttribute="top" secondItem="dss-h1-sMI" secondAttribute="top" constant="5" id="hTR-BF-AeD"/>
+                                                <constraint firstItem="b3T-yb-dtg" firstAttribute="centerX" secondItem="dss-h1-sMI" secondAttribute="centerX" id="oZS-ko-rJ3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -263,9 +277,14 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Visas nu" id="kXo-9Q-dKj"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hUG-hi-bFb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
+                        <outlet property="currentProgramDescription" destination="Bp2-6C-HyX" id="WC9-T1-9qX"/>
                         <outlet property="currentProgramTime" destination="3nF-4U-eJL" id="uWG-p1-XXs"/>
                         <outlet property="currentProgramTitle" destination="B2u-3T-NKS" id="kUx-Qh-dnI"/>
+                        <outlet property="nextProgramDescription" destination="b3T-yb-dtg" id="RsZ-WO-Cmg"/>
                         <outlet property="nextProgramTime" destination="UtE-j6-y2W" id="IBN-OP-QeB"/>
                         <outlet property="nextProgramTitle" destination="iEw-Ty-d3d" id="zQa-qw-78b"/>
                         <outlet property="serviceName" destination="WBv-FV-5sW" id="7JM-l1-Wvw"/>

@@ -60,3 +60,6 @@ Använda referenser:
 - http://www.raywenderlich.com/46988/ios-design-patterns 
 - http://www.raywenderlich.com/49311/advanced-table-view-animations-tutorial-drop-in-cards
 
+TODO:s
+------
+ - När PlayingViewController skrollas hamnar batteri mm bakom skrollen - ser inte snyggt ut.

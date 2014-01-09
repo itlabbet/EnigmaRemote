@@ -16,8 +16,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *serviceName;
 @property (weak, nonatomic) IBOutlet UILabel *currentProgramTitle;
 @property (weak, nonatomic) IBOutlet UILabel *currentProgramTime;
+@property (weak, nonatomic) IBOutlet UITextView *currentProgramDescription;
 @property (weak, nonatomic) IBOutlet UILabel *nextProgramTitle;
 @property (weak, nonatomic) IBOutlet UILabel *nextProgramTime;
+@property (weak, nonatomic) IBOutlet UITextView *nextProgramDescription;
 
 @end
 
@@ -35,12 +37,25 @@
     [super viewWillAppear:animated];
     
     [self loadNowPlaying];
-    [self updateUserInterface];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.refreshControl addTarget:self
+                            action:@selector(loadNowPlaying)
+                  forControlEvents:UIControlEventValueChanged];
+
 }
 
 - (void)loadNowPlaying
 {
-    //[self.refreshControl beginRefreshing];
+    self.epg = nil;
+    
+    [self.refreshControl beginRefreshing];
+    
+    [self updateUserInterface];
     
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
@@ -52,7 +67,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
             self.epg = currentPlaying;
-            //[self.refreshControl endRefreshing];
+            [self.refreshControl endRefreshing];
         });
     });
 }
@@ -67,10 +82,12 @@
         // Current event on this channel
         self.currentProgramTitle.text = self.epg.currentEvent.title;
         self.currentProgramTime.text = [self timeSpanForEvent:self.epg.currentEvent];
+        self.currentProgramDescription.text = self.epg.currentEvent.extendedDescription;
 
         // Next event on this channel
         self.nextProgramTitle.text = self.epg.nextEvent.title;
         self.nextProgramTime.text = [self timeSpanForEvent:self.epg.nextEvent];
+        self.nextProgramDescription.text = self.epg.nextEvent.extendedDescription;
     }
     else
     {
@@ -79,10 +96,12 @@
         // Current event on this channel
         self.currentProgramTitle.text = @"";
         self.currentProgramTime.text = @"";
+        self.currentProgramDescription.text = @"";
         
         // Next event on this channel
         self.nextProgramTitle.text = @"";
         self.nextProgramTime.text = @"";
+        self.nextProgramDescription.text = @"";
 
     }
     
