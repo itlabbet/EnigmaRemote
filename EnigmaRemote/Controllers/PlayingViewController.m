@@ -30,25 +30,12 @@
     [self updateUserInterface];
 }
 
-- (void)loadView
-{
-    [super loadView];
-    
-    [self loadNowPlaying];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [self updateUserInterface];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    // TODO: är det bäst att anropa [self updateUserInterface]; här eller i viewDidLoad?
+    [self loadNowPlaying];
+    [self updateUserInterface];
 }
 
 - (void)loadNowPlaying

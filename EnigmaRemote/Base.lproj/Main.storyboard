@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tki-AP-IeT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qWS-tR-fs4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -129,13 +129,14 @@
                     <connections>
                         <segue destination="8ob-M0-6Ap" kind="relationship" relationship="viewControllers" id="3lc-ya-OJ2"/>
                         <segue destination="7CR-qh-FGM" kind="relationship" relationship="viewControllers" id="ZmZ-H7-YEx"/>
+                        <segue destination="Tki-AP-IeT" kind="relationship" relationship="viewControllers" id="UUi-Kw-qhi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3X-5l-0Az" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="317" y="235"/>
         </scene>
-        <!--Playing View Controller-->
+        <!--Playing View Controller - Visas nu-->
         <scene sceneID="y5a-KQ-Mks">
             <objects>
                 <tableViewController id="Tki-AP-IeT" customClass="PlayingViewController" sceneMemberID="viewController">
@@ -261,6 +262,7 @@
                             <outlet property="delegate" destination="Tki-AP-IeT" id="Aj7-te-5uq"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Visas nu" id="kXo-9Q-dKj"/>
                     <connections>
                         <outlet property="currentProgramTime" destination="3nF-4U-eJL" id="uWG-p1-XXs"/>
                         <outlet property="currentProgramTitle" destination="B2u-3T-NKS" id="kUx-Qh-dnI"/>
@@ -271,7 +273,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2Y-fi-iRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="611"/>
+            <point key="canvasLocation" x="851" y="567"/>
         </scene>
         <!--Remote View Controller - Zappa-->
         <scene sceneID="ESs-0c-a2n">
