@@ -17,7 +17,6 @@
 		5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBF1878287F004FCDD5 /* Channel.m */; };
 		5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */; };
 		5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */; };
-		5D4E1FCF18782890004FCDD5 /* SettingsViewControllerTmp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC918782890004FCDD5 /* SettingsViewControllerTmp.m */; };
 		5D52A6CB18784D6100BF03EF /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */; };
 		5D52A6CD187850E800BF03EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D52A6CC187850E800BF03EF /* libxml2.dylib */; };
 		5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664690187DF81900DA1B1B /* ApplicationSettings.m */; };
@@ -73,8 +72,6 @@
 		5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BouquetsViewController.m; path = Controllers/BouquetsViewController.m; sourceTree = "<group>"; };
 		5D4E1FC418782890004FCDD5 /* ChannelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelsViewController.h; path = Controllers/ChannelsViewController.h; sourceTree = "<group>"; };
 		5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelsViewController.m; path = Controllers/ChannelsViewController.m; sourceTree = "<group>"; };
-		5D4E1FC818782890004FCDD5 /* SettingsViewControllerTmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewControllerTmp.h; path = Controllers/SettingsViewControllerTmp.h; sourceTree = "<group>"; };
-		5D4E1FC918782890004FCDD5 /* SettingsViewControllerTmp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewControllerTmp.m; path = Controllers/SettingsViewControllerTmp.m; sourceTree = "<group>"; };
 		5D52A6C918784D6100BF03EF /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		5D52A6CC187850E800BF03EF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -289,8 +286,6 @@
 				5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */,
 				5D26DC0118799BEF00CAD0B6 /* ChannelViewController.h */,
 				5D26DC0218799BEF00CAD0B6 /* ChannelViewController.m */,
-				5D4E1FC818782890004FCDD5 /* SettingsViewControllerTmp.h */,
-				5D4E1FC918782890004FCDD5 /* SettingsViewControllerTmp.m */,
 				5DFF706A187F211600F3CC04 /* RemoteViewController.h */,
 				5DFF706B187F211600F3CC04 /* RemoteViewController.m */,
 				5DFF706D187F21E100F3CC04 /* PlayingViewController.h */,
@@ -434,7 +429,6 @@
 				5D26DC0018786BD400CAD0B6 /* NSString+URLEncode.m in Sources */,
 				5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */,
 				5DFF706C187F211600F3CC04 /* RemoteViewController.m in Sources */,
-				5D4E1FCF18782890004FCDD5 /* SettingsViewControllerTmp.m in Sources */,
 				5D443213187B004200A098F1 /* BoxControlViewController.m in Sources */,
 				5D26DC0318799BEF00CAD0B6 /* ChannelViewController.m in Sources */,
 				5DDDF46418564C7100289D13 /* main.m in Sources */,

@@ -98,6 +98,8 @@
         self.nextProgramTime.text = @"";
 
     }
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - helpers

@@ -9,8 +9,8 @@
             <objects>
                 <viewController id="3JV-nM-EHU" customClass="BouquetsViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rSf-H4-4Pr"/>
-                        <viewControllerLayoutGuide type="bottom" id="iDp-nK-ApZ"/>
+                        <viewControllerLayoutGuide type="top" id="yha-4f-wtg"/>
+                        <viewControllerLayoutGuide type="bottom" id="CId-mQ-hca"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="akB-3N-s0Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -60,8 +60,8 @@
             <objects>
                 <viewController id="D5N-uX-5vz" customClass="ChannelsViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Hj-6F-Nuo"/>
-                        <viewControllerLayoutGuide type="bottom" id="i4b-8B-tqc"/>
+                        <viewControllerLayoutGuide type="top" id="E9p-GK-I6r"/>
+                        <viewControllerLayoutGuide type="bottom" id="M10-Zf-YvC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e22-RP-oTj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -102,8 +102,8 @@
             <objects>
                 <viewController id="Bus-Rx-tbV" customClass="ChannelViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hd1-FL-be2"/>
-                        <viewControllerLayoutGuide type="bottom" id="f9b-S6-AeQ"/>
+                        <viewControllerLayoutGuide type="top" id="MLf-cM-Dgi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gva-c0-lDQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6eI-wr-QWX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -271,15 +271,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2Y-fi-iRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="717"/>
+            <point key="canvasLocation" x="1148" y="611"/>
         </scene>
         <!--Remote View Controller - Zappa-->
         <scene sceneID="ESs-0c-a2n">
             <objects>
                 <viewController id="7CR-qh-FGM" customClass="RemoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uMk-oj-iX0"/>
-                        <viewControllerLayoutGuide type="bottom" id="AAP-zh-K6V"/>
+                        <viewControllerLayoutGuide type="top" id="dBm-IQ-xrr"/>
+                        <viewControllerLayoutGuide type="bottom" id="biW-2e-kfR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="swL-Cc-2rn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -313,8 +313,8 @@
             <objects>
                 <viewController id="Zss-pW-4ma" customClass="BoxControlViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ivL-WO-ErT"/>
-                        <viewControllerLayoutGuide type="bottom" id="ADN-cH-ZRf"/>
+                        <viewControllerLayoutGuide type="top" id="knF-mP-g9w"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xzf-z6-E1i"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="u90-hO-pmc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
