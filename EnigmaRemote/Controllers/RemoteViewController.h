@@ -1,5 +1,5 @@
 //
-//  PlayingViewController.h
+//  RemoteViewController.h
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 09/01/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayingViewController : UITableViewController
+@interface RemoteViewController : UIViewController
 
 @end

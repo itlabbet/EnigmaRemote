@@ -483,7 +483,7 @@
                                                   title:eventTitle
                                             description:eventDescription
                                     extendedDescription:eventExtendedDescription
-                                              reference:serviceReference
+                                              reference:eventServiceReference
                                             serviceName:eventServiceName];
         
         [epgs addObject:epgEvent];
@@ -493,6 +493,106 @@
     // TODO: verify size == 2 of epgs
     
     channelEPG = [[ChannelEPG alloc] initWithCurrentEvent:[epgs firstObject] andNextEvent:[epgs lastObject]];
+    
+    
+    return channelEPG;
+}
+
+- (ChannelEPG *)currentPlaying
+{
+    ChannelEPG *channelEPG = nil;
+    NSString *eventServiceName;
+    
+    NSString *playingUrlStr = [NSString stringWithFormat:@"/web/getcurrent"];
+    
+    NSURL *playingUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:playingUrlStr]];
+    NSData *playingData = [[NSData alloc] initWithContentsOfURL:playingUrl];
+    
+    if (playingData == nil)
+    {
+        // TODO: Notify user about error
+        return nil;
+    }
+    
+    
+    NSError *error = nil;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:playingData options:0 error:&error];
+    
+    if (doc == nil)
+    {
+        // TODO: Notify user about error
+        return nil;
+    }
+    
+    NSMutableArray *events = [[NSMutableArray alloc] init];
+    
+    // Note - there is only one service, but need to get is as an array
+    NSArray *serviceElements = [doc nodesForXPath:@"//e2currentserviceinformation/e2service" error:nil];
+    if ([serviceElements count] > 0)
+    {
+        eventServiceName = [self valueOfElement:[serviceElements firstObject] forKey:@"e2servicename"];
+    }
+    
+    // There might be more than two events returned but just take the first two and display them as current program and next program
+    NSArray *eventElements = [doc nodesForXPath:@"//e2currentserviceinformation/e2eventlist/e2event" error:nil];
+    NSUInteger counter = 0;
+    for (GDataXMLElement *eventElement in eventElements)
+    {
+        // Handle the case that there might be more than two events returned
+        counter++;
+        if (counter > 2)
+            break;
+        
+        NSString *eventIdStr;
+        NSString *eventStartStr;
+        NSString *eventDurationStr;
+        NSString *eventCurrentTimeStr;
+        NSString *eventTitle;
+        NSString *eventDescription;
+        NSString *eventExtendedDescription;
+        NSString *eventServiceReference;
+        
+        
+        // Fetch EPG element values from XML
+        
+        eventIdStr = [self valueOfElement:eventElement forKey:@"e2eventid"];
+        eventTitle = [self valueOfElement:eventElement forKey:@"e2eventtitle"];
+        eventStartStr = [self valueOfElement:eventElement forKey:@"e2eventstart"];
+        eventDurationStr = [self valueOfElement:eventElement forKey:@"e2eventduration"];
+        eventCurrentTimeStr = [self valueOfElement:eventElement forKey:@"e2eventcurrenttime"];
+        eventDescription = [self valueOfElement:eventElement forKey:@"e2eventdescription"];
+        eventExtendedDescription = [self valueOfElement:eventElement forKey:@"e2eventdescriptionextended"];
+        eventServiceReference = [self valueOfElement:eventElement forKey:@"e2eventservicereference"];
+        
+        
+        // Convert string values to real data types
+        
+        NSNumber *tempEventId = [[NSNumber alloc]initWithLongLong:[eventIdStr longLongValue]];
+        NSUInteger eventId = [tempEventId unsignedIntegerValue];
+        NSNumber *tempStartTime = [[NSNumber alloc]initWithLongLong:[eventStartStr longLongValue]];
+        NSDate *startTime = [NSDate dateWithTimeIntervalSince1970:[tempStartTime unsignedIntegerValue]];
+        NSTimeInterval duration = [eventDurationStr doubleValue];
+        NSNumber *tempCurrentTime = [[NSNumber alloc]initWithLongLong:[eventCurrentTimeStr longLongValue]];
+        NSDate *currentTime = [NSDate dateWithTimeIntervalSince1970:[tempCurrentTime unsignedIntegerValue]];
+        
+        // Create the epg object
+        
+        EPGEvent *epgEvent = [[EPGEvent alloc] initWith:eventId
+                                              startTime:startTime
+                                               duration:duration
+                                            currentTime:currentTime
+                                                  title:eventTitle
+                                            description:eventDescription
+                                    extendedDescription:eventExtendedDescription
+                                              reference:eventServiceReference
+                                            serviceName:eventServiceName];
+        
+        [events addObject:epgEvent];
+        
+    }
+    
+    // TODO: verify size == 2 of epgs
+    channelEPG = [[ChannelEPG alloc] initWithCurrentEvent:[events firstObject] andNextEvent:[events lastObject]];
     
     
     return channelEPG;

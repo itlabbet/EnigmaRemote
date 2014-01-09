@@ -17,5 +17,4 @@
 
 - (instancetype)initWithCurrentEvent:(EPGEvent *)current andNextEvent:(EPGEvent *)next;
 
-
 @end

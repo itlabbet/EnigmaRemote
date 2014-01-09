@@ -1,5 +1,5 @@
 //
-//  TimersViewController.h
+//  SettingsViewController.h
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 09/12/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimersViewController : UIViewController
+@interface SettingsViewControllerTmp : UIViewController
 
 @end

@@ -50,5 +50,7 @@ typedef enum
 - (void)zapTo:(NSString *)serviceReference;
 
 - (ChannelEPG *)channelEPGFor:(NSString *)serviceReference;
+
+- (ChannelEPG *)currentPlaying;
     
 @end
