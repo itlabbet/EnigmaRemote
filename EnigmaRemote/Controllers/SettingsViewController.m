@@ -48,7 +48,7 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
-        DeviceInfo *deviceInfo = [[EnigmaClient sharedInstance] deviceinfo];
+        DeviceInfo *deviceInfo = [[EnigmaClient sharedInstance] deviceInfo];
         //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
         
         dispatch_async(dispatch_get_main_queue(), ^{

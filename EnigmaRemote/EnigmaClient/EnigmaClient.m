@@ -86,7 +86,7 @@
     return self;
 }
 
-- (DeviceInfo *)deviceinfo
+- (DeviceInfo *)deviceInfo
 {
     // TODO: dokumentera upp denna ordentligt
     

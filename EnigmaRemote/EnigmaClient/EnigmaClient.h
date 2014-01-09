@@ -37,7 +37,7 @@ typedef enum
 
 + (EnigmaClient *) sharedInstance;
 
-- (DeviceInfo *)deviceinfo;
+- (DeviceInfo *)deviceInfo;
 
 - (PowerState)powerState;
 

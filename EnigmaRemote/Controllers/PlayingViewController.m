@@ -29,7 +29,7 @@
 {
     _epg = epg;
     
-    [self updateUserInterface];
+    [self updateUserInterface]; // fill in user interface
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -52,10 +52,9 @@
 - (void)loadNowPlaying
 {
     self.epg = nil;
+    [self updateUserInterface]; // clear user interface
     
     [self.refreshControl beginRefreshing];
-    
-    [self updateUserInterface];
     
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
