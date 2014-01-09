@@ -9,6 +9,8 @@
 #import "PlayingViewController.h"
 #import "EnigmaClient.h"
 
+// TODO: Hantera fallet då boxen är avstängd - då returneras
+
 @interface PlayingViewController ()
 
 @property (nonatomic, strong) ChannelEPG *epg;
@@ -73,7 +75,7 @@
 
 - (void)updateUserInterface
 {
-    if (self.epg)
+    if (self.epg && self.epg.currentEvent.duration > 0)
     {
         // The channel
         self.serviceName.text = self.epg.currentEvent.serviceName;

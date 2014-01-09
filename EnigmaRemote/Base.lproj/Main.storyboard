@@ -330,7 +330,7 @@
             </objects>
             <point key="canvasLocation" x="852" y="1157"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - Mer-->
         <scene sceneID="ifF-a3-DFK">
             <objects>
                 <tableViewController id="eOR-iw-1Cl" sceneMemberID="viewController">
@@ -361,21 +361,42 @@
                                             <segue destination="DVc-tf-8af" kind="push" id="BfR-MX-XCm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Tqb-eB-v1U">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Fzx-3d-Qsk" style="IBUITableViewCellStyleDefault" id="Tqb-eB-v1U">
                                         <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tqb-eB-v1U" id="Qx2-LR-vck">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Inställningar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fzx-3d-Qsk">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="MSN-nI-Zzx">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="zOX-QN-Lxo" style="IBUITableViewCellStyleDefault" id="MSN-nI-Zzx">
                                         <rect key="frame" x="0.0" y="152" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MSN-nI-Zzx" id="f6C-43-8Bx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Fjärrstyr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zOX-QN-Lxo">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Zss-pW-4ma" kind="push" id="i3D-9B-G5A"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -385,13 +406,13 @@
                             <outlet property="delegate" destination="eOR-iw-1Cl" id="qZ2-92-giY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iib-xv-ZP1"/>
+                    <navigationItem key="navigationItem" title="Mer" id="iib-xv-ZP1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ka5-hl-mJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1377" y="1805"/>
         </scene>
-        <!--Device Info View Controller-->
+        <!--Device Info View Controller - Information-->
         <scene sceneID="WT8-wD-xel">
             <objects>
                 <tableViewController id="DVc-tf-8af" customClass="DeviceInfoViewController" sceneMemberID="viewController">
@@ -558,7 +579,7 @@
                             <outlet property="delegate" destination="DVc-tf-8af" id="WY8-ng-XZg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="AUd-pg-rgl"/>
+                    <navigationItem key="navigationItem" title="Information" id="AUd-pg-rgl"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="kIX-zh-4pj">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
@@ -573,9 +594,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLs-b4-Wmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880" y="1603"/>
+            <point key="canvasLocation" x="1920" y="1163"/>
         </scene>
-        <!--Box Control View Controller-->
+        <!--Box Control View Controller - Fjärrstyr-->
         <scene sceneID="Pys-w3-u7m">
             <objects>
                 <viewController id="Zss-pW-4ma" customClass="BoxControlViewController" sceneMemberID="viewController">
@@ -637,13 +658,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Fjärrstyr" id="kJ9-Va-KkQ"/>
                     <connections>
                         <outlet property="currentPowerStateLabel" destination="0T5-JW-MWZ" id="A05-A7-9fj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1p-Mb-8tO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2256" y="2121"/>
+            <point key="canvasLocation" x="1920" y="1773"/>
         </scene>
         <!--Navigation Controller - Bläddra-->
         <scene sceneID="bVv-Ut-Kzw">
