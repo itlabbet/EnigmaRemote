@@ -19,6 +19,7 @@
 		5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */; };
 		5D52A6CB18784D6100BF03EF /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */; };
 		5D52A6CD187850E800BF03EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D52A6CC187850E800BF03EF /* libxml2.dylib */; };
+		5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */; };
 		5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664690187DF81900DA1B1B /* ApplicationSettings.m */; };
 		5D664694187DF89200DA1B1B /* BoxConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664693187DF89200DA1B1B /* BoxConnection.m */; };
 		5D95C436187F259F00B54811 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D95C435187F259F00B54811 /* SettingsViewController.m */; };
@@ -75,6 +76,8 @@
 		5D52A6C918784D6100BF03EF /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		5D52A6CC187850E800BF03EF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		5D549FC6187F5741004360C3 /* DeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfoViewController.h; path = Controllers/DeviceInfoViewController.h; sourceTree = "<group>"; };
+		5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInfoViewController.m; path = Controllers/DeviceInfoViewController.m; sourceTree = "<group>"; };
 		5D66468F187DF81900DA1B1B /* ApplicationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationSettings.h; sourceTree = "<group>"; };
 		5D664690187DF81900DA1B1B /* ApplicationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationSettings.m; sourceTree = "<group>"; };
 		5D664692187DF89200DA1B1B /* BoxConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxConnection.h; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				5DFF706E187F21E100F3CC04 /* PlayingViewController.m */,
 				5D95C434187F259F00B54811 /* SettingsViewController.h */,
 				5D95C435187F259F00B54811 /* SettingsViewController.m */,
+				5D549FC6187F5741004360C3 /* DeviceInfoViewController.h */,
+				5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				5D443219187B3A4B00A098F1 /* ChannelEPG.m in Sources */,
 				5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */,
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
+				5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */,
 				5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */,
 				5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */,
 				5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */,
