@@ -112,7 +112,10 @@
 
 - (NSString *)timeSpanForEvent:(EPGEvent *)event
 {
-    NSString *span = [NSString stringWithFormat:@"%@ - %@", event.startTime, [NSDate dateWithTimeInterval:event.duration sinceDate:event.startTime] ];
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    timeFormatter.dateFormat = @"HH:mm";
+    
+    NSString *span = [NSString stringWithFormat:@"%@ - %@", [timeFormatter stringFromDate:event.startTime], [timeFormatter stringFromDate:[NSDate dateWithTimeInterval:event.duration sinceDate:event.startTime]]];
     
     return span;
 }
