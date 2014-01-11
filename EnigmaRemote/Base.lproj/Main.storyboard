@@ -375,11 +375,11 @@
                                             <segue destination="DVc-tf-8af" kind="push" id="BfR-MX-XCm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Fzx-3d-Qsk" detailTextLabel="pjA-Up-rxk" style="IBUITableViewCellStyleSubtitle" id="Tqb-eB-v1U">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Fzx-3d-Qsk" detailTextLabel="pjA-Up-rxk" style="IBUITableViewCellStyleSubtitle" id="Tqb-eB-v1U">
                                         <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tqb-eB-v1U" id="Qx2-LR-vck">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Inställningar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fzx-3d-Qsk">
@@ -398,6 +398,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cvB-RL-ApK" kind="push" id="QOw-pz-Bd3"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="zOX-QN-Lxo" detailTextLabel="wTU-Er-KhD" style="IBUITableViewCellStyleSubtitle" id="MSN-nI-Zzx">
                                         <rect key="frame" x="0.0" y="187" width="320" height="44"/>
@@ -623,6 +626,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLs-b4-Wmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1920" y="1163"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="QIx-zD-mda">
+            <objects>
+                <tableViewController id="9Ed-4u-SrA" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RRP-9e-za8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Vk4-hd-ToE">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vk4-hd-ToE" id="h2D-3C-3nf">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Ed-4u-SrA" id="pzN-1h-83s"/>
+                            <outlet property="delegate" destination="9Ed-4u-SrA" id="q9b-N8-Xat"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ffI-MF-evZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BaK-1Q-Um9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2306" y="2388"/>
+        </scene>
+        <!--Table View Controller - Anslutningar-->
+        <scene sceneID="Qya-Kq-jdh">
+            <objects>
+                <tableViewController id="cvB-RL-ApK" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pLa-DD-GXc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DRh-yh-a8i">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DRh-yh-a8i" id="e60-Qh-HwG">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9Ed-4u-SrA" kind="push" id="iXp-0V-kEl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cvB-RL-ApK" id="Puy-qU-BMM"/>
+                            <outlet property="delegate" destination="cvB-RL-ApK" id="7f3-cv-tZZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Anslutningar" id="3aH-uq-rGF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVL-U4-Z4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920" y="2388"/>
         </scene>
         <!--Box Control View Controller - Fjärrstyr-->
         <scene sceneID="Pys-w3-u7m">

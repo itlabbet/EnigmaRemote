@@ -8,7 +8,20 @@
 
 #import "BoxConnection.h"
 
+@interface BoxConnection ()
+
+// Internally make properties writeable
+@property (nonatomic, readwrite) NSUInteger port;
+@property (nonatomic, readwrite) BOOL favorite;
+
+@end
+
 @implementation BoxConnection
+
+- (void)setAsFavorite:(BOOL)favorite
+{
+    self.favorite = favorite;
+}
 
 // TODO: gör konstanter av nycklarna nedan
 

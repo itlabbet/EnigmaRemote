@@ -20,6 +20,29 @@
 
 @implementation ApplicationSettings
 
+- (BoxConnection *)favorite
+{
+    for (BoxConnection *connection in self.connections)
+    {
+        if (connection.favorite)
+            return connection;
+    }
+    
+    return nil;
+}
+
+- (void)setFavorite:(BoxConnection *)favorite
+{
+    // Change favorite connection
+    BoxConnection *currentFavorite = self.favorite;
+    
+    if ([self.connections containsObject:favorite])
+    {
+        [favorite setAsFavorite:YES];
+        [currentFavorite setAsFavorite:NO];
+    }
+}
+
 - (instancetype)init
 {
     if (self = [super init])

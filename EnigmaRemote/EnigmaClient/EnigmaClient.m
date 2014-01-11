@@ -42,6 +42,7 @@
 
 
 #import "EnigmaClient.h"
+#import "ApplicationSettings.h"
 #import "NSString+URLEncode.h"
 #import "GDataXMLNode.h"
 #import "Bouquet.h"
@@ -78,9 +79,18 @@
     if (self)
     {
         // TODO: get from settings instead.
-        _baseUrl = @"http://192.168.10.12";
+        //_baseUrl = @"http://192.168.10.12";
+        ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+        _baseUrl = nil;
         
-        // if not settings - return nil
+        if (settings.favorite)
+        {
+            _baseUrl = [NSString stringWithFormat:@"http://%@", settings.favorite.ipAddress];
+        }
+        
+        // if not able to get settings - return nil
+        if (_baseUrl == nil)
+            return nil;
     }
     
     return self;
