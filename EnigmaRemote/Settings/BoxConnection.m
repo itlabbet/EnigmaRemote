@@ -21,6 +21,7 @@
         self.port = [portNumber unsignedIntegerValue];
         self.username = [aDecoder decodeObjectForKey:@"Username"];
         self.password = [aDecoder decodeObjectForKey:@"Password"];
+        self.favorite = [aDecoder decodeBoolForKey:@"Favorite"];
 	}
 	return self;
 }
@@ -33,7 +34,7 @@
     [aCoder encodeObject:portNumber forKey:@"Port"];
 	[aCoder encodeObject:self.username forKey:@"Username"];
     [aCoder encodeObject:self.password forKey:@"Password"];
-	
+	[aCoder encodeBool:self.favorite forKey:@"Favorite"];
 }
 
 @end

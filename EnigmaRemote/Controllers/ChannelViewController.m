@@ -46,8 +46,6 @@
 {
     [super viewDidLoad];
     
-    self.title = self.channel.name;
-    
     // Setup event handling
     [self.refreshControl addTarget:self
                             action:@selector(loadEpg)

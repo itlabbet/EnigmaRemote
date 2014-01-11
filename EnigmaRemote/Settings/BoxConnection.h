@@ -10,11 +10,12 @@
 
 @interface BoxConnection : NSObject <NSCoding>
 
-@property (strong, nonatomic) NSString *name;
-@property (nonatomic, strong) NSString *ipAddress;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *ipAddress;
 @property (nonatomic) NSUInteger port;
-@property (nonatomic, strong) NSString *username;
-@property (nonatomic, strong) NSString *password;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic) BOOL favorite;
 
 
 @end
