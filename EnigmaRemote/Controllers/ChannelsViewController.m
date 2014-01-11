@@ -11,6 +11,9 @@
 #import "EnigmaClient.h"
 #import "Channel.h"
 
+// TODO: hur visa aktuell kanal?
+// Bör funka vid tillbaka och framåt navigering också...
+
 @interface ChannelsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSArray *channels;

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Niklas Andersson. All rights reserved.
 //
 
+// TODO: Hantera byte av kanal i denna vy på ett snyggt presenterat sätt... -> göra cellen till en knapp??
+
 #import "ChannelViewController.h"
 #import "EnigmaClient.h"
 
@@ -13,9 +15,8 @@
 
 @property (nonatomic, strong) ChannelEPG *epg;
 
-
+@property (weak, nonatomic) IBOutlet UIButton *channelButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell *serviceCell;
-@property (weak, nonatomic) IBOutlet UILabel *serviceName;
 @property (weak, nonatomic) IBOutlet UILabel *currentProgramTitle;
 @property (weak, nonatomic) IBOutlet UILabel *currentProgramTime;
 @property (weak, nonatomic) IBOutlet UITextView *currentProgramDescription;
@@ -45,18 +46,13 @@
 {
     [super viewDidLoad];
     
+    self.title = self.channel.name;
+    
+    // Setup event handling
     [self.refreshControl addTarget:self
                             action:@selector(loadEpg)
                   forControlEvents:UIControlEventValueChanged];
-    
-    UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                          action:@selector(zap:)];
-    singleTapRecognizer.numberOfTapsRequired = 1;
-    
-    [self.serviceCell addGestureRecognizer:singleTapRecognizer];
 }
-
-
 
 - (void)loadEpg
 {
@@ -74,6 +70,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
+            // TODO: if epg is nil notify user that no epg could be fetched
             self.epg = epg;
             [self.refreshControl endRefreshing];
         });
@@ -86,7 +83,7 @@
     {
         // The channel - take the name from the channel insteal of from the EPG if the EPG is not filled
         // in (which might happen if the box has not received EPG information from the television signal).
-        self.serviceName.text = self.channel.name;
+        [self.channelButton setTitle:self.channel.name forState:UIControlStateNormal];
         
         // Current event on this channel
         self.currentProgramTitle.text = self.epg.currentEvent.title;
@@ -100,7 +97,7 @@
     }
     else
     {
-        self.serviceName.text = @"";
+        [self.channelButton setTitle:self.channel.name forState:UIControlStateNormal];
         
         // Current event on this channel
         self.currentProgramTitle.text = @"";
@@ -129,7 +126,7 @@
     return span;
 }
 
-- (void)zap:(UIGestureRecognizer *)sender
+- (IBAction)zap:(id)sender
 {
     [[EnigmaClient sharedInstance] zapTo:self.channel.reference];
 }
