@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+// TODO: add comment
 @interface DeviceInfo : NSObject
 
 @property (nonatomic, copy, readonly) NSString *enigmaVersion;
