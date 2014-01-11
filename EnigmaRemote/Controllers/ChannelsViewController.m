@@ -7,7 +7,7 @@
 //
 
 #import "ChannelsViewController.h"
-#import "ChannelViewController.h"   // To remove undeclared selector warning
+#import "ChannelViewControllerTmp.h"   // To remove undeclared selector warning
 #import "EnigmaClient.h"
 #import "Channel.h"
 

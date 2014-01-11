@@ -2,7 +2,7 @@
 //  ChannelViewController.m
 //  EnigmaRemote
 //
-//  Created by Niklas Andersson on 05/01/14.
+//  Created by Niklas Andersson on 11/01/14.
 //  Copyright (c) 2014 Niklas Andersson. All rights reserved.
 //
 
@@ -13,6 +13,16 @@
 
 @property (nonatomic, strong) ChannelEPG *epg;
 
+
+@property (weak, nonatomic) IBOutlet UITableViewCell *serviceCell;
+@property (weak, nonatomic) IBOutlet UILabel *serviceName;
+@property (weak, nonatomic) IBOutlet UILabel *currentProgramTitle;
+@property (weak, nonatomic) IBOutlet UILabel *currentProgramTime;
+@property (weak, nonatomic) IBOutlet UITextView *currentProgramDescription;
+@property (weak, nonatomic) IBOutlet UILabel *nextProgramTitle;
+@property (weak, nonatomic) IBOutlet UILabel *nextProgramTime;
+@property (weak, nonatomic) IBOutlet UITextView *nextProgramDescription;
+
 @end
 
 @implementation ChannelViewController
@@ -20,23 +30,40 @@
 - (void)setEpg:(ChannelEPG *)epg
 {
     _epg = epg;
+    
+    [self updateUserInterface]; // fill in user interface
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self loadEpg];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    [[EnigmaClient sharedInstance] zapTo:self.channel.reference];
+    [self.refreshControl addTarget:self
+                            action:@selector(loadEpg)
+                  forControlEvents:UIControlEventValueChanged];
     
-    [self loadEPG];
+    UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                          action:@selector(zap:)];
+    singleTapRecognizer.numberOfTapsRequired = 1;
+    
+    [self.serviceCell addGestureRecognizer:singleTapRecognizer];
 }
 
-#pragma mark - Internal
 
-- (void) loadEPG
+
+- (void)loadEpg
 {
-    //[self.refreshControl beginRefreshing];
+    self.epg = nil;
+    [self updateUserInterface]; // clear user interface
+    
+    [self.refreshControl beginRefreshing];
     
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
@@ -48,9 +75,63 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
             self.epg = epg;
-            //[self.refreshControl endRefreshing];
+            [self.refreshControl endRefreshing];
         });
     });
+}
+
+- (void)updateUserInterface
+{
+    if (self.epg && self.epg.currentEvent.duration > 0)
+    {
+        // The channel - take the name from the channel insteal of from the EPG if the EPG is not filled
+        // in (which might happen if the box has not received EPG information from the television signal).
+        self.serviceName.text = self.channel.name;
+        
+        // Current event on this channel
+        self.currentProgramTitle.text = self.epg.currentEvent.title;
+        self.currentProgramTime.text = [self timeSpanForEvent:self.epg.currentEvent];
+        self.currentProgramDescription.text = self.epg.currentEvent.extendedDescription;
+        
+        // Next event on this channel
+        self.nextProgramTitle.text = self.epg.nextEvent.title;
+        self.nextProgramTime.text = [self timeSpanForEvent:self.epg.nextEvent];
+        self.nextProgramDescription.text = self.epg.nextEvent.extendedDescription;
+    }
+    else
+    {
+        self.serviceName.text = @"";
+        
+        // Current event on this channel
+        self.currentProgramTitle.text = @"";
+        self.currentProgramTime.text = @"";
+        self.currentProgramDescription.text = @"";
+        
+        // Next event on this channel
+        self.nextProgramTitle.text = @"";
+        self.nextProgramTime.text = @"";
+        self.nextProgramDescription.text = @"";
+        
+    }
+    
+    [self.tableView reloadData];
+}
+
+#pragma mark - helpers
+
+- (NSString *)timeSpanForEvent:(EPGEvent *)event
+{
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    timeFormatter.dateFormat = @"HH:mm";
+    
+    NSString *span = [NSString stringWithFormat:@"%@ - %@", [timeFormatter stringFromDate:event.startTime], [timeFormatter stringFromDate:[NSDate dateWithTimeInterval:event.duration sinceDate:event.startTime]]];
+    
+    return span;
+}
+
+- (void)zap:(UIGestureRecognizer *)sender
+{
+    [[EnigmaClient sharedInstance] zapTo:self.channel.reference];
 }
 
 @end
