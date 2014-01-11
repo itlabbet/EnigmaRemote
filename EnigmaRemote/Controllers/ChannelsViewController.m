@@ -93,22 +93,31 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    Channel *selectedChannel = [self.channels objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"showChannel" sender:selectedChannel];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Channel *selectedChannel = [self.channels objectAtIndex:indexPath.row];
+    
+    [[EnigmaClient sharedInstance] zapTo:selectedChannel.reference];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([sender isKindOfClass:[UITableViewCell class]])
+    if ([sender isKindOfClass:[Channel class]])
     {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Channel *channel = sender;
         
-        if (indexPath)
+        if ([[segue identifier] isEqualToString:@"showChannel" ])
         {
-            if ([[segue identifier] isEqualToString:@"showChannel" ])
+            if ([segue.destinationViewController respondsToSelector:@selector(setChannel:)])
             {
-                if ([segue.destinationViewController respondsToSelector:@selector(setChannel:)])
-                {
-                    Channel *channel = [self.channels objectAtIndex:indexPath.row];
-                    
-                    [segue.destinationViewController performSelector:@selector(setChannel:) withObject:channel];
-                }
+                [segue.destinationViewController performSelector:@selector(setChannel:) withObject:channel];
             }
         }
     }
