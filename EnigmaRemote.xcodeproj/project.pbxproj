@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5D26DC0018786BD400CAD0B6 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */; };
-		5D26DC0318799BEF00CAD0B6 /* ChannelViewControllerTmp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26DC0218799BEF00CAD0B6 /* ChannelViewControllerTmp.m */; };
 		5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A3187C7DF60047F20C /* EPGEvent.m */; };
 		5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A6187C992F0047F20C /* DeviceInfo.m */; };
 		5D443213187B004200A098F1 /* BoxControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D443212187B004200A098F1 /* BoxControlViewController.m */; };
@@ -56,8 +55,6 @@
 /* Begin PBXFileReference section */
 		5D26DBFE18786BD400CAD0B6 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncode.h"; path = "External/URLEncode/NSString+URLEncode.h"; sourceTree = "<group>"; };
 		5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncode.m"; path = "External/URLEncode/NSString+URLEncode.m"; sourceTree = "<group>"; };
-		5D26DC0118799BEF00CAD0B6 /* ChannelViewControllerTmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelViewControllerTmp.h; path = Controllers/ChannelViewControllerTmp.h; sourceTree = "<group>"; };
-		5D26DC0218799BEF00CAD0B6 /* ChannelViewControllerTmp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewControllerTmp.m; path = Controllers/ChannelViewControllerTmp.m; sourceTree = "<group>"; };
 		5D40B6A2187C7DF60047F20C /* EPGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPGEvent.h; path = Models/EPGEvent.h; sourceTree = "<group>"; };
 		5D40B6A3187C7DF60047F20C /* EPGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPGEvent.m; path = Models/EPGEvent.m; sourceTree = "<group>"; };
 		5D40B6A5187C992F0047F20C /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfo.h; path = Models/DeviceInfo.h; sourceTree = "<group>"; };
@@ -292,8 +289,6 @@
 				5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */,
 				5D6E068D18815531004C0AD1 /* ChannelViewController.h */,
 				5D6E068E18815531004C0AD1 /* ChannelViewController.m */,
-				5D26DC0118799BEF00CAD0B6 /* ChannelViewControllerTmp.h */,
-				5D26DC0218799BEF00CAD0B6 /* ChannelViewControllerTmp.m */,
 				5DFF706A187F211600F3CC04 /* RemoteViewController.h */,
 				5DFF706B187F211600F3CC04 /* RemoteViewController.m */,
 				5DFF706D187F21E100F3CC04 /* PlayingViewController.h */,
@@ -442,7 +437,6 @@
 				5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */,
 				5DFF706C187F211600F3CC04 /* RemoteViewController.m in Sources */,
 				5D443213187B004200A098F1 /* BoxControlViewController.m in Sources */,
-				5D26DC0318799BEF00CAD0B6 /* ChannelViewControllerTmp.m in Sources */,
 				5DDDF46418564C7100289D13 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
