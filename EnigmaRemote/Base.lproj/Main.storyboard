@@ -819,8 +819,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Ändra" id="GS8-gu-1z1">
-                                        <barButtonItem key="leftBarButtonItem" title="Avbryt" id="4Ev-pJ-DuK"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Klar" style="done" id="Kzp-9Q-hld"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Avbryt" id="4Ev-pJ-DuK">
+                                            <connections>
+                                                <action selector="cancel:" destination="iwM-0e-hpn" id="4AY-NW-NU0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Klar" style="done" id="Kzp-9Q-hld">
+                                            <connections>
+                                                <action selector="save:" destination="iwM-0e-hpn" id="uEP-M3-Qma"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

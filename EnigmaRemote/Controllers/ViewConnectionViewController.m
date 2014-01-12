@@ -35,6 +35,22 @@
     [super viewDidLoad];
 }
 
+#pragma mark - Implementation of ConnectionDelegate
+
+- (void)updateBoxConnection:(BoxConnection *)connection
+{
+    self.connection = connection;
+    
+    [self updateUI];
+}
+
+- (void)removeBoxConnection:(BoxConnection *)connection
+{
+    [self.delegate removeBoxConnection:connection];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -48,6 +64,17 @@
             editCtrl.connection = self.connection;
         }
     }
+}
+
+#pragma mark - internal helpers
+
+- (void)updateUI
+{
+    self.name.text = self.connection.name;
+    self.ipAddress.text = self.connection.ipAddress;
+    self.port.text = [NSString stringWithFormat:@"%d", self.connection.port];
+    self.username.text = self.connection.username;
+    self.password.text = self.connection.password;
 }
 
 @end

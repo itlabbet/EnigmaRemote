@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ConnectionDelegate.h"
 
-@interface ViewConnectionViewController : UITableViewController
+@interface ViewConnectionViewController : UITableViewController <ConnectionsDelegate>
 
-@property (nonatomic, strong) id<ConnectionsDelegate> delegate;
+@property (nonatomic, assign) id<ConnectionsDelegate> delegate;
 @property (nonatomic, strong) BoxConnection *connection;
 
 @end

@@ -44,7 +44,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)cancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
+// TODO: anslut denna till en Action
 - (IBAction)remove:(id)sender
 {
     // TODO:
