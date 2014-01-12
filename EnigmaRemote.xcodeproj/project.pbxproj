@@ -37,6 +37,8 @@
 		5DDDF48118564C7100289D13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF47F18564C7100289D13 /* InfoPlist.strings */; };
 		5DDDF48318564C7100289D13 /* EnigmaRemoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF48218564C7100289D13 /* EnigmaRemoteTests.m */; };
 		5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF48C18564DEF00289D13 /* Readme.txt */; };
+		5DF1E0D918829D2900887BA9 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */; };
+		5DF1E0DC18829D3C00887BA9 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1E0DB18829D3C00887BA9 /* ConnectionViewController.m */; };
 		5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */; };
 		5DFF706C187F211600F3CC04 /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF706B187F211600F3CC04 /* RemoteViewController.m */; };
 		5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF706E187F21E100F3CC04 /* PlayingViewController.m */; };
@@ -102,6 +104,10 @@
 		5DDDF48018564C7100289D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DDDF48218564C7100289D13 /* EnigmaRemoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnigmaRemoteTests.m; sourceTree = "<group>"; };
 		5DDDF48C18564DEF00289D13 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Readme.txt; path = EnigmaRemote/Readme.txt; sourceTree = "<group>"; };
+		5DF1E0D718829D2900887BA9 /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionsViewController.h; path = Controllers/ConnectionsViewController.h; sourceTree = "<group>"; };
+		5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionsViewController.m; path = Controllers/ConnectionsViewController.m; sourceTree = "<group>"; };
+		5DF1E0DA18829D3C00887BA9 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionViewController.h; path = Controllers/ConnectionViewController.h; sourceTree = "<group>"; };
+		5DF1E0DB18829D3C00887BA9 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionViewController.m; path = Controllers/ConnectionViewController.m; sourceTree = "<group>"; };
 		5DFDC3ED1876F5EF00703E54 /* EnigmaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnigmaClient.h; path = EnigmaClient/EnigmaClient.h; sourceTree = "<group>"; };
 		5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnigmaClient.m; path = EnigmaClient/EnigmaClient.m; sourceTree = "<group>"; };
 		5DFF706A187F211600F3CC04 /* RemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteViewController.h; path = Controllers/RemoteViewController.h; sourceTree = "<group>"; };
@@ -297,6 +303,10 @@
 				5D95C435187F259F00B54811 /* SettingsViewController.m */,
 				5D549FC6187F5741004360C3 /* DeviceInfoViewController.h */,
 				5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */,
+				5DF1E0D718829D2900887BA9 /* ConnectionsViewController.h */,
+				5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */,
+				5DF1E0DA18829D3C00887BA9 /* ConnectionViewController.h */,
+				5DF1E0DB18829D3C00887BA9 /* ConnectionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -424,10 +434,12 @@
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
 				5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */,
 				5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */,
+				5DF1E0DC18829D3C00887BA9 /* ConnectionViewController.m in Sources */,
 				5D6E068F18815531004C0AD1 /* ChannelViewController.m in Sources */,
 				5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */,
 				5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */,
 				5D95C436187F259F00B54811 /* SettingsViewController.m in Sources */,
+				5DF1E0D918829D2900887BA9 /* ConnectionsViewController.m in Sources */,
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
 				5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */,
 				5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */,
