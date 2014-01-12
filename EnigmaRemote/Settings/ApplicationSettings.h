@@ -12,7 +12,7 @@
 @interface ApplicationSettings : NSObject
 
 @property (nonatomic, strong) BoxConnection *favorite;
-@property (nonatomic, strong, readonly) NSArray *connections;
+@property (nonatomic, strong) NSArray *connections;
 
 - (void)addHost:(BoxConnection *)connection;
 - (void)removeHost:(BoxConnection *)connection;

@@ -13,8 +13,6 @@
 
 @interface ApplicationSettings ()
 
-@property (nonatomic, strong, readwrite) NSArray *connections;
-
 @end
 
 

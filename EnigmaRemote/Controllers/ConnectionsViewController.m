@@ -59,10 +59,9 @@
     static NSString *CellIdentifier = @"ConnectionCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
     
-    // TODO:
-    cell.textLabel.text = @"nisse";
+    cell.textLabel.text = connection.name;
     
     return cell;
 }
@@ -111,7 +110,7 @@
 {
     ApplicationSettings *settings = [[ApplicationSettings alloc] init];
     
-    // TODO: fundera på hur edit ska gå till...
+    settings.connections = self.connections;
     
     [settings save];
     

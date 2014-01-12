@@ -11,11 +11,10 @@
 
 @protocol ConnectionsDelegate <NSObject>
 
-- (void)addBoxConnection:(BoxConnection *)connection;
-- (void)removeBoxConnection:(BoxConnection *)connection;
-
 @optional
 
+- (void)addBoxConnection:(BoxConnection *)connection;
+- (void)removeBoxConnection:(BoxConnection *)connection;
 - (void)updateBoxConnection:(BoxConnection *)connection;
 - (void)clear;
 

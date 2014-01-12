@@ -34,6 +34,8 @@
 {
     self.connection = connection;
     
+    [self.delegate updateBoxConnection:self.connection];
+    
     [self updateUI];
 }
 
