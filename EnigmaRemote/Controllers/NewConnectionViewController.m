@@ -10,6 +10,12 @@
 
 @interface NewConnectionViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *ipAddress;
+@property (weak, nonatomic) IBOutlet UITextField *port;
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+
 @end
 
 @implementation NewConnectionViewController
@@ -39,21 +45,19 @@
 
 - (IBAction)cancel:(id)sender
 {
-    // TODO: temporary for testing
-    [self.delegate clear];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BoxConnection *)createConnection
 {
-    // TODO: get all fields
-    
-    // TODO: sätta som favorite = YES?? - bättre välja med en checkbox i listan med anslutnigar
-    BoxConnection *connection = [[BoxConnection alloc] initWithName:@"DB800SE"
-                                                          ipAddress:@"192.168.10.12"
-                                                               port:80 username:@""
-                                                           password:@""
-                                                           favorite:YES];
+    NSInteger port = [self.port.text integerValue];
+
+    BoxConnection *connection = [[BoxConnection alloc] initWithName:self.name.text
+                                                          ipAddress:self.ipAddress.text
+                                                               port:port
+                                                           username:self.username.text
+                                                           password:self.password.text
+                                                           favorite:NO];
     
     return connection;
 }
