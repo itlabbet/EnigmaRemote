@@ -7,15 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BoxConnection.h"
-
-@protocol ConnectionsDelegate <NSObject>
-
-- (void)addBoxConnection:(BoxConnection *)connection;
-- (void)updateBoxConnection:(BoxConnection *)connection;
-- (void)removeBoxConnection:(BoxConnection *)connection;
-
-@end
+#import "ConnectionDelegate.h"
 
 @interface ConnectionsViewController : UITableViewController <ConnectionsDelegate>
 

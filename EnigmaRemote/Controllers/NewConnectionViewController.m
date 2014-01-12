@@ -6,14 +6,23 @@
 //  Copyright (c) 2014 Niklas Andersson. All rights reserved.
 //
 
-#import "ConnectionViewController.h"
-#import "ConnectionsViewController.h"
+#import "NewConnectionViewController.h"
 
-@interface ConnectionViewController ()
+@interface NewConnectionViewController ()
 
 @end
 
-@implementation ConnectionViewController
+@implementation NewConnectionViewController
+
+- (void)setDelegate:(id<ConnectionsDelegate>)delegate
+{
+    _delegate = delegate;
+}
+
+- (void)setNisse:(id<ConnectionsDelegate>)nisse
+{
+    _nisse = nisse;
+}
 
 - (void)viewDidLoad
 {

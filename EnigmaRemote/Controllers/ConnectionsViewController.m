@@ -7,6 +7,8 @@
 //
 
 #import "ConnectionsViewController.h"
+#import "NewConnectionViewController.h"
+#import "EditConnectionViewController.h"
 #import "ApplicationSettings.h"
 
 @interface ConnectionsViewController ()
@@ -119,6 +121,37 @@
     [settings removeHost:connection];
     
     [settings save];
+}
+
+- (IBAction)add:(UIBarButtonItem *)sender
+{
+    
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"newConnection"])
+    {
+        if ([segue.destinationViewController respondsToSelector:@selector(setDelegate:)])
+        {
+            [segue.destinationViewController performSelector:@selector(setDelegate:) withObject:self];
+        }
+        
+        if ([segue.destinationViewController respondsToSelector:@selector(setNisse:)])
+        {
+            [segue.destinationViewController performSelector:@selector(setNisse:) withObject:self];
+        }
+        
+    }
+    else if ([segue.identifier isEqualToString:@"editConnection"])
+    {
+        if ([segue.destinationViewController respondsToSelector:@selector(setDelegate:)])
+        {
+            [segue.destinationViewController performSelector:@selector(setDelegate:) withObject:self];
+        }
+    }
 }
 
 
