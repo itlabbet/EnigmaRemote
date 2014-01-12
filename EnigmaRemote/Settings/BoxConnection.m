@@ -11,7 +11,6 @@
 @interface BoxConnection ()
 
 // Internally make properties writeable
-@property (nonatomic, readwrite) NSUInteger port;
 @property (nonatomic, readwrite) BOOL favorite;
 
 @end

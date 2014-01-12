@@ -8,7 +8,7 @@
 
 #import "ConnectionsViewController.h"
 #import "NewConnectionViewController.h"
-#import "EditConnectionViewController.h"
+#import "ViewConnectionViewController.h"
 #import "ApplicationSettings.h"
 
 @interface ConnectionsViewController ()
@@ -161,11 +161,11 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
         
-        if ([segue.destinationViewController isKindOfClass:[EditConnectionViewController class]])
+        if ([segue.destinationViewController isKindOfClass:[ViewConnectionViewController class]])
         {
-            EditConnectionViewController *editCtrl = segue.destinationViewController;
-            editCtrl.delegate = self;
-            editCtrl.connection = connection;
+            ViewConnectionViewController *viewCtrl = segue.destinationViewController;
+            viewCtrl.delegate = self;
+            viewCtrl.connection = connection;
         }
     }
 }

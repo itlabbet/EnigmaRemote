@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *ipAddress;
-@property (nonatomic, readonly) NSUInteger port;
+@property (nonatomic) NSUInteger port;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, readonly) BOOL favorite;

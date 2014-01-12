@@ -36,10 +36,9 @@
 
 - (IBAction)save:(id)sender
 {
-    // TODO:
-    BoxConnection *updatedConnection = nil;
+    [self updateModel];
     
-    [self.delegate updateBoxConnection:updatedConnection];
+    [self.delegate updateBoxConnection:self.connection];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -52,10 +51,7 @@
 // TODO: anslut denna till en Action
 - (IBAction)remove:(id)sender
 {
-    // TODO:
-    BoxConnection *removedConnection = nil;
-    
-    [self.delegate removeBoxConnection:removedConnection];
+    [self.delegate removeBoxConnection:self.connection];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -69,6 +65,17 @@
     self.port.text = [NSString stringWithFormat:@"%d", self.connection.port];
     self.username.text = self.connection.username;
     self.password.text = self.connection.password;
+}
+
+- (void)updateModel
+{
+    NSInteger port = [self.port.text integerValue];
+    
+    self.connection.name = self.name.text;
+    self.connection.ipAddress = self.ipAddress.text;
+    self.connection.port = port;
+    self.connection.username = self.username.text;
+    self.connection.password = self.password.text;
 }
 
 @end
