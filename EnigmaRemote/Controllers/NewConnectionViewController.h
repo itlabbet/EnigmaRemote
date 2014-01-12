@@ -14,6 +14,4 @@
 
 @property (nonatomic, assign) id<ConnectionsDelegate> delegate;
 
-@property (nonatomic, assign) id<ConnectionsDelegate> nisse;
-
 @end

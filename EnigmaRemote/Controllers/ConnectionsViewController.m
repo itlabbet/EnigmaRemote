@@ -125,7 +125,8 @@
 
 - (IBAction)add:(UIBarButtonItem *)sender
 {
-    
+    // TODO: Verkar inte gå att sätta upp en modal segue via storyboarden direkt från knappen
+    [self performSegueWithIdentifier:@"newConnection" sender:self];
 }
 
 #pragma mark - Segue
@@ -134,23 +135,29 @@
 {
     if ([segue.identifier isEqualToString:@"newConnection"])
     {
+        
         if ([segue.destinationViewController respondsToSelector:@selector(setDelegate:)])
         {
             [segue.destinationViewController performSelector:@selector(setDelegate:) withObject:self];
-        }
-        
-        if ([segue.destinationViewController respondsToSelector:@selector(setNisse:)])
-        {
-            [segue.destinationViewController performSelector:@selector(setNisse:) withObject:self];
         }
         
     }
-    else if ([segue.identifier isEqualToString:@"editConnection"])
+    else if ([segue.identifier isEqualToString:@"manageConnection"])
     {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
+        
+        if ([segue.destinationViewController respondsToSelector:@selector(setConnection:)])
+        {
+            [segue.destinationViewController performSelector:@selector(setConnection:) withObject:connection];
+        }
+        
         if ([segue.destinationViewController respondsToSelector:@selector(setDelegate:)])
         {
             [segue.destinationViewController performSelector:@selector(setDelegate:) withObject:self];
         }
+        
+        
     }
 }
 

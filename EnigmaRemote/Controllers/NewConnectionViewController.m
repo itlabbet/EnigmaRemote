@@ -19,11 +19,6 @@
     _delegate = delegate;
 }
 
-- (void)setNisse:(id<ConnectionsDelegate>)nisse
-{
-    _nisse = nisse;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
