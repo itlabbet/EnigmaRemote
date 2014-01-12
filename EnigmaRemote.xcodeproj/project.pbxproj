@@ -22,6 +22,7 @@
 		5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664690187DF81900DA1B1B /* ApplicationSettings.m */; };
 		5D664694187DF89200DA1B1B /* BoxConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664693187DF89200DA1B1B /* BoxConnection.m */; };
 		5D6E068F18815531004C0AD1 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E068E18815531004C0AD1 /* ChannelViewController.m */; };
+		5D80853C188310E600396892 /* ViewConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D80853B188310E600396892 /* ViewConnectionViewController.m */; };
 		5D95C436187F259F00B54811 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D95C435187F259F00B54811 /* SettingsViewController.m */; };
 		5DC192951882B7A30023E612 /* EditConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC192941882B7A30023E612 /* EditConnectionViewController.m */; };
 		5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45718564C7100289D13 /* Foundation.framework */; };
@@ -85,6 +86,8 @@
 		5D664693187DF89200DA1B1B /* BoxConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxConnection.m; sourceTree = "<group>"; };
 		5D6E068D18815531004C0AD1 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelViewController.h; path = Controllers/ChannelViewController.h; sourceTree = "<group>"; };
 		5D6E068E18815531004C0AD1 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewController.m; path = Controllers/ChannelViewController.m; sourceTree = "<group>"; };
+		5D80853A188310E600396892 /* ViewConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewConnectionViewController.h; path = Controllers/ViewConnectionViewController.h; sourceTree = "<group>"; };
+		5D80853B188310E600396892 /* ViewConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewConnectionViewController.m; path = Controllers/ViewConnectionViewController.m; sourceTree = "<group>"; };
 		5D95C434187F259F00B54811 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controllers/SettingsViewController.h; sourceTree = "<group>"; };
 		5D95C435187F259F00B54811 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controllers/SettingsViewController.m; sourceTree = "<group>"; };
 		5DC192931882B7A30023E612 /* EditConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditConnectionViewController.h; path = Controllers/EditConnectionViewController.h; sourceTree = "<group>"; };
@@ -307,13 +310,15 @@
 				5D95C435187F259F00B54811 /* SettingsViewController.m */,
 				5D549FC6187F5741004360C3 /* DeviceInfoViewController.h */,
 				5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */,
+				5DC192961882C1C80023E612 /* ConnectionDelegate.h */,
 				5DF1E0D718829D2900887BA9 /* ConnectionsViewController.h */,
 				5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */,
 				5DF1E0DA18829D3C00887BA9 /* NewConnectionViewController.h */,
 				5DF1E0DB18829D3C00887BA9 /* NewConnectionViewController.m */,
+				5D80853A188310E600396892 /* ViewConnectionViewController.h */,
+				5D80853B188310E600396892 /* ViewConnectionViewController.m */,
 				5DC192931882B7A30023E612 /* EditConnectionViewController.h */,
 				5DC192941882B7A30023E612 /* EditConnectionViewController.m */,
-				5DC192961882C1C80023E612 /* ConnectionDelegate.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				5D664694187DF89200DA1B1B /* BoxConnection.m in Sources */,
 				5D443219187B3A4B00A098F1 /* ChannelEPG.m in Sources */,
 				5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */,
+				5D80853C188310E600396892 /* ViewConnectionViewController.m in Sources */,
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
 				5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */,
 				5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */,

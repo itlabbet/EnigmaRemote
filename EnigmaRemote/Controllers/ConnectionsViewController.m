@@ -156,7 +156,7 @@
             newCtrl.delegate = self;
         }
     }
-    else if ([segue.identifier isEqualToString:@"manageConnection"])
+    else if ([segue.identifier isEqualToString:@"viewConnection"])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];

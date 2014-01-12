@@ -1,5 +1,5 @@
 //
-//  EditConnectionViewController.h
+//  ViewConnectionViewController.h
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 12/01/14.
@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ConnectionDelegate.h"
 
+@interface ViewConnectionViewController : UITableViewController
 
-@interface EditConnectionViewController : UIViewController
-
-// TODO: assign eller strong eller weak här?
 @property (nonatomic, strong) id<ConnectionsDelegate> delegate;
 @property (nonatomic, strong) BoxConnection *connection;
 
