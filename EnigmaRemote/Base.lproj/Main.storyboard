@@ -727,7 +727,9 @@
                             <outlet property="delegate" destination="aJI-hI-iwL" id="udf-0t-yek"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Anslutning" id="vtH-Q2-lLB"/>
+                    <navigationItem key="navigationItem" title="Anslutning" id="vtH-Q2-lLB">
+                        <barButtonItem key="rightBarButtonItem" title="Ändra" id="Pxq-qf-QSq"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb5-1H-whV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

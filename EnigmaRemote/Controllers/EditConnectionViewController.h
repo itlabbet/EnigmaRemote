@@ -14,7 +14,6 @@
 
 // TODO: assign eller strong eller weak här?
 @property (nonatomic, strong) id<ConnectionsDelegate> delegate;
-
 @property (nonatomic, strong) BoxConnection *connection;
 
 @end

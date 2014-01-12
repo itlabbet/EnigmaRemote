@@ -150,18 +150,10 @@
 {
     if ([segue.identifier isEqualToString:@"newConnection"])
     {
-        NSLog(@"destinationViewController %@", [segue.destinationViewController description]);
-        
         if ([segue.destinationViewController isKindOfClass:[NewConnectionViewController class]])
         {
             NewConnectionViewController *newCtrl = segue.destinationViewController;
             newCtrl.delegate = self;
-            /*
-             if ([segue.destinationViewController respondsToSelector:@selector(setDelegate:)])
-             {
-             [segue.destinationViewController performSelector:@selector(setDelegate:) withObject:self];
-             }
-             */
         }
     }
     else if ([segue.identifier isEqualToString:@"manageConnection"])
@@ -169,17 +161,12 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
         
-        if ([segue.destinationViewController respondsToSelector:@selector(setConnection:)])
+        if ([segue.destinationViewController isKindOfClass:[EditConnectionViewController class]])
         {
-            [segue.destinationViewController performSelector:@selector(setConnection:) withObject:connection];
+            EditConnectionViewController *editCtrl = segue.destinationViewController;
+            editCtrl.delegate = self;
+            editCtrl.connection = connection;
         }
-        
-        if ([segue.destinationViewController respondsToSelector:@selector(setDelegate:)])
-        {
-            [segue.destinationViewController performSelector:@selector(setDelegate:) withObject:self];
-        }
-        
-        
     }
 }
 
