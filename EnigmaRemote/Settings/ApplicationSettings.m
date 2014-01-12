@@ -84,6 +84,13 @@
     self.connections = connections;
 }
 
+- (void)clear
+{
+    NSError *error;
+    
+    [[NSFileManager defaultManager] removeItemAtPath:[self dataFilePath] error: &error];
+}
+
 - (void)save
 {
     // Save settings to file

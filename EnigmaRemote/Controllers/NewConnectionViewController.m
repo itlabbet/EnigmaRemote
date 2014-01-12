@@ -39,6 +39,8 @@
 
 - (IBAction)cancel:(id)sender
 {
+    // TODO: temporary for testing
+    [self.delegate clear];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -46,7 +48,7 @@
 {
     // TODO: get all fields
     
-    
+    // TODO: sätta som favorite = YES?? - bättre välja med en checkbox i listan med anslutnigar
     BoxConnection *connection = [[BoxConnection alloc] initWithName:@"DB800SE"
                                                           ipAddress:@"192.168.10.12"
                                                                port:80 username:@""

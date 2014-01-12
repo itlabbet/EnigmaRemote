@@ -78,8 +78,6 @@
     
     if (self)
     {
-        // TODO: get from settings instead.
-        //_baseUrl = @"http://192.168.10.12";
         ApplicationSettings *settings = [[ApplicationSettings alloc] init];
         _baseUrl = nil;
         

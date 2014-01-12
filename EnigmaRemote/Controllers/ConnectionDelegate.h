@@ -14,5 +14,6 @@
 - (void)addBoxConnection:(BoxConnection *)connection;
 - (void)updateBoxConnection:(BoxConnection *)connection;
 - (void)removeBoxConnection:(BoxConnection *)connection;
+- (void)clear;
 
 @end

@@ -16,6 +16,7 @@
 
 - (void)addHost:(BoxConnection *)connection;
 - (void)removeHost:(BoxConnection *)connection;
+- (void)clear;
 - (void)save;
 
 @end

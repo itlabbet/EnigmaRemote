@@ -129,6 +129,15 @@
     [self loadConnections];
 }
 
+- (void)clear
+{
+    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+    
+    [settings clear];
+}
+
+#pragma mark - event handlers
+
 - (IBAction)add:(UIBarButtonItem *)sender
 {
     // TODO: Verkar inte gå att sätta upp en modal segue via storyboarden direkt från knappen
