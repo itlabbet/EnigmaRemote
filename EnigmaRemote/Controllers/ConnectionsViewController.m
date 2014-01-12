@@ -103,6 +103,8 @@
     [settings addHost:connection];
     
     [settings save];
+    
+    [self loadConnections];
 }
 
 - (void)updateBoxConnection:(BoxConnection *)connection
@@ -112,6 +114,8 @@
     // TODO: fundera på hur edit ska gå till...
     
     [settings save];
+    
+    [self loadConnections];
 }
 
 - (void)removeBoxConnection:(BoxConnection *)connection
@@ -121,6 +125,8 @@
     [settings removeHost:connection];
     
     [settings save];
+    
+    [self loadConnections];
 }
 
 - (IBAction)add:(UIBarButtonItem *)sender
@@ -135,12 +141,19 @@
 {
     if ([segue.identifier isEqualToString:@"newConnection"])
     {
+        NSLog(@"destinationViewController %@", [segue.destinationViewController description]);
         
-        if ([segue.destinationViewController respondsToSelector:@selector(setDelegate:)])
+        if ([segue.destinationViewController isKindOfClass:[NewConnectionViewController class]])
         {
-            [segue.destinationViewController performSelector:@selector(setDelegate:) withObject:self];
+            NewConnectionViewController *newCtrl = segue.destinationViewController;
+            newCtrl.delegate = self;
+            /*
+             if ([segue.destinationViewController respondsToSelector:@selector(setDelegate:)])
+             {
+             [segue.destinationViewController performSelector:@selector(setDelegate:) withObject:self];
+             }
+             */
         }
-        
     }
     else if ([segue.identifier isEqualToString:@"manageConnection"])
     {

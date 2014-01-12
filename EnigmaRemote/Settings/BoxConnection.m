@@ -23,11 +23,32 @@
     self.favorite = favorite;
 }
 
+- (instancetype)initWithName:(NSString *)name
+                   ipAddress:(NSString* )ipAddress
+                        port:(NSUInteger)port
+                    username:(NSString *)username
+                    password:(NSString *)password
+                    favorite:(BOOL)favorite
+{
+    if (self = [super init])
+    {
+        _name = name;
+        _ipAddress = ipAddress;
+        _port = port;
+        _username = username;
+        _password = password;
+        _favorite = favorite;
+    }
+    
+    return self;
+}
+
 // TODO: gör konstanter av nycklarna nedan
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-	if ((self = [super init])) {
+	if ((self = [super init]))
+    {
 		self.name = [aDecoder decodeObjectForKey:@"Name"];
 		self.ipAddress = [aDecoder decodeObjectForKey:@"IpAddress"];
         NSNumber *portNumber = [aDecoder decodeObjectForKey:@"Port"];

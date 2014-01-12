@@ -17,6 +17,14 @@
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, readonly) BOOL favorite;
 
+// TODO: ev property istället...? Skyddad hantering behövs så att inte två kan vara favorite samtidigt dock
+- (instancetype)initWithName:(NSString *)name
+                   ipAddress:(NSString* )ipAddress
+                        port:(NSUInteger)port
+                    username:(NSString *)username
+                    password:(NSString *)password
+                    favorite:(BOOL)favorite;
+
 - (void)setAsFavorite:(BOOL)favorite;
 
 @end

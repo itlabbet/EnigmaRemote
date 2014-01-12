@@ -22,6 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 }
 
 
@@ -29,7 +30,7 @@
 
 - (IBAction)save:(id)sender
 {
-    BoxConnection *newConnection = nil;
+    BoxConnection *newConnection = [self createConnection];
    
     [self.delegate addBoxConnection:newConnection];
     
@@ -39,6 +40,20 @@
 - (IBAction)cancel:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BoxConnection *)createConnection
+{
+    // TODO: get all fields
+    
+    
+    BoxConnection *connection = [[BoxConnection alloc] initWithName:@"DB800SE"
+                                                          ipAddress:@"192.168.10.12"
+                                                               port:80 username:@""
+                                                           password:@""
+                                                           favorite:YES];
+    
+    return connection;
 }
 
 @end

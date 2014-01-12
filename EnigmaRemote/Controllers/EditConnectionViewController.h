@@ -12,7 +12,8 @@
 
 @interface EditConnectionViewController : UITableViewController
 
-@property (nonatomic, assign) id<ConnectionsDelegate> delegate;
+// TODO: assign eller strong eller weak här?
+@property (nonatomic, strong) id<ConnectionsDelegate> delegate;
 
 @property (nonatomic, strong) BoxConnection *connection;
 

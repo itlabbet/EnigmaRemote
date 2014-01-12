@@ -10,8 +10,10 @@
 #import "ConnectionDelegate.h"
 
 
-@interface NewConnectionViewController : UITableViewController
+@interface NewConnectionViewController : UIViewController
 
-@property (nonatomic, assign) id<ConnectionsDelegate> delegate;
+// TODO: assign eller strong eller weak här?
+@property (nonatomic, strong) id<ConnectionsDelegate> delegate;
+
 
 @end
