@@ -63,7 +63,7 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
-        ChannelEPG *epg = [[EnigmaClient sharedInstance] channelEPGFor:self.channel.reference];
+        ChannelEPG *epg = [[EnigmaClient sharedInstance] channelEPGFor:self.epgEvent.serviceReference];
         //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -81,7 +81,7 @@
     {
         // The channel - take the name from the channel insteal of from the EPG if the EPG is not filled
         // in (which might happen if the box has not received EPG information from the television signal).
-        [self.channelButton setTitle:self.channel.name forState:UIControlStateNormal];
+        [self.channelButton setTitle:self.epgEvent.serviceName forState:UIControlStateNormal];
         
         // Current event on this channel
         self.currentProgramTitle.text = self.epg.currentEvent.title;
@@ -95,7 +95,7 @@
     }
     else
     {
-        [self.channelButton setTitle:self.channel.name forState:UIControlStateNormal];
+        [self.channelButton setTitle:self.epgEvent.serviceName forState:UIControlStateNormal];
         
         // Current event on this channel
         self.currentProgramTitle.text = @"";
@@ -116,7 +116,7 @@
 
 - (IBAction)zap:(id)sender
 {
-    [[EnigmaClient sharedInstance] zapTo:self.channel.reference];
+    [[EnigmaClient sharedInstance] zapTo:self.epgEvent.serviceReference];
     
     [self zapAnimation];
 }

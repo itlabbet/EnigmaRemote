@@ -47,6 +47,8 @@ typedef enum
 
 - (NSArray *)channelsFor:(NSString *)serviceReference;
 
+- (NSArray *)channelsWithEpgFor:(NSString *)serviceReference;
+
 - (void)zapTo:(NSString *)serviceReference;
 
 - (ChannelEPG *)channelEPGFor:(NSString *)serviceReference;

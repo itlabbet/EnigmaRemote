@@ -28,6 +28,9 @@
 // URL för Svenska kanaler
 // http://192.168.10.12/web/getservices?sRef=1:7:1:0:0:0:0:0:0:0:FROM%20BOUQUET%20%22userbouquet.favourites.tv%22%20ORDER%20BY%20bouquet
 
+// URL för Svenska kanaler med EPG
+//http://192.168.10.12/web/epgbouquet?bRef=1:7:1:0:0:0:0:0:0:0:FROM%20BOUQUET%20%22userbouquet.favourites.tv%22%20ORDER%20BY%20bouquet
+
 // EPG för SVT2 HD
 // http://192.168.10.12/web/epgservice?sRef=1:0:19:416:36:A027:FFFF0000:0:0:0:
 
@@ -408,6 +411,86 @@
     
     return channels;
 }
+
+- (NSArray *)channelsWithEpgFor:(NSString *)serviceReference
+{
+    NSString *channelsUrlStr = [NSString stringWithFormat:@"/web/epgbouquet?bRef=%@", [serviceReference urlencode]];
+    
+    NSURL *channelsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:channelsUrlStr]];
+    NSData *channelData = [[NSData alloc] initWithContentsOfURL:channelsUrl];
+    
+    if (channelData == nil)
+    {
+        return nil;
+    }
+    
+    NSError *error = nil;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:channelData options:0 error:&error];
+    
+    if (doc == nil)
+    {
+        return nil;
+    }
+    
+    
+    NSMutableArray *epgs = [[NSMutableArray alloc] init];
+    
+    NSArray *epgElements = [doc nodesForXPath:@"//e2eventlist/e2event" error:nil];
+    
+    for (GDataXMLElement *epgElement in epgElements)
+    {
+        NSString *eventIdStr;
+        NSString *eventStartStr;
+        NSString *eventDurationStr;
+        NSString *eventCurrentTimeStr;
+        NSString *eventTitle;
+        NSString *eventDescription;
+        NSString *eventExtendedDescription;
+        NSString *eventServiceReference;
+        NSString *eventServiceName;
+        
+        // Fetch EPG element values from XML
+        
+        eventIdStr = [self valueOfElement:epgElement forKey:@"e2eventid"];
+        eventStartStr = [self valueOfElement:epgElement forKey:@"e2eventstart"];
+        eventDurationStr = [self valueOfElement:epgElement forKey:@"e2eventduration"];
+        eventCurrentTimeStr = [self valueOfElement:epgElement forKey:@"e2eventcurrenttime"];
+        eventTitle = [self valueOfElement:epgElement forKey:@"e2eventtitle"];
+        eventDescription = [self valueOfElement:epgElement forKey:@"e2eventdescription"];
+        eventExtendedDescription = [self valueOfElement:epgElement forKey:@"e2eventdescriptionextended"];
+        eventServiceReference = [self valueOfElement:epgElement forKey:@"e2eventservicereference"];
+        eventServiceName = [self valueOfElement:epgElement forKey:@"e2eventservicename"];
+        
+        
+        // Convert string values to real data types
+        
+        NSNumber *tempEventId = [[NSNumber alloc]initWithLongLong:[eventIdStr longLongValue]];
+        NSUInteger eventId = [tempEventId unsignedIntegerValue];
+        NSNumber *tempStartTime = [[NSNumber alloc]initWithLongLong:[eventStartStr longLongValue]];
+        NSDate *startTime = [NSDate dateWithTimeIntervalSince1970:[tempStartTime unsignedIntegerValue]];
+        NSTimeInterval duration = [eventDurationStr doubleValue];
+        NSNumber *tempCurrentTime = [[NSNumber alloc]initWithLongLong:[eventCurrentTimeStr longLongValue]];
+        NSDate *currentTime = [NSDate dateWithTimeIntervalSince1970:[tempCurrentTime unsignedIntegerValue]];
+        
+        // Create the epg object
+        
+        EPGEvent *epgEvent = [[EPGEvent alloc] initWith:eventId
+                                              startTime:startTime
+                                               duration:duration
+                                            currentTime:currentTime
+                                                  title:eventTitle
+                                            description:eventDescription
+                                    extendedDescription:eventExtendedDescription
+                                              reference:eventServiceReference
+                                            serviceName:eventServiceName];
+        
+        [epgs addObject:epgEvent];
+        
+    }
+    
+    return epgs;
+}
+
 
 - (void)zapTo:(NSString *)serviceReference
 {

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "BoxConnection.h"
 
+// TODO: fundera på om denna bör heta ngt annat!
+// Skulle kunna ha EPG i kanallistan eller bara rena kanaler som en valbar setting istället....
+
 @interface ApplicationSettings : NSObject
 
 @property (nonatomic, strong) BoxConnection *favorite;

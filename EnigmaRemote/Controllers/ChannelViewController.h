@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Channel.h"
+#import "EPGEvent.h"
 
 @interface ChannelViewController : UITableViewController
 
-@property (nonatomic, strong) Channel *channel;
+@property (nonatomic, strong) EPGEvent *epgEvent;
 
 @end

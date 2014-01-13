@@ -16,16 +16,16 @@
 
 @interface ChannelsViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) NSArray *channels;
+@property (strong, nonatomic) NSArray *epgEvents;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation ChannelsViewController
 
-- (void)setChannels:(NSArray *)channels
+- (void)setEpgEvents:(NSArray *)epgEvents
 {
-    _channels = channels;
+    _epgEvents = epgEvents;
     
     [self.tableView reloadData];
 }
@@ -43,7 +43,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self loadChannels];
+    [self loadEpgEvents];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -60,21 +60,20 @@
     [self.tableView flashScrollIndicators];
 }
 
-- (void)loadChannels
+- (void)loadEpgEvents
 {
+    // TODO: enable refresh animation
     //[self.refreshControl beginRefreshing];
     
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
     dispatch_async(clientLoaderQueue, ^{
         
-        NSArray *channels = [[EnigmaClient sharedInstance] channelsFor:self.bouquet.reference];
-        //NSArray* sortedJobs = [self sort:unsortedJobs];
-        //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
+        NSArray *epgEvents = [[EnigmaClient sharedInstance] channelsWithEpgFor:self.bouquet.reference];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
-            self.channels = channels;
+            self.epgEvents = epgEvents;
             //[self.refreshControl endRefreshing];
         });
     });
@@ -83,52 +82,70 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.channels count];
+    return [self.epgEvents count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChannelCell" forIndexPath:indexPath];
-    Channel *channel = self.channels[indexPath.row];
+    EPGEvent *epgEvent = self.epgEvents[indexPath.row];
     
-    cell.textLabel.text = channel.name;
+    cell.textLabel.text = epgEvent.serviceName;
+    cell.detailTextLabel.text = [self eventDetailsFor:epgEvent];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    Channel *selectedChannel = [self.channels objectAtIndex:indexPath.row];
+    EPGEvent *selectedChannel = [self.epgEvents objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"showChannel" sender:selectedChannel];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Channel *selectedChannel = [self.channels objectAtIndex:indexPath.row];
+    EPGEvent *selectedChannel = [self.epgEvents objectAtIndex:indexPath.row];
     UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
-    [[EnigmaClient sharedInstance] zapTo:selectedChannel.reference];
+    [[EnigmaClient sharedInstance] zapTo:selectedChannel.serviceReference];
     
     [self zapAnimation:selectedCell];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([sender isKindOfClass:[Channel class]])
+    if ([sender isKindOfClass:[EPGEvent class]])
     {
-        Channel *channel = sender;
+        EPGEvent *epgEvent = sender;
         
         if ([[segue identifier] isEqualToString:@"showChannel" ])
         {
-            if ([segue.destinationViewController respondsToSelector:@selector(setChannel:)])
+            if ([segue.destinationViewController respondsToSelector:@selector(setEpgEvent:)])
             {
-                [segue.destinationViewController performSelector:@selector(setChannel:) withObject:channel];
+                [segue.destinationViewController performSelector:@selector(setEpgEvent:) withObject:epgEvent];
             }
         }
     }
 }
 
 #pragma mark - internal helpers
+
+- (NSString *)eventDetailsFor:(EPGEvent *)event
+{
+    NSString *details = [NSString stringWithFormat:@"%@ %@", [self timeSpanForEvent:event], event.title];
+    
+    return details;
+}
+
+- (NSString *)timeSpanForEvent:(EPGEvent *)event
+{
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    timeFormatter.dateFormat = @"HH:mm";
+    
+    NSString *span = [NSString stringWithFormat:@"%@ - %@", [timeFormatter stringFromDate:event.startTime], [timeFormatter stringFromDate:[NSDate dateWithTimeInterval:event.duration sinceDate:event.startTime]]];
+    
+    return span;
+}
 
 - (void)zapAnimation:(UITableViewCell *)cell
 {
