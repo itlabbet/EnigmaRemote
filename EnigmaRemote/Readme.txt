@@ -70,3 +70,5 @@ TODO:s
  - Hantera "connection finns", men ej kontakt med servern -> felmeddelande
  - Hantera byte av favorit - appen måste fatta att en ny connection ska användas.
  - Uppstädning av ConnectionDelegate - ingen bra lösning idag.
+ - Remove all warnings
+ - Handle responses from web server
