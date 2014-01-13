@@ -78,6 +78,7 @@
     
     if (self)
     {
+        // TODO: Det ska gå att byta box under körning - funkar ej såhär :)
         ApplicationSettings *settings = [[ApplicationSettings alloc] init];
         _baseUrl = nil;
         

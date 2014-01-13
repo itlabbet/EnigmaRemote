@@ -64,3 +64,4 @@ Använda referenser:
 TODO:s
 ------
  - När PlayingViewController skrollas hamnar batteri mm bakom skrollen - ser inte snyggt ut.
+ - Hantera singleton-fallet där Enigmaklienten fått en setting efter det att den skapats, då är baseUrl nil.

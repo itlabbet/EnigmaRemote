@@ -47,19 +47,6 @@
 
 - (BoxConnection *)createConnection
 {
-    /*
-    NSInteger port = [self.port.text integerValue];
-
-    BoxConnection *connection = [[BoxConnection alloc] initWithName:self.name.text
-                                                          ipAddress:self.ipAddress.text
-                                                               port:port
-                                                           username:self.username.text
-                                                           password:self.password.text
-                                                           favorite:NO];
-    
-    return connection;
-     */
-    
     // TODO: gå ej direkt på MMI:et för att hämta data utan gå via en metod, gör MMI:et private!
     
     NSInteger port = [self.embeddedController.port.text integerValue];
@@ -70,7 +57,7 @@
                                                                port:port
                                                            username:self.embeddedController.username.text
                                                            password:self.embeddedController.password.text
-                                                           favorite:NO];
+                                                           favorite:YES]; // TODO: Hantera favoriter
     
     return connection;}
 
