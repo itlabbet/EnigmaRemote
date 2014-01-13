@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ConnectionDelegate.h"
+#import "DeleteDelegeate.h"
 
 
-@interface EditConnectionViewController : UIViewController
+@interface EditConnectionViewController : UIViewController <DeleteDelegeate>
 
-// TODO: assign eller strong eller weak här?
-@property (nonatomic, strong) id<ConnectionsDelegate> delegate;
+@property (nonatomic, weak) id<ConnectionsDelegate> delegate;
 @property (nonatomic, strong) BoxConnection *connection;
 
 @end

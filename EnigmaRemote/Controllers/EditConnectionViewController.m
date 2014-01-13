@@ -26,7 +26,6 @@
     self.title = self.connection.name;
 }
 
-
 #pragma mark - Handling of UI events
 
 - (IBAction)save:(id)sender
@@ -43,14 +42,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-// TODO: anslut denna till en Delete button
-- (IBAction)remove:(id)sender
-{
-    [self.delegate removeBoxConnection:self.connection];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -59,6 +50,9 @@
     {
         // Get embedded controller
         self.embeddedController = segue.destinationViewController;
+        
+        // Setup deletion delegate
+        self.embeddedController.delegate = self;
         
         // Set values in edit views
         self.embeddedController.name = self.connection.name;
@@ -80,7 +74,17 @@
     self.connection.password = self.embeddedController.password;
 }
 
+#pragma mark - DeleteDelegate implementation
 
-
+- (void)delete
+{
+    [self.delegate removeBoxConnection:self.connection];
+    
+    // We need to unwind to the view connections view controller (2 steps back)
+    // This is because the controller one step back is a view only controller
+    // and we have just deleted the connection for that view
+    
+    [self performSegueWithIdentifier:@"toConnections" sender:self];
+}
 
 @end

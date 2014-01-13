@@ -112,6 +112,15 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - event handling
+
+- (IBAction)zap:(id)sender
+{
+    [[EnigmaClient sharedInstance] zapTo:self.channel.reference];
+    
+    [self zapAnimation];
+}
+
 #pragma mark - helpers
 
 - (NSString *)timeSpanForEvent:(EPGEvent *)event
@@ -124,9 +133,33 @@
     return span;
 }
 
-- (IBAction)zap:(id)sender
+
+
+- (void)zapAnimation
 {
-    [[EnigmaClient sharedInstance] zapTo:self.channel.reference];
+    // Animate the click on the zap cell
+    [UIView animateWithDuration:0.2
+                     animations:^(void) {
+                         
+                         self.serviceCell.selected = YES;
+                     }
+     
+                     completion:^(BOOL finished) {
+                         
+                         [UIView animateWithDuration:0.2
+                                          animations:^(void) {
+                                              
+                                              self.serviceCell.selected = NO;
+                                          }
+                          
+                                          completion:^(BOOL finished) {
+                                              
+                                              
+                                          }];
+                         
+                         
+                     }];
+
 }
 
 @end

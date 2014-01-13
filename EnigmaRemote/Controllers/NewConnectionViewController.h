@@ -12,8 +12,7 @@
 
 @interface NewConnectionViewController : UIViewController
 
-// TODO: assign eller strong eller weak här?
-@property (nonatomic, assign) id<ConnectionsDelegate> delegate;
+@property (nonatomic, weak) id<ConnectionsDelegate> delegate;
 
 
 @end

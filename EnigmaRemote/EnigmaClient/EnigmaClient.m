@@ -63,10 +63,11 @@
 {
     static EnigmaClient *_sharedInstance = nil;
     
-    static dispatch_once_t oncePredicate;
+    static dispatch_once_t oncePredicate = 0;
     
     dispatch_once(&oncePredicate, ^{
         _sharedInstance = [[EnigmaClient alloc] init];
+        
     });
     return _sharedInstance;
 }

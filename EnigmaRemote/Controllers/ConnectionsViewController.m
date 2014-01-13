@@ -8,12 +8,13 @@
 
 #import "ConnectionsViewController.h"
 #import "NewConnectionViewController.h"
-#import "ViewConnectionViewController.h"
+#import "ConnectionViewController.h"
 #import "ApplicationSettings.h"
 
 @interface ConnectionsViewController ()
 
 @property (nonatomic, strong) NSArray *connections;
+@property (nonatomic, strong) ApplicationSettings *settings;
 
 @end
 
@@ -26,7 +27,6 @@
     
     [self.tableView reloadData];
 }
-
 
 - (void)loadView
 {
@@ -86,9 +86,13 @@
 }
 
 #pragma mark - Implementation of ConnectionDelegate 
+// TODO: Gör om detta helt!
+// Skicka endast en komplett lista till settings och gör sedan save på hela listan!
+// På så sätt behövs endast save och clear metoderna....
 
 - (void)addBoxConnection:(BoxConnection *)connection
 {
+    /*
     ApplicationSettings *settings = [[ApplicationSettings alloc] init];
     
     [settings addHost:connection];
@@ -96,10 +100,23 @@
     [settings save];
     
     [self loadConnections];
+     */
+    
+    NSMutableArray *connections = [self.connections mutableCopy];
+    [connections addObject:connection];
+    
+    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+    
+    settings.connections = connections;
+    [settings save];
+    
+    [self loadConnections];
 }
 
 - (void)updateBoxConnection:(BoxConnection *)connection
 {
+    /*
+    // TODO: Gör detta bättre! Hur ska en update gå till? load laddar ju om listan och vi får nya pekare!
     ApplicationSettings *settings = [[ApplicationSettings alloc] init];
     
     settings.connections = self.connections;
@@ -107,14 +124,42 @@
     [settings save];
     
     [self loadConnections];
+    */
+    
+    // TODO: fundera igenom denna - arrayen är redan uppdaterad då objektet som returnerats redan uppdaterats
+    // Behöver endast spara till disk och updatera mmi:et
+    
+    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+    
+    settings.connections = self.connections;
+    
+    [settings save];
+    
+    [self loadConnections];
+
+    
 }
 
 - (void)removeBoxConnection:(BoxConnection *)connection
 {
+    /*
+    // TODO: Gör detta bättre! Hur ska en update gå till? load laddar ju om listan och vi får nya pekare!
     ApplicationSettings *settings = [[ApplicationSettings alloc] init];
     
-    [settings removeHost:connection];
+    //[settings removeHost:connection];
+    settings.connections = self.connections;
     
+    [settings save];
+    
+    [self loadConnections];
+    */
+    
+    NSMutableArray *connections = [self.connections mutableCopy];
+    [connections removeObject:connection];
+    
+    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+    
+    settings.connections = connections;
     [settings save];
     
     [self loadConnections];
@@ -125,6 +170,8 @@
     ApplicationSettings *settings = [[ApplicationSettings alloc] init];
     
     [settings clear];
+    
+    [self loadConnections];
 }
 
 #pragma mark - event handlers
@@ -152,15 +199,20 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
         
-        if ([segue.destinationViewController isKindOfClass:[ViewConnectionViewController class]])
+        if ([segue.destinationViewController isKindOfClass:[ConnectionViewController class]])
         {
-            ViewConnectionViewController *viewCtrl = segue.destinationViewController;
+            ConnectionViewController *viewCtrl = segue.destinationViewController;
             viewCtrl.delegate = self;
             viewCtrl.connection = connection;
         }
     }
 }
 
+#pragma mark - unwind handling
 
+- (IBAction)unWindToConnectionsView:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [self loadConnections];
+}
 
 @end

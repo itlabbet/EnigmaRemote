@@ -1,5 +1,5 @@
 //
-//  ViewConnectionViewController.h
+//  ConnectionViewController.h
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 12/01/14.
@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ConnectionDelegate.h"
 
-@interface ViewConnectionViewController : UITableViewController <ConnectionsDelegate>
+@interface ConnectionViewController : UITableViewController <ConnectionsDelegate>
 
-@property (nonatomic, assign) id<ConnectionsDelegate> delegate;
+@property (nonatomic, weak) id<ConnectionsDelegate> delegate;
 @property (nonatomic, strong) BoxConnection *connection;
 
 @end

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConnectionDelegate.h"
+#import "DeleteDelegeate.h"
 
 @interface EmbeddedEditConnectionViewController : UITableViewController
+
+@property (nonatomic, weak) id<DeleteDelegeate> delegate;
 
 // Used for both input and outputs outputs
 // Input values will be set in UI

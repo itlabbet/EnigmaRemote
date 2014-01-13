@@ -106,8 +106,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Channel *selectedChannel = [self.channels objectAtIndex:indexPath.row];
-    
+    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
     [[EnigmaClient sharedInstance] zapTo:selectedChannel.reference];
+    
+    [self zapAnimation:selectedCell];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -125,5 +127,35 @@
         }
     }
 }
+
+#pragma mark - internal helpers
+
+- (void)zapAnimation:(UITableViewCell *)cell
+{
+    // Animate the click on the zap cell
+    [UIView animateWithDuration:0.2
+                     animations:^(void) {
+                         
+                         cell.selected = YES;
+                     }
+     
+                     completion:^(BOOL finished) {
+                         
+                         [UIView animateWithDuration:0.2
+                                          animations:^(void) {
+                                              
+                                              cell.selected = NO;
+                                          }
+                          
+                                          completion:^(BOOL finished) {
+                                              
+                                              
+                                          }];
+                         
+                         
+                     }];
+    
+}
+
 
 @end

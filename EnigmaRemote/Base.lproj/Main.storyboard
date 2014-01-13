@@ -675,10 +675,10 @@
             </objects>
             <point key="canvasLocation" x="226" y="954"/>
         </scene>
-        <!--View Connection View Controller - Anslutning-->
+        <!--Connection View Controller - Anslutning-->
         <scene sceneID="myo-gV-YBq">
             <objects>
-                <tableViewController id="aJI-hI-iwL" customClass="ViewConnectionViewController" sceneMemberID="viewController">
+                <tableViewController id="aJI-hI-iwL" customClass="ConnectionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="YZv-ud-boF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -844,8 +844,12 @@
                             <constraint firstAttribute="trailing" secondItem="aaW-hF-nqq" secondAttribute="trailing" id="mHn-93-vcT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Ll7-Zy-jCy" kind="unwind" identifier="toConnections" unwindAction="unWindToConnectionsView:sender:" id="IeC-db-H6B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91F-j1-h1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ll7-Zy-jCy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="669" y="1712"/>
         </scene>
@@ -999,8 +1003,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rD-LL-g23">
-                                                    <rect key="frame" x="20" y="7" width="39" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rD-LL-g23">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Kanal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1010,6 +1014,11 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6rD-LL-g23" firstAttribute="top" secondItem="sqM-JW-9Tj" secondAttribute="top" constant="7" id="Nm2-oC-6gj"/>
+                                                <constraint firstItem="6rD-LL-g23" firstAttribute="leading" secondItem="sqM-JW-9Tj" secondAttribute="leading" constant="20" symbolic="YES" id="XqZ-dn-A9E"/>
+                                                <constraint firstAttribute="trailing" secondItem="6rD-LL-g23" secondAttribute="trailing" constant="20" symbolic="YES" id="xsa-sp-axM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1349,14 +1358,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Radera anslutning" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-Xt-aNP">
-                                                    <rect key="frame" x="20" y="11" width="139" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-yY-fRd">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Radera">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="delete:" destination="9ft-aX-qXs" eventType="touchUpInside" id="mrz-5Q-t4t"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="BgH-yY-fRd" secondAttribute="trailing" constant="20" symbolic="YES" id="75W-DK-IH2"/>
+                                                <constraint firstItem="BgH-yY-fRd" firstAttribute="leading" secondItem="Pzy-aS-23T" secondAttribute="leading" constant="20" symbolic="YES" id="eCS-9X-buy"/>
+                                                <constraint firstItem="BgH-yY-fRd" firstAttribute="top" secondItem="Pzy-aS-23T" secondAttribute="top" constant="7" id="hPI-m7-nxL"/>
+                                                <constraint firstAttribute="bottom" secondItem="BgH-yY-fRd" secondAttribute="bottom" constant="6" id="zUu-Ye-bAr"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

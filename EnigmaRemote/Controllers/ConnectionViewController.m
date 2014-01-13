@@ -1,15 +1,15 @@
 //
-//  ViewConnectionViewController.m
+//  ConnectionViewController.m
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 12/01/14.
 //  Copyright (c) 2014 Niklas Andersson. All rights reserved.
 //
 
-#import "ViewConnectionViewController.h"
+#import "ConnectionViewController.h"
 #import "EditConnectionViewController.h"
 
-@interface ViewConnectionViewController ()
+@interface ConnectionViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *ipAddress;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation ViewConnectionViewController
+@implementation ConnectionViewController
 
 - (void)viewDidLoad
 {
@@ -29,6 +29,7 @@
 }
 
 #pragma mark - Implementation of ConnectionDelegate
+// TODO: hanteringen av dessa bör nog ligga i edit kontrollern...
 
 - (void)updateBoxConnection:(BoxConnection *)connection
 {
@@ -43,7 +44,7 @@
 {
     [self.delegate removeBoxConnection:connection];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Segue
