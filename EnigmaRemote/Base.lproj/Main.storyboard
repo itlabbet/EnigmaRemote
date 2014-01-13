@@ -935,7 +935,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SQ-BC-teS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SQ-BC-teS">
                                 <rect key="frame" x="104" y="72" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Toggle Stand By">
@@ -945,9 +945,12 @@
                                     <action selector="toggleStandBy:" destination="Zss-pW-4ma" eventType="touchUpInside" id="lPT-Ll-6HM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppp-5m-4BM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppp-5m-4BM">
                                 <rect key="frame" x="127" y="110" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="anR-kT-kaH"/>
+                                </constraints>
                                 <state key="normal" title="Restart">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -955,7 +958,7 @@
                                     <action selector="restart:" destination="Zss-pW-4ma" eventType="touchUpInside" id="2Iy-cZ-Uzd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TZ-UD-Nge">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TZ-UD-Nge">
                                 <rect key="frame" x="127" y="443" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reboot">
@@ -965,7 +968,7 @@
                                     <action selector="reboot:" destination="Zss-pW-4ma" eventType="touchUpInside" id="jd3-uh-Nhd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKb-Dv-HgP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKb-Dv-HgP">
                                 <rect key="frame" x="122" y="481" width="76" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Shut Down">
@@ -977,6 +980,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QKb-Dv-HgP" firstAttribute="top" secondItem="4TZ-UD-Nge" secondAttribute="bottom" constant="8" symbolic="YES" id="0It-tx-5Kl"/>
+                            <constraint firstItem="4TZ-UD-Nge" firstAttribute="centerX" secondItem="Ppp-5m-4BM" secondAttribute="centerX" id="3CQ-DU-UMI"/>
+                            <constraint firstItem="Ppp-5m-4BM" firstAttribute="leading" secondItem="4TZ-UD-Nge" secondAttribute="leading" id="KD1-7L-hWc"/>
+                            <constraint firstItem="QKb-Dv-HgP" firstAttribute="centerX" secondItem="4TZ-UD-Nge" secondAttribute="centerX" id="ZaE-yb-TQv"/>
+                            <constraint firstItem="Ppp-5m-4BM" firstAttribute="top" secondItem="4SQ-BC-teS" secondAttribute="bottom" constant="8" symbolic="YES" id="eiW-N5-z5C"/>
+                            <constraint firstItem="QKb-Dv-HgP" firstAttribute="centerX" secondItem="u90-hO-pmc" secondAttribute="centerX" id="fTY-F6-iEo"/>
+                            <constraint firstItem="oj5-ox-9HZ" firstAttribute="top" secondItem="QKb-Dv-HgP" secondAttribute="bottom" constant="8" id="ls1-i6-d8c"/>
+                            <constraint firstItem="4SQ-BC-teS" firstAttribute="top" secondItem="C9S-Xm-P6v" secondAttribute="bottom" constant="8" id="ygT-Xw-pPB"/>
+                            <constraint firstItem="4SQ-BC-teS" firstAttribute="centerX" secondItem="Ppp-5m-4BM" secondAttribute="centerX" id="yjv-hI-pDi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fjärrstyr" id="kJ9-Va-KkQ"/>
                 </viewController>

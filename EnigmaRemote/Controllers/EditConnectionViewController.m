@@ -62,7 +62,7 @@
 {
     self.name.text = self.connection.name;
     self.ipAddress.text = self.connection.ipAddress;
-    self.port.text = [NSString stringWithFormat:@"%d", self.connection.port];
+    self.port.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.connection.port];
     self.username.text = self.connection.username;
     self.password.text = self.connection.password;
 }
