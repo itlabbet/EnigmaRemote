@@ -25,14 +25,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 }
-
 
 #pragma mark - Handling of UI events
 
 - (IBAction)save:(id)sender
 {
+    // A new connection was added
     BoxConnection *newConnection = [self createConnection];
    
     [self.delegate addBoxConnection:newConnection];
@@ -42,30 +41,25 @@
 
 - (IBAction)cancel:(id)sender
 {
+    // The new connection was canceled - dismiss
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BoxConnection *)createConnection
 {
-    // TODO: gå ej direkt på MMI:et för att hämta data utan gå via en metod, gör MMI:et private!
-    
-    NSInteger port = [self.embeddedController.port.text integerValue];
-    
-    
-    BoxConnection *connection = [[BoxConnection alloc] initWithName:self.embeddedController.name.text
-                                                          ipAddress:self.embeddedController.ipAddress.text
-                                                               port:port
-                                                           username:self.embeddedController.username.text
-                                                           password:self.embeddedController.password.text
+    // Fetch data from UI and create model
+    BoxConnection *connection = [[BoxConnection alloc] initWithName:self.embeddedController.name
+                                                          ipAddress:self.embeddedController.ipAddress
+                                                               port:self.embeddedController.port
+                                                           username:self.embeddedController.username
+                                                           password:self.embeddedController.password
                                                            favorite:YES]; // TODO: Hantera favoriter
     
-    return connection;}
-
+    return connection;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"i förälder %@", segue.identifier);
-    
     if ([segue.identifier isEqualToString:@"embedded"])
     {
         self.embeddedController = segue.destinationViewController;

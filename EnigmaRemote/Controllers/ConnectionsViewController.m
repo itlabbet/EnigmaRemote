@@ -32,20 +32,12 @@
 {
     [super loadView];
     
-    // TODO: se till att alla data laddas i loadView
-    
     [self loadConnections];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

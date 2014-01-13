@@ -7,15 +7,12 @@
 //
 
 #import "EditConnectionViewController.h"
+#import "EmbeddedEditConnectionViewController.h"
 
 
 @interface EditConnectionViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *ipAddress;
-@property (weak, nonatomic) IBOutlet UITextField *port;
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (nonatomic, strong) EmbeddedEditConnectionViewController *embeddedController;
 
 @end
 
@@ -27,8 +24,6 @@
     [super viewDidLoad];
     
     self.title = self.connection.name;
-    
-    [self updateUI];
 }
 
 
@@ -48,7 +43,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-// TODO: anslut denna till en Action
+// TODO: anslut denna till en Delete button
 - (IBAction)remove:(id)sender
 {
     [self.delegate removeBoxConnection:self.connection];
@@ -56,26 +51,36 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - internal helpers
+#pragma mark - Segue
 
-- (void)updateUI
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.name.text = self.connection.name;
-    self.ipAddress.text = self.connection.ipAddress;
-    self.port.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.connection.port];
-    self.username.text = self.connection.username;
-    self.password.text = self.connection.password;
+    if ([segue.identifier isEqualToString:@"embedded"])
+    {
+        // Get embedded controller
+        self.embeddedController = segue.destinationViewController;
+        
+        // Set values in edit views
+        self.embeddedController.name = self.connection.name;
+        self.embeddedController.ipAddress = self.connection.ipAddress;
+        self.embeddedController.port = self.connection.port;
+        self.embeddedController.username = self.connection.username;
+        self.embeddedController.password = self.connection.password;
+    }
 }
+
+#pragma mark - internal helpers
 
 - (void)updateModel
 {
-    NSInteger port = [self.port.text integerValue];
-    
-    self.connection.name = self.name.text;
-    self.connection.ipAddress = self.ipAddress.text;
-    self.connection.port = port;
-    self.connection.username = self.username.text;
-    self.connection.password = self.password.text;
+    self.connection.name = self.embeddedController.name;
+    self.connection.ipAddress = self.embeddedController.ipAddress;
+    self.connection.port = self.embeddedController.port;
+    self.connection.username = self.embeddedController.username;
+    self.connection.password = self.embeddedController.password;
 }
+
+
+
 
 @end

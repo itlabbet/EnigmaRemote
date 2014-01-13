@@ -10,11 +10,11 @@
 
 @interface EmbeddedNewConnectionViewController : UITableViewController
 
-// TODO: ska dessa exponeras publikt eller bättre göra en egen BoxConnection property?
-@property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *ipAddress;
-@property (weak, nonatomic) IBOutlet UITextField *port;
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UITextField *password;
+// Output properties
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) NSString *ipAddress;
+@property (nonatomic, readonly) NSUInteger port;
+@property (nonatomic, strong, readonly) NSString *username;
+@property (nonatomic, strong, readonly) NSString *password;
 
 @end
