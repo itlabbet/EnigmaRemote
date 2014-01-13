@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5D0B11F81883BF5300E6B258 /* EmbeddedNewConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */; };
-		5D26DC0018786BD400CAD0B6 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */; };
 		5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A3187C7DF60047F20C /* EPGEvent.m */; };
 		5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A6187C992F0047F20C /* DeviceInfo.m */; };
 		5D443213187B004200A098F1 /* BoxControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D443212187B004200A098F1 /* BoxControlViewController.m */; };
@@ -17,7 +16,6 @@
 		5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBF1878287F004FCDD5 /* Channel.m */; };
 		5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */; };
 		5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */; };
-		5D52A6CB18784D6100BF03EF /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */; };
 		5D52A6CD187850E800BF03EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D52A6CC187850E800BF03EF /* libxml2.dylib */; };
 		5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */; };
 		5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664690187DF81900DA1B1B /* ApplicationSettings.m */; };
@@ -42,6 +40,8 @@
 		5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF48C18564DEF00289D13 /* Readme.txt */; };
 		5DF1E0D918829D2900887BA9 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */; };
 		5DF1E0DC18829D3C00887BA9 /* NewConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1E0DB18829D3C00887BA9 /* NewConnectionViewController.m */; };
+		5DF4641B18844B4400578B76 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4641A18844B4400578B76 /* GDataXMLNode.m */; };
+		5DF4641E18844B6600578B76 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4641D18844B6600578B76 /* NSString+URLEncode.m */; };
 		5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */; };
 		5DFF706C187F211600F3CC04 /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF706B187F211600F3CC04 /* RemoteViewController.m */; };
 		5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF706E187F21E100F3CC04 /* PlayingViewController.m */; };
@@ -60,8 +60,6 @@
 /* Begin PBXFileReference section */
 		5D0B11F61883BF5300E6B258 /* EmbeddedNewConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbeddedNewConnectionViewController.h; path = Controllers/EmbeddedNewConnectionViewController.h; sourceTree = "<group>"; };
 		5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbeddedNewConnectionViewController.m; path = Controllers/EmbeddedNewConnectionViewController.m; sourceTree = "<group>"; };
-		5D26DBFE18786BD400CAD0B6 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncode.h"; path = "External/URLEncode/NSString+URLEncode.h"; sourceTree = "<group>"; };
-		5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncode.m"; path = "External/URLEncode/NSString+URLEncode.m"; sourceTree = "<group>"; };
 		5D40B6A2187C7DF60047F20C /* EPGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPGEvent.h; path = Models/EPGEvent.h; sourceTree = "<group>"; };
 		5D40B6A3187C7DF60047F20C /* EPGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPGEvent.m; path = Models/EPGEvent.m; sourceTree = "<group>"; };
 		5D40B6A5187C992F0047F20C /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfo.h; path = Models/DeviceInfo.h; sourceTree = "<group>"; };
@@ -78,8 +76,6 @@
 		5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BouquetsViewController.m; path = Controllers/BouquetsViewController.m; sourceTree = "<group>"; };
 		5D4E1FC418782890004FCDD5 /* ChannelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelsViewController.h; path = Controllers/ChannelsViewController.h; sourceTree = "<group>"; };
 		5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelsViewController.m; path = Controllers/ChannelsViewController.m; sourceTree = "<group>"; };
-		5D52A6C918784D6100BF03EF /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
-		5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		5D52A6CC187850E800BF03EF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5D549FC6187F5741004360C3 /* DeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfoViewController.h; path = Controllers/DeviceInfoViewController.h; sourceTree = "<group>"; };
 		5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInfoViewController.m; path = Controllers/DeviceInfoViewController.m; sourceTree = "<group>"; };
@@ -118,6 +114,10 @@
 		5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionsViewController.m; path = Controllers/ConnectionsViewController.m; sourceTree = "<group>"; };
 		5DF1E0DA18829D3C00887BA9 /* NewConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewConnectionViewController.h; path = Controllers/NewConnectionViewController.h; sourceTree = "<group>"; };
 		5DF1E0DB18829D3C00887BA9 /* NewConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewConnectionViewController.m; path = Controllers/NewConnectionViewController.m; sourceTree = "<group>"; };
+		5DF4641918844B4400578B76 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDataXMLNode.h; path = EnigmaRemote/Utilities/GDataXML/GDataXMLNode.h; sourceTree = SOURCE_ROOT; };
+		5DF4641A18844B4400578B76 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDataXMLNode.m; path = EnigmaRemote/Utilities/GDataXML/GDataXMLNode.m; sourceTree = SOURCE_ROOT; };
+		5DF4641C18844B6600578B76 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncode.h"; path = "Utilities/URLEncode/NSString+URLEncode.h"; sourceTree = "<group>"; };
+		5DF4641D18844B6600578B76 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncode.m"; path = "Utilities/URLEncode/NSString+URLEncode.m"; sourceTree = "<group>"; };
 		5DFDC3ED1876F5EF00703E54 /* EnigmaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnigmaClient.h; path = EnigmaClient/EnigmaClient.h; sourceTree = "<group>"; };
 		5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnigmaClient.m; path = EnigmaClient/EnigmaClient.m; sourceTree = "<group>"; };
 		5DFF706A187F211600F3CC04 /* RemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteViewController.h; path = Controllers/RemoteViewController.h; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 		5D26DBFC18786B4E00CAD0B6 /* URLEncode */ = {
 			isa = PBXGroup;
 			children = (
-				5D26DBFE18786BD400CAD0B6 /* NSString+URLEncode.h */,
-				5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */,
+				5DF4641C18844B6600578B76 /* NSString+URLEncode.h */,
+				5DF4641D18844B6600578B76 /* NSString+URLEncode.m */,
 			);
 			name = URLEncode;
 			sourceTree = "<group>";
@@ -167,20 +167,20 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		5D4E1FD1187828AB004FCDD5 /* External */ = {
+		5D4E1FD1187828AB004FCDD5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				5D26DBFC18786B4E00CAD0B6 /* URLEncode */,
 				5D52A6C818784D6100BF03EF /* GDataXML */,
 			);
-			name = External;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		5D52A6C818784D6100BF03EF /* GDataXML */ = {
 			isa = PBXGroup;
 			children = (
-				5D52A6C918784D6100BF03EF /* GDataXMLNode.h */,
-				5D52A6CA18784D6100BF03EF /* GDataXMLNode.m */,
+				5DF4641918844B4400578B76 /* GDataXMLNode.h */,
+				5DF4641A18844B4400578B76 /* GDataXMLNode.m */,
 			);
 			name = GDataXML;
 			path = External/GDataXML;
@@ -250,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				5D66468E187DF7ED00DA1B1B /* Settings */,
-				5D4E1FD1187828AB004FCDD5 /* External */,
+				5D4E1FD1187828AB004FCDD5 /* Utilities */,
 				5D4E1FBB1878280E004FCDD5 /* Views */,
 				5D69182C18777479004EEBEE /* Models */,
 				5DFDC3EC1876F5CE00703E54 /* EnigmaClient */,
@@ -449,6 +449,7 @@
 				5D443219187B3A4B00A098F1 /* ChannelEPG.m in Sources */,
 				5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */,
 				5D80853C188310E600396892 /* ViewConnectionViewController.m in Sources */,
+				5DF4641E18844B6600578B76 /* NSString+URLEncode.m in Sources */,
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
 				5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */,
 				5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */,
@@ -462,9 +463,8 @@
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
 				5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */,
 				5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */,
-				5D52A6CB18784D6100BF03EF /* GDataXMLNode.m in Sources */,
+				5DF4641B18844B4400578B76 /* GDataXMLNode.m in Sources */,
 				5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */,
-				5D26DC0018786BD400CAD0B6 /* NSString+URLEncode.m in Sources */,
 				5DC192951882B7A30023E612 /* EditConnectionViewController.m in Sources */,
 				5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */,
 				5DFF706C187F211600F3CC04 /* RemoteViewController.m in Sources */,

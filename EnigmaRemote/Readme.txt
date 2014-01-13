@@ -5,6 +5,7 @@ Momentet ger betyget 3 om resultatet:
 - Är ett körbart program
 - Innehåller de delar som specificerades i projektförslaget
 - Skriftlig redovisning av projektet, rapport och post-mortem.
+    - Post-mortem: http://www.ehow.com/how_6516661_write-postmortem-report.html
 - Muntlig presentation/video. Inspelad film (max 3 minuter) som laddas upp i mappen ”App project - video”.
 
 
