@@ -7,14 +7,11 @@
 //
 
 #import "NewConnectionViewController.h"
+#import "EmbeddedNewConnectionViewController.h"
 
 @interface NewConnectionViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *ipAddress;
-@property (weak, nonatomic) IBOutlet UITextField *port;
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (nonatomic, weak) EmbeddedNewConnectionViewController *embeddedController;
 
 @end
 
@@ -50,6 +47,7 @@
 
 - (BoxConnection *)createConnection
 {
+    /*
     NSInteger port = [self.port.text integerValue];
 
     BoxConnection *connection = [[BoxConnection alloc] initWithName:self.name.text
@@ -60,6 +58,31 @@
                                                            favorite:NO];
     
     return connection;
+     */
+    
+    // TODO: gå ej direkt på MMI:et för att hämta data utan gå via en metod, gör MMI:et private!
+    
+    NSInteger port = [self.embeddedController.port.text integerValue];
+    
+    
+    BoxConnection *connection = [[BoxConnection alloc] initWithName:self.embeddedController.name.text
+                                                          ipAddress:self.embeddedController.ipAddress.text
+                                                               port:port
+                                                           username:self.embeddedController.username.text
+                                                           password:self.embeddedController.password.text
+                                                           favorite:NO];
+    
+    return connection;}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"i förälder %@", segue.identifier);
+    
+    if ([segue.identifier isEqualToString:@"embedded"])
+    {
+        self.embeddedController = segue.destinationViewController;
+    }
 }
 
 @end

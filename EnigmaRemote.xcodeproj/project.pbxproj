@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0B11F81883BF5300E6B258 /* EmbeddedNewConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */; };
 		5D26DC0018786BD400CAD0B6 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */; };
 		5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A3187C7DF60047F20C /* EPGEvent.m */; };
 		5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A6187C992F0047F20C /* DeviceInfo.m */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D0B11F61883BF5300E6B258 /* EmbeddedNewConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbeddedNewConnectionViewController.h; path = Controllers/EmbeddedNewConnectionViewController.h; sourceTree = "<group>"; };
+		5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbeddedNewConnectionViewController.m; path = Controllers/EmbeddedNewConnectionViewController.m; sourceTree = "<group>"; };
 		5D26DBFE18786BD400CAD0B6 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncode.h"; path = "External/URLEncode/NSString+URLEncode.h"; sourceTree = "<group>"; };
 		5D26DBFF18786BD400CAD0B6 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncode.m"; path = "External/URLEncode/NSString+URLEncode.m"; sourceTree = "<group>"; };
 		5D40B6A2187C7DF60047F20C /* EPGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPGEvent.h; path = Models/EPGEvent.h; sourceTree = "<group>"; };
@@ -315,6 +318,8 @@
 				5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */,
 				5DF1E0DA18829D3C00887BA9 /* NewConnectionViewController.h */,
 				5DF1E0DB18829D3C00887BA9 /* NewConnectionViewController.m */,
+				5D0B11F61883BF5300E6B258 /* EmbeddedNewConnectionViewController.h */,
+				5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */,
 				5D80853A188310E600396892 /* ViewConnectionViewController.h */,
 				5D80853B188310E600396892 /* ViewConnectionViewController.m */,
 				5DC192931882B7A30023E612 /* EditConnectionViewController.h */,
@@ -447,6 +452,7 @@
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
 				5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */,
 				5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */,
+				5D0B11F81883BF5300E6B258 /* EmbeddedNewConnectionViewController.m in Sources */,
 				5DF1E0DC18829D3C00887BA9 /* NewConnectionViewController.m in Sources */,
 				5D6E068F18815531004C0AD1 /* ChannelViewController.m in Sources */,
 				5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */,
