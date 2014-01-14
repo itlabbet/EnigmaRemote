@@ -14,10 +14,9 @@
 // TODO: hur visa aktuell kanal?
 // Bör funka vid tillbaka och framåt navigering också...
 
-@interface ChannelsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ChannelsViewController ()
 
 @property (strong, nonatomic) NSArray *epgEvents;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -30,34 +29,12 @@
     [self.tableView reloadData];
 }
 
-- (void)loadView
-{
-    [super loadView];
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
     [self loadEpgEvents];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [self.tableView flashScrollIndicators];
 }
 
 - (void)loadEpgEvents

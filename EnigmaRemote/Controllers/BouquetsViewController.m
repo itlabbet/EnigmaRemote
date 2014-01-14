@@ -12,10 +12,9 @@
 #import "Bouquet.h"
 
 
-@interface BouquetsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface BouquetsViewController ()
 
 @property (strong, nonatomic) NSArray *bouquets;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
     
 @end
 
@@ -28,34 +27,12 @@
     [self.tableView reloadData];
 }
 
-- (void)loadView
-{
-    [super loadView];
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
     [self loadBouquets];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [self.tableView flashScrollIndicators];
 }
 
 - (void)loadBouquets

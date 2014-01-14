@@ -10,6 +10,6 @@
 
 // TODO: Gör om denna till en TVC då rotate alltid slutar fungera efter ett tag!
 
-@interface BouquetsViewController : UIViewController 
+@interface BouquetsViewController : UITableViewController
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Bouquet.h"
 
-@interface ChannelsViewController : UIViewController
+@interface ChannelsViewController : UITableViewController
 
 @property (nonatomic, strong) Bouquet* bouquet;
 
