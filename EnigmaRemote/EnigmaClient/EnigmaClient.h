@@ -32,6 +32,7 @@ typedef enum
 
 }BoxCommandAction;
 
+// All calls to EnigmaClient will block and should be perfomed in a separate queue.
 
 @interface EnigmaClient : NSObject
 
