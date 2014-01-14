@@ -107,7 +107,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == actionSheet.cancelButtonIndex)
+    if (buttonIndex == actionSheet.destructiveButtonIndex)
     {
         // Clicked first button - Delete this contact
         // Forward the deletion handling to our delete delegate
