@@ -258,7 +258,6 @@
 				5D4E1FBB1878280E004FCDD5 /* Views */,
 				5D69182C18777479004EEBEE /* Models */,
 				5DFDC3EC1876F5CE00703E54 /* EnigmaClient */,
-				5DFDC3DC1876F55600703E54 /* Images */,
 				5DFDC3DB1876F54D00703E54 /* Controllers */,
 				5DDDF46618564C7100289D13 /* AppDelegate.h */,
 				5DDDF46718564C7100289D13 /* AppDelegate.m */,
@@ -335,13 +334,6 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		5DFDC3DC1876F55600703E54 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		5DFDC3EC1876F5CE00703E54 /* EnigmaClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,9 +346,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5DDDF45318564C7000289D13 /* EnigmaRemote */ = {
+		5DDDF45318564C7000289D13 /* Enigma */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5DDDF48618564C7100289D13 /* Build configuration list for PBXNativeTarget "EnigmaRemote" */;
+			buildConfigurationList = 5DDDF48618564C7100289D13 /* Build configuration list for PBXNativeTarget "Enigma" */;
 			buildPhases = (
 				5DDDF45018564C7000289D13 /* Sources */,
 				5DDDF45118564C7000289D13 /* Frameworks */,
@@ -366,7 +358,7 @@
 			);
 			dependencies = (
 			);
-			name = EnigmaRemote;
+			name = Enigma;
 			productName = EnigmaRemote;
 			productReference = 5DDDF45418564C7100289D13 /* EnigmaRemote.app */;
 			productType = "com.apple.product-type.application";
@@ -419,7 +411,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5DDDF45318564C7000289D13 /* EnigmaRemote */,
+				5DDDF45318564C7000289D13 /* Enigma */,
 				5DDDF47418564C7100289D13 /* EnigmaRemoteTests */,
 			);
 		};
@@ -494,7 +486,7 @@
 /* Begin PBXTargetDependency section */
 		5DDDF47B18564C7100289D13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5DDDF45318564C7000289D13 /* EnigmaRemote */;
+			target = 5DDDF45318564C7000289D13 /* Enigma */;
 			targetProxy = 5DDDF47A18564C7100289D13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -623,6 +615,7 @@
 				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -639,6 +632,7 @@
 				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -697,7 +691,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5DDDF48618564C7100289D13 /* Build configuration list for PBXNativeTarget "EnigmaRemote" */ = {
+		5DDDF48618564C7100289D13 /* Build configuration list for PBXNativeTarget "Enigma" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DDDF48718564C7100289D13 /* Debug */,
