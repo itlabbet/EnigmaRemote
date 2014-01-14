@@ -80,7 +80,6 @@
         
         // TODO: i detta fallet sortera i bokstavsordning...
         //NSArray* sortedJobs = [self sort:unsortedJobs];
-        //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
