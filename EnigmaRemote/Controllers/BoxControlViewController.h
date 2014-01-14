@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BoxControlViewController : UIViewController
+@interface BoxControlViewController : UITableViewController
 
 @end

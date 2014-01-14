@@ -378,7 +378,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Zss-pW-4ma" kind="push" id="i3D-9B-G5A"/>
+                                            <segue destination="c6h-e5-qqG" kind="push" id="1h8-yF-hHy"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -854,79 +854,115 @@
             <point key="canvasLocation" x="669" y="1712"/>
         </scene>
         <!--Box Control View Controller - Fjärrstyr-->
-        <scene sceneID="Pys-w3-u7m">
+        <scene sceneID="pTY-7w-l0P">
             <objects>
-                <viewController id="Zss-pW-4ma" customClass="BoxControlViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="C9S-Xm-P6v"/>
-                        <viewControllerLayoutGuide type="bottom" id="oj5-ox-9HZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="u90-hO-pmc">
+                <tableViewController id="c6h-e5-qqG" customClass="BoxControlViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bVn-4X-hj8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SQ-BC-teS">
-                                <rect key="frame" x="104" y="72" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Toggle Stand By">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="toggleStandBy:" destination="Zss-pW-4ma" eventType="touchUpInside" id="lPT-Ll-6HM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppp-5m-4BM">
-                                <rect key="frame" x="127" y="110" width="66" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="anR-kT-kaH"/>
-                                </constraints>
-                                <state key="normal" title="Restart">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="restart:" destination="Zss-pW-4ma" eventType="touchUpInside" id="2Iy-cZ-Uzd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TZ-UD-Nge">
-                                <rect key="frame" x="127" y="443" width="66" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reboot">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="reboot:" destination="Zss-pW-4ma" eventType="touchUpInside" id="jd3-uh-Nhd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKb-Dv-HgP">
-                                <rect key="frame" x="122" y="481" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Shut Down">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shutdown:" destination="Zss-pW-4ma" eventType="touchUpInside" id="qYO-cy-aQ5"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="QKb-Dv-HgP" firstAttribute="top" secondItem="4TZ-UD-Nge" secondAttribute="bottom" constant="8" symbolic="YES" id="0It-tx-5Kl"/>
-                            <constraint firstItem="4TZ-UD-Nge" firstAttribute="centerX" secondItem="Ppp-5m-4BM" secondAttribute="centerX" id="3CQ-DU-UMI"/>
-                            <constraint firstItem="Ppp-5m-4BM" firstAttribute="leading" secondItem="4TZ-UD-Nge" secondAttribute="leading" id="KD1-7L-hWc"/>
-                            <constraint firstItem="QKb-Dv-HgP" firstAttribute="centerX" secondItem="4TZ-UD-Nge" secondAttribute="centerX" id="ZaE-yb-TQv"/>
-                            <constraint firstItem="Ppp-5m-4BM" firstAttribute="top" secondItem="4SQ-BC-teS" secondAttribute="bottom" constant="8" symbolic="YES" id="eiW-N5-z5C"/>
-                            <constraint firstItem="QKb-Dv-HgP" firstAttribute="centerX" secondItem="u90-hO-pmc" secondAttribute="centerX" id="fTY-F6-iEo"/>
-                            <constraint firstItem="oj5-ox-9HZ" firstAttribute="top" secondItem="QKb-Dv-HgP" secondAttribute="bottom" constant="8" id="ls1-i6-d8c"/>
-                            <constraint firstItem="4SQ-BC-teS" firstAttribute="top" secondItem="C9S-Xm-P6v" secondAttribute="bottom" constant="8" id="ygT-Xw-pPB"/>
-                            <constraint firstItem="4SQ-BC-teS" firstAttribute="centerX" secondItem="Ppp-5m-4BM" secondAttribute="centerX" id="yjv-hI-pDi"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Fjärrstyr" id="kJ9-Va-KkQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w1p-Mb-8tO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="f6Y-hc-5IP">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="96k-z2-uaL">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="96k-z2-uaL" id="SHI-jb-AhA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGw-4X-6oY">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Växla standby">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="toggleStandBy:" destination="c6h-e5-qqG" eventType="touchUpInside" id="zhe-L4-ap3"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mgw-aM-Klg">
+                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mgw-aM-Klg" id="niy-DB-Od0">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBW-KW-mG5">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Snabb omstart">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="restart:" destination="c6h-e5-qqG" eventType="touchUpInside" id="xoG-Xh-25x"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="57m-vD-nRi">
+                                        <rect key="frame" x="0.0" y="187" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="57m-vD-nRi" id="7IP-Nj-Afc">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQj-Ve-Gaz">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Total omstart">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="reboot:" destination="c6h-e5-qqG" eventType="touchUpInside" id="Vk1-Ag-HVY"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2gX-aC-s79">
+                                        <rect key="frame" x="0.0" y="231" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2gX-aC-s79" id="vaJ-8o-RQf">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-t6-7ih">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Total nerstängning">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="shutdown:" destination="c6h-e5-qqG" eventType="touchUpInside" id="siU-7M-cjp"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="c6h-e5-qqG" id="acB-pZ-qTE"/>
+                            <outlet property="delegate" destination="c6h-e5-qqG" id="I2l-ja-jpy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Fjärrstyr" id="dvE-f1-fgV"/>
+                    <connections>
+                        <outlet property="rebootCell" destination="57m-vD-nRi" id="caC-yt-ueK"/>
+                        <outlet property="restartCell" destination="mgw-aM-Klg" id="9J9-fJ-WqF"/>
+                        <outlet property="shutdownCell" destination="2gX-aC-s79" id="i74-D4-oDu"/>
+                        <outlet property="standbyCell" destination="96k-z2-uaL" id="HxZ-gO-Msz"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jr8-Tl-Gj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-312" y="589"/>
+            <point key="canvasLocation" x="-312" y="579"/>
         </scene>
         <!--Navigation Controller - Bläddra-->
         <scene sceneID="bVv-Ut-Kzw">
