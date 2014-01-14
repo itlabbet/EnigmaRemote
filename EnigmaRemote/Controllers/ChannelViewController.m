@@ -64,7 +64,6 @@
     dispatch_async(clientLoaderQueue, ^{
         
         ChannelEPG *epg = [[EnigmaClient sharedInstance] channelEPGFor:self.epgEvent.serviceReference];
-        //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI

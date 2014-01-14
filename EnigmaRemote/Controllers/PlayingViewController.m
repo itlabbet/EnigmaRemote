@@ -63,7 +63,6 @@
     dispatch_async(clientLoaderQueue, ^{
         
         ChannelEPG *currentPlaying = [[EnigmaClient sharedInstance] currentPlaying];
-        //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
