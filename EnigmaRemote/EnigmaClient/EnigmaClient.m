@@ -88,6 +88,7 @@
         
         if (settings.favorite)
         {
+            // TODO: använd username + password
             _baseUrl = [NSString stringWithFormat:@"http://%@", settings.favorite.ipAddress];
         }
         

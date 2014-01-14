@@ -8,7 +8,7 @@
 
 #import "EmbeddedNewConnectionViewController.h"
 
-@interface EmbeddedNewConnectionViewController ()
+@interface EmbeddedNewConnectionViewController () <UITextFieldDelegate>
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UITextField *tfName;
@@ -20,6 +20,8 @@
 @end
 
 @implementation EmbeddedNewConnectionViewController
+
+#pragma mark - getters
 
 - (NSString *)name
 {
@@ -45,6 +47,54 @@
 - (NSString *)password
 {
     return self.tfPassword.text;
+}
+
+#pragma mark - overrides
+
+- (void)viewDidLoad
+{
+    // Hook up delegates
+    self.tfName.delegate = self;
+    self.tfIPAddress.delegate = self;
+    self.tfPort.delegate = self;
+    self.tfUsername.delegate = self;
+    self.tfPassword.delegate = self;
+    
+    [self.tfName becomeFirstResponder];
+}
+
+#pragma mark - UITextFieldDelegate implementation
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // If Return is pressed on keyboard - jump to next textfield
+    
+    if (textField == self.tfName)
+    {
+        [self.tfIPAddress becomeFirstResponder];
+    }
+    
+    if (textField == self.tfIPAddress)
+    {
+        [self.tfPort becomeFirstResponder];
+    }
+    
+    if (textField == self.tfPort)
+    {
+        [self.tfUsername becomeFirstResponder];
+    }
+    
+    if (textField == self.tfUsername)
+    {
+        [self.tfPassword becomeFirstResponder];
+    }
+    
+    if (textField == self.tfPassword)
+    {
+        [self.tfPassword resignFirstResponder];
+    }
+    
+    return YES;
 }
 
 @end
