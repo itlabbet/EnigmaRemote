@@ -8,7 +8,7 @@
 
 #import "EmbeddedEditConnectionViewController.h"
 
-@interface EmbeddedEditConnectionViewController () <UIAlertViewDelegate>
+@interface EmbeddedEditConnectionViewController () <UIActionSheetDelegate>//<UIAlertViewDelegate>
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UITextField *tfName;
@@ -77,21 +77,20 @@
 }
 
 - (void)showConfirmDelete
-{
-    UIAlertView *alert = [[UIAlertView alloc] init];
-    [alert setTitle:@"Bekräfta"];
-    [alert setMessage:@"Vill du radera anslutningen?"];
-    [alert setDelegate:self];
-    [alert addButtonWithTitle:@"Radera"];
-    [alert addButtonWithTitle:@"Avbryt"];
+{    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Bekräfta ta bort"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Avbryt"
+                                         destructiveButtonTitle:@"Radera"
+                                               otherButtonTitles:nil];
     
-    [alert setDelegate:self];
-    [alert show];
+    [sheet showInView:self.tableView];
 }
 
-#pragma mark - UIAlertViewDelegate implementation
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+#pragma mark - UIActionSheetDelegate implementation
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0)
     {
