@@ -113,7 +113,7 @@
         // Forward the deletion handling to our delete delegate
         [self.delegate delete];
     }
-    else if (buttonIndex == actionSheet.destructiveButtonIndex)
+    else if (buttonIndex == actionSheet.cancelButtonIndex)
     {
         // Clicked second button - i.e. canceled - Do nothing 
     }
