@@ -63,7 +63,11 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
         ChannelEPG *epg = [[EnigmaClient sharedInstance] channelEPGFor:self.epgEvent.serviceReference];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI

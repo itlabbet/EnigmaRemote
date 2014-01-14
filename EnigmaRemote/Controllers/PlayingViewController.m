@@ -62,7 +62,11 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
         ChannelEPG *currentPlaying = [[EnigmaClient sharedInstance] currentPlaying];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI

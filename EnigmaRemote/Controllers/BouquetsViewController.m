@@ -37,20 +37,20 @@
 
 - (void)loadBouquets
 {
-    //[self.refreshControl beginRefreshing];
-    
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
     dispatch_async(clientLoaderQueue, ^{
         
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
         NSArray *bouquets = [[EnigmaClient sharedInstance] bouquets];
-        //NSArray* sortedJobs = [self sort:unsortedJobs];
-        //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
             self.bouquets = bouquets;
-            //[self.refreshControl endRefreshing];
+            
         });
     });
 

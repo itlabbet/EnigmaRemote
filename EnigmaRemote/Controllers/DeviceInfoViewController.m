@@ -60,8 +60,11 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
         DeviceInfo *deviceInfo = [[EnigmaClient sharedInstance] deviceInfo];
-        //[NSThread sleepForTimeInterval:1.0]; // enable to simulate slow network access
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
