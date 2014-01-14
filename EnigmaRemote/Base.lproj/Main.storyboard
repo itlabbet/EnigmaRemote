@@ -871,7 +871,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGw-4X-6oY">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGw-4X-6oY">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Växla standby">
@@ -882,6 +882,11 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xGw-4X-6oY" firstAttribute="top" secondItem="SHI-jb-AhA" secondAttribute="top" constant="7" id="48R-7W-egv"/>
+                                                <constraint firstItem="xGw-4X-6oY" firstAttribute="leading" secondItem="SHI-jb-AhA" secondAttribute="leading" constant="20" symbolic="YES" id="RJo-hS-vwV"/>
+                                                <constraint firstAttribute="trailing" secondItem="xGw-4X-6oY" secondAttribute="trailing" constant="20" symbolic="YES" id="ZJ4-H3-aBX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mgw-aM-Klg">
@@ -891,7 +896,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBW-KW-mG5">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBW-KW-mG5">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Snabb omstart">
@@ -902,6 +907,11 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="CBW-KW-mG5" secondAttribute="trailing" constant="20" symbolic="YES" id="GeW-cJ-May"/>
+                                                <constraint firstItem="CBW-KW-mG5" firstAttribute="leading" secondItem="niy-DB-Od0" secondAttribute="leading" constant="20" symbolic="YES" id="Mnd-Se-18F"/>
+                                                <constraint firstItem="CBW-KW-mG5" firstAttribute="top" secondItem="niy-DB-Od0" secondAttribute="top" constant="7" id="xKm-J8-x82"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="57m-vD-nRi">
@@ -911,7 +921,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQj-Ve-Gaz">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQj-Ve-Gaz">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Total omstart">
@@ -922,6 +932,11 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="GQj-Ve-Gaz" secondAttribute="trailing" constant="20" symbolic="YES" id="CDV-ah-OYE"/>
+                                                <constraint firstItem="GQj-Ve-Gaz" firstAttribute="leading" secondItem="7IP-Nj-Afc" secondAttribute="leading" constant="20" symbolic="YES" id="F4f-5u-yoE"/>
+                                                <constraint firstItem="GQj-Ve-Gaz" firstAttribute="top" secondItem="7IP-Nj-Afc" secondAttribute="top" constant="7" id="qo2-6N-AbM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2gX-aC-s79">
@@ -931,7 +946,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-t6-7ih">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-t6-7ih">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Total nerstängning">
@@ -942,6 +957,11 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3Fg-t6-7ih" firstAttribute="leading" secondItem="vaJ-8o-RQf" secondAttribute="leading" constant="20" symbolic="YES" id="9Rw-yj-tcK"/>
+                                                <constraint firstItem="3Fg-t6-7ih" firstAttribute="top" secondItem="vaJ-8o-RQf" secondAttribute="top" constant="7" id="Gib-hN-Zbd"/>
+                                                <constraint firstAttribute="trailing" secondItem="3Fg-t6-7ih" secondAttribute="trailing" constant="20" symbolic="YES" id="mvH-ua-zL7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -962,7 +982,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jr8-Tl-Gj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-312" y="579"/>
+            <point key="canvasLocation" x="-312" y="589"/>
         </scene>
         <!--Navigation Controller - Bläddra-->
         <scene sceneID="bVv-Ut-Kzw">
