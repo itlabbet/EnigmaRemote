@@ -43,8 +43,6 @@
 - (void)removeBoxConnection:(BoxConnection *)connection
 {
     [self.delegate removeBoxConnection:connection];
-    
-    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Segue

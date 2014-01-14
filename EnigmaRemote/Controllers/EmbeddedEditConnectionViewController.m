@@ -76,6 +76,7 @@
     self.tfPassword.text = _password;
 }
 
+// TODO: dismiss sheet if going to background
 - (void)showConfirmDelete
 {    
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Bekräfta ta bort"

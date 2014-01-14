@@ -34,11 +34,17 @@
     
     [self.delegate updateBoxConnection:self.connection];
     
+    // TODO: för att dismissa en modal vy gör
+    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancel:(id)sender
 {
+    // TODO: för att dismissa en modal vy gör
+    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

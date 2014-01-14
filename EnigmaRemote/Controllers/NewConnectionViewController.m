@@ -36,12 +36,19 @@
    
     [self.delegate addBoxConnection:newConnection];
     
+    // TODO: för att dismissa en modal vy gör
+    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancel:(id)sender
 {
     // The new connection was canceled - dismiss
+    
+    // TODO: för att dismissa en modal vy gör
+    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
