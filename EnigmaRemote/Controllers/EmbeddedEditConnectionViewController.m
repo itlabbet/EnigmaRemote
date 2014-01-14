@@ -60,8 +60,8 @@
 
     // Subscribe to "going to background event"
     [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(didEnterBackground:)
-                                                 name: UIApplicationDidEnterBackgroundNotification
+                                             selector: @selector(applicationWillResignActive:)
+                                                name:UIApplicationWillResignActiveNotification
                                                object: nil];
     
     // Create the action sheet for confirm delete - but do not display it yet
@@ -121,13 +121,9 @@
 
 #pragma mark - UIApplicationDidEnterBackgroundNotification handler
 
-- (void)didEnterBackground:(UIApplication *)application
+- (void)applicationWillResignActive:(UIApplication *)application
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        // executed by main thread - OK to update UI
-        [self.actionSheet dismissWithClickedButtonIndex:1 animated:NO];
-    });
-        
+    [self.actionSheet dismissWithClickedButtonIndex:1 animated:NO];
 }
 
 
