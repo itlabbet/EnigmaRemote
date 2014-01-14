@@ -34,13 +34,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Setup event handling
+    [self.refreshControl addTarget:self
+                            action:@selector(loadEpgEvents)
+                  forControlEvents:UIControlEventValueChanged];
+
     [self loadEpgEvents];
 }
 
 - (void)loadEpgEvents
 {
-    // TODO: enable refresh animation
-    //[self.refreshControl beginRefreshing];
+    [self.refreshControl beginRefreshing];
     
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
@@ -51,7 +55,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
             self.epgEvents = epgEvents;
-            //[self.refreshControl endRefreshing];
+            [self.refreshControl endRefreshing];
         });
     });
     

@@ -38,6 +38,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Setup event handling
+    [self.refreshControl addTarget:self
+                            action:@selector(loadConnections)
+                  forControlEvents:UIControlEventValueChanged];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,7 +66,7 @@
 
 - (void)loadConnections
 {
-    //[self.refreshControl beginRefreshing];
+    [self.refreshControl beginRefreshing];
     
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
@@ -79,7 +85,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // executed by main thread - OK to update UI
             self.connections = connections;
-            //[self.refreshControl endRefreshing];
+            [self.refreshControl endRefreshing];
         });
     });
     
