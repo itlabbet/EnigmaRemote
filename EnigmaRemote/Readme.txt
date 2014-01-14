@@ -66,6 +66,7 @@ TODO:s
  - När PlayingViewController skrollas hamnar batteri mm bakom skrollen - ser inte snyggt ut.
  - Hantera singleton-fallet där Enigmaklienten fått en setting efter det att den skapats, då är baseUrl nil.
  - Fixa till dismiss av keyboard där det används.
+ - Ikoner tab bar
  - Hantera ingen lagrad connection -> navigera till fyll i
  - Hantera "connection finns", men ej kontakt med servern -> felmeddelande
  - Hantera byte av favorit - appen måste fatta att en ny connection ska användas.
