@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfUsername;
 @property (weak, nonatomic) IBOutlet UITextField *tfPassword;
 
+@property (strong, nonatomic) UIActionSheet *actionSheet;
+
 @end
 
 @implementation EmbeddedEditConnectionViewController
@@ -55,8 +57,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // Subscribe to "going to background event"
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(didEnterBackground:)
+                                                 name: UIApplicationDidEnterBackgroundNotification
+                                               object: nil];
     
+    // Create the action sheet for confirm delete - but do not display it yet
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Bekräfta ta bort"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Avbryt"
+                                         destructiveButtonTitle:@"Radera"
+                                              otherButtonTitles:nil];
+
     [self updateUI];
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)delete:(UIButton *)sender
@@ -78,14 +98,8 @@
 
 // TODO: dismiss sheet if going to background
 - (void)showConfirmDelete
-{    
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Bekräfta ta bort"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Avbryt"
-                                         destructiveButtonTitle:@"Radera"
-                                               otherButtonTitles:nil];
-    
-    [sheet showInView:self.tableView];
+{
+    [self.actionSheet showInView:self.tableView];
 }
 
 
@@ -104,5 +118,17 @@
         // Clicked second button - i.e. canceled - Do nothing 
     }
 }
+
+#pragma mark - UIApplicationDidEnterBackgroundNotification handler
+
+- (void)didEnterBackground:(UIApplication *)application
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // executed by main thread - OK to update UI
+        [self.actionSheet dismissWithClickedButtonIndex:1 animated:NO];
+    });
+        
+}
+
 
 @end
