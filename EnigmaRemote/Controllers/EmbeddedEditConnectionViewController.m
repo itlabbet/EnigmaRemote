@@ -107,13 +107,13 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0)
+    if (buttonIndex == actionSheet.cancelButtonIndex)
     {
         // Clicked first button - Delete this contact
         // Forward the deletion handling to our delete delegate
         [self.delegate delete];
     }
-    else if (buttonIndex == 1)
+    else if (buttonIndex == actionSheet.destructiveButtonIndex)
     {
         // Clicked second button - i.e. canceled - Do nothing 
     }
@@ -123,7 +123,7 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    [self.actionSheet dismissWithClickedButtonIndex:1 animated:NO];
+    [self.actionSheet dismissWithClickedButtonIndex:self.actionSheet.cancelButtonIndex animated:NO];
 }
 
 
