@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5DDDF45318564C7000289D13"
-               BuildableName = "EnigmaRemote.app"
+               BuildableName = "Enigma.app"
                BlueprintName = "Enigma"
                ReferencedContainer = "container:EnigmaRemote.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5DDDF45318564C7000289D13"
-            BuildableName = "EnigmaRemote.app"
+            BuildableName = "Enigma.app"
             BlueprintName = "Enigma"
             ReferencedContainer = "container:EnigmaRemote.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5DDDF45318564C7000289D13"
-            BuildableName = "EnigmaRemote.app"
+            BuildableName = "Enigma.app"
             BlueprintName = "Enigma"
             ReferencedContainer = "container:EnigmaRemote.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5DDDF45318564C7000289D13"
-            BuildableName = "EnigmaRemote.app"
+            BuildableName = "Enigma.app"
             BlueprintName = "Enigma"
             ReferencedContainer = "container:EnigmaRemote.xcodeproj">
          </BuildableReference>

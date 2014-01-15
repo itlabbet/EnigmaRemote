@@ -59,9 +59,36 @@
     
     BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = connection.name;
+    cell.textLabel.text = [self createConnectionText:connection];
+    
+    if (connection.favorite)
+    {
+        UIFont *font = [cell.textLabel.font copy];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:font.pointSize];
+        cell.textLabel.textColor = [[[UIApplication sharedApplication] delegate] window].tintColor;
+    }
+    else
+    {
+        // TODO: is it possible to set textcolor to a default (instead of black) as in Interface Builder?
+        UIFont *font = [cell.textLabel.font copy];
+        cell.textLabel.font = [UIFont systemFontOfSize:font.pointSize];
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    BoxConnection *selectedConnection = [self.connections objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"viewConnection" sender:selectedConnection];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BoxConnection *selectedConnection = [self.connections objectAtIndex:indexPath.row];
+    [self changeFavoriteConnection:selectedConnection];
 }
 
 - (void)loadConnections
@@ -142,7 +169,6 @@
     
     [self loadConnections];
 
-    
 }
 
 - (void)removeBoxConnection:(BoxConnection *)connection
@@ -218,6 +244,40 @@
 - (IBAction)unWindToConnectionsView:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [self loadConnections];
+}
+
+#pragma mark - helpers
+
+- (NSString *)createConnectionText:(BoxConnection *)connection
+{
+    if (connection.favorite)
+    {
+        // Return name with a checkmark in front
+        return [NSString stringWithFormat:@"\u2713 %@", connection.name];
+    }
+    
+    // Return the name without checkmark
+    return [NSString stringWithFormat:@"\u2001 %@", connection.name];
+}
+
+- (void)changeFavoriteConnection:(BoxConnection *)newFavorite
+{
+    // TODO: update model, update UI
+    
+    for (BoxConnection *connection in self.connections)
+    {
+        [connection setAsFavorite:NO];
+    }
+    
+    [newFavorite setAsFavorite:YES];
+    
+    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+    
+    settings.connections = self.connections;
+    [settings save];
+    
+    // TODO: Update UI
+    [self.tableView reloadData];
 }
 
 @end

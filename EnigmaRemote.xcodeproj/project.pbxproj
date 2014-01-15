@@ -93,7 +93,7 @@
 		5DC192931882B7A30023E612 /* EditConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditConnectionViewController.h; path = Controllers/EditConnectionViewController.h; sourceTree = "<group>"; };
 		5DC192941882B7A30023E612 /* EditConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditConnectionViewController.m; path = Controllers/EditConnectionViewController.m; sourceTree = "<group>"; };
 		5DC192961882C1C80023E612 /* ConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConnectionDelegate.h; path = Controllers/ConnectionDelegate.h; sourceTree = "<group>"; };
-		5DDDF45418564C7100289D13 /* EnigmaRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnigmaRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDDF45418564C7100289D13 /* Enigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDDF45718564C7100289D13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DDDF45918564C7100289D13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5DDDF45B18564C7100289D13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -232,7 +232,7 @@
 		5DDDF45518564C7100289D13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5DDDF45418564C7100289D13 /* EnigmaRemote.app */,
+				5DDDF45418564C7100289D13 /* Enigma.app */,
 				5DDDF47518564C7100289D13 /* EnigmaRemoteTests.xctest */,
 			);
 			name = Products;
@@ -360,7 +360,7 @@
 			);
 			name = Enigma;
 			productName = EnigmaRemote;
-			productReference = 5DDDF45418564C7100289D13 /* EnigmaRemote.app */;
+			productReference = 5DDDF45418564C7100289D13 /* Enigma.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5DDDF47418564C7100289D13 /* EnigmaRemoteTests */ = {
