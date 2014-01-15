@@ -45,6 +45,9 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"CurrentFilled"];
+    
+    
     [self.refreshControl addTarget:self
                             action:@selector(loadNowPlaying)
                   forControlEvents:UIControlEventValueChanged];

@@ -32,6 +32,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"BrowseFilled"];
+    
     [self loadBouquets];
 }
 

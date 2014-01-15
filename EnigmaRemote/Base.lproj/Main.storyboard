@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="-935" y="-536"/>
         </scene>
-        <!--Table View Controller - Mer-->
+        <!--More View Controller - Mer-->
         <scene sceneID="ifF-a3-DFK">
             <objects>
-                <tableViewController id="eOR-iw-1Cl" sceneMemberID="viewController">
+                <tableViewController id="eOR-iw-1Cl" customClass="MoreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="H1z-jT-2b4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

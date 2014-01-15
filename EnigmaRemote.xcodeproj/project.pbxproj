@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D0B11F81883BF5300E6B258 /* EmbeddedNewConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */; };
 		5D278F1B1887355C002448C7 /* ChannelEPG.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D278F1A1887355C002448C7 /* ChannelEPG.m */; };
+		5D278F621887448E002448C7 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D278F611887448E002448C7 /* MoreViewController.m */; };
 		5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A3187C7DF60047F20C /* EPGEvent.m */; };
 		5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A6187C992F0047F20C /* DeviceInfo.m */; };
 		5D443213187B004200A098F1 /* BoxControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D443212187B004200A098F1 /* BoxControlViewController.m */; };
@@ -63,6 +64,8 @@
 		5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbeddedNewConnectionViewController.m; path = Controllers/EmbeddedNewConnectionViewController.m; sourceTree = "<group>"; };
 		5D278F191887355C002448C7 /* ChannelEPG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelEPG.h; path = Models/ChannelEPG.h; sourceTree = "<group>"; };
 		5D278F1A1887355C002448C7 /* ChannelEPG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelEPG.m; path = Models/ChannelEPG.m; sourceTree = "<group>"; };
+		5D278F601887448E002448C7 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreViewController.h; path = Controllers/MoreViewController.h; sourceTree = "<group>"; };
+		5D278F611887448E002448C7 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreViewController.m; path = Controllers/MoreViewController.m; sourceTree = "<group>"; };
 		5D40B6A2187C7DF60047F20C /* EPGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPGEvent.h; path = Models/EPGEvent.h; sourceTree = "<group>"; };
 		5D40B6A3187C7DF60047F20C /* EPGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPGEvent.m; path = Models/EPGEvent.m; sourceTree = "<group>"; };
 		5D40B6A5187C992F0047F20C /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfo.h; path = Models/DeviceInfo.h; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				5DC192941882B7A30023E612 /* EditConnectionViewController.m */,
 				5DF4641F1884610A00578B76 /* EmbeddedEditConnectionViewController.h */,
 				5DF464201884610A00578B76 /* EmbeddedEditConnectionViewController.m */,
+				5D278F601887448E002448C7 /* MoreViewController.h */,
+				5D278F611887448E002448C7 /* MoreViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */,
 				5D278F1B1887355C002448C7 /* ChannelEPG.m in Sources */,
 				5D80853C188310E600396892 /* ConnectionViewController.m in Sources */,
+				5D278F621887448E002448C7 /* MoreViewController.m in Sources */,
 				5DF4641E18844B6600578B76 /* NSString+URLEncode.m in Sources */,
 				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
 				5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */,
