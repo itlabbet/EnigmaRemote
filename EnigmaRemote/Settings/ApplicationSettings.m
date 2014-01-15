@@ -29,6 +29,16 @@
     return nil;
 }
 
+- (void)setConnections:(NSArray *)connections
+{
+    _connections = connections;
+    
+    if ([_connections count] == 1)
+    {
+        [[ _connections firstObject] setAsFavorite:YES];
+    }
+}
+
 - (void)setFavorite:(BoxConnection *)favorite
 {
     // Change favorite connection

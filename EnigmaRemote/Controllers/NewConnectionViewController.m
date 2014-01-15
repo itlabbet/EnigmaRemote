@@ -60,7 +60,7 @@
                                                                port:self.embeddedController.port
                                                            username:self.embeddedController.username
                                                            password:self.embeddedController.password
-                                                           favorite:YES]; // TODO: Hantera favoriter
+                                                           favorite:NO];
     
     return connection;
 }

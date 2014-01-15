@@ -142,6 +142,7 @@
     ApplicationSettings *settings = [[ApplicationSettings alloc] init];
     
     settings.connections = connections;
+    
     [settings save];
     
     [self loadConnections];
