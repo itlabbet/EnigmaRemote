@@ -119,9 +119,19 @@
 
 - (IBAction)zap:(id)sender
 {
-    [[EnigmaClient sharedInstance] zapTo:self.epgEvent.serviceReference];
-    
     [self zapAnimation];
+    
+    dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
+    
+    dispatch_async(clientLoaderQueue, ^{
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        [[EnigmaClient sharedInstance] zapTo:self.epgEvent.serviceReference];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+    });
 }
 
 #pragma mark - helpers

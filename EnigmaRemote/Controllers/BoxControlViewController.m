@@ -25,32 +25,78 @@
     [super viewDidLoad];
 }
 
+
 #pragma mark - Actions
 
 - (IBAction)toggleStandBy:(id)sender
 {
     [self zapAnimation:self.standbyCell];
-    [[EnigmaClient sharedInstance] performAction:BoxCommandToggleStandBy];
+
+    dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
+    
+    dispatch_async(clientLoaderQueue, ^{
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        [[EnigmaClient sharedInstance] performAction:BoxCommandToggleStandBy];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+    });
+    
 }
 
 - (IBAction)restart:(id)sender
 {
     [self zapAnimation:self.restartCell];
     
-    [[EnigmaClient sharedInstance] performAction:BoxCommandRestart];
+    dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
+    
+    dispatch_async(clientLoaderQueue, ^{
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        [[EnigmaClient sharedInstance] performAction:BoxCommandRestart];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+    });
 }
 
 - (IBAction)reboot:(id)sender
 {
     [self zapAnimation:self.rebootCell];
     
-    [[EnigmaClient sharedInstance] performAction:BoxCommandReboot];
+    dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
+    
+    dispatch_async(clientLoaderQueue, ^{
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        [[EnigmaClient sharedInstance] performAction:BoxCommandReboot];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+    });
+    
 }
 
 - (IBAction)shutdown:(id)sender
 {
     [self zapAnimation:self.shutdownCell];
-    [[EnigmaClient sharedInstance] performAction:BoxCommandShutDown];
+    
+    dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
+    
+    dispatch_async(clientLoaderQueue, ^{
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        [[EnigmaClient sharedInstance] performAction:BoxCommandShutDown];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+    });
+    
 }
 
 - (void)zapAnimation:(UITableViewCell *)cell

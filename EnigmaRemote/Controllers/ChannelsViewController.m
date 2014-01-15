@@ -94,9 +94,21 @@
 {
     EPGEvent *selectedChannel = [self.epgEvents objectAtIndex:indexPath.row];
     UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
-    [[EnigmaClient sharedInstance] zapTo:selectedChannel.serviceReference];
+    
     
     [self zapAnimation:selectedCell];
+    
+    dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
+    
+    dispatch_async(clientLoaderQueue, ^{
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        [[EnigmaClient sharedInstance] zapTo:selectedChannel.serviceReference];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+    });
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
