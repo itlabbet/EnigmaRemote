@@ -968,7 +968,7 @@
         <scene sceneID="BMd-8t-0Oq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coM-6e-YVk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Visas nu" id="kXo-9Q-dKj"/>
+                    <tabBarItem key="tabBarItem" title="Visas nu" image="CurrentLine" id="kXo-9Q-dKj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fSk-WZ-SiB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -987,7 +987,7 @@
         <scene sceneID="ODd-RF-lDf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OU6-7l-5d7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mer" id="vmx-ME-CBk"/>
+                    <tabBarItem key="tabBarItem" title="Mer" image="MoreLine" id="vmx-ME-CBk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRD-46-yVh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1423,7 +1423,7 @@
         <scene sceneID="0iU-vm-lku">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iFh-BS-KsH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bläddra" id="s9p-am-5pw"/>
+                    <tabBarItem key="tabBarItem" title="Bläddra" image="BrowseLine" id="s9p-am-5pw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xTt-g4-6i1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1439,6 +1439,11 @@
             <point key="canvasLocation" x="-1381" y="-1264"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BrowseLine" width="25" height="23"/>
+        <image name="CurrentLine" width="30" height="18"/>
+        <image name="MoreLine" width="30" height="6"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

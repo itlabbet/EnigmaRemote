@@ -6,10 +6,12 @@
     },
     {
       "idiom" : "iphone",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "bookmark-line.png"
     },
     {
       "idiom" : "iphone",
+      "filename" : "bookmark-line-1.png",
       "subtype" : "retina4",
       "scale" : "2x"
     }
