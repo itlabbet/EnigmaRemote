@@ -82,22 +82,38 @@
     
     if (self)
     {
-        // TODO: Det ska gå att byta box under körning - funkar ej såhär :)
-        ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-        _baseUrl = nil;
-        
-        if (settings.favorite)
-        {
-            // TODO: använd username + password
-            _baseUrl = [NSString stringWithFormat:@"http://%@", settings.favorite.ipAddress];
-        }
+        [self loadSettings];
         
         // if not able to get settings - return nil
+        // TODO: Måste komma ur detta
+        // Hantera:
+        // 1)Ny server som favorit
+        // 2 Ingen server som favorit
+        // Skulle det funger med ett observer pattern där enigmaklienten observerar och detekterar att ny settings har laddats
+        // Notifiera med delegat? Eller hur funkar addObserver @selector...? 
         if (_baseUrl == nil)
             return nil;
     }
     
     return self;
+}
+
+- (void)reloadSettings
+{
+    [self loadSettings];
+}
+
+- (void)loadSettings
+{
+    // TODO: Det ska gå att byta box under körning - funkar ej såhär :)
+    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+    _baseUrl = nil;
+
+    if (settings.favorite)
+    {
+        // TODO: använd username + password
+        _baseUrl = [NSString stringWithFormat:@"http://%@", settings.favorite.ipAddress];
+    }
 }
 
 - (DeviceInfo *)deviceInfo
