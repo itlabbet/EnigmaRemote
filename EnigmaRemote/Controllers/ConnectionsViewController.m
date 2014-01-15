@@ -80,6 +80,8 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
+    // TODO: låt inte sender vara en datamodell
+    
     BoxConnection *selectedConnection = [self.connections objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"viewConnection" sender:selectedConnection];
@@ -227,6 +229,8 @@
     }
     else if ([segue.identifier isEqualToString:@"viewConnection"])
     {
+        // TODO: låt inte sender vara en datamodell
+        
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
         
