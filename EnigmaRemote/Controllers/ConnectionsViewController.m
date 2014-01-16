@@ -266,8 +266,6 @@
         
         NSArray *connections = settings.connections;
         
-        // TODO: ta bort alla dessa kommentarer...
-        
         // TODO: i detta fallet sortera i bokstavsordning...
         //NSArray* sortedJobs = [self sort:unsortedJobs];
         
@@ -300,22 +298,37 @@
 - (void)removeBoxConnection:(NSString *)connectionId
 {
     NSMutableArray *connections = [self.connections mutableCopy];
+    BoxConnection *connectionToRemove = nil;
     
     for (BoxConnection *connection in connections)
     {
         if ([connection.id isEqualToString:connectionId])
         {
-            ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
+            connectionToRemove = connection;
             
-            [connections removeObject:connection];
-            
-            settings.connections = connections;
-            
-            [settings save];
-            
-            // TODO: hantera favorit om första som lades till - checkmark - skulle kunna hanteras i AppSettings istället
-            [self loadConnections];
+            break; // no need to iterate any further
         }
+    }
+    
+    if (connectionToRemove)
+    {
+        // Save to persistent storage and update UI
+        ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
+        
+        [connections removeObject:connectionToRemove];
+     
+        if (connectionToRemove.favorite)
+        {
+            // The removed connection was the favorite -> pick the first remaining connection as favorite
+            
+            [[connections firstObject] setFavorite:YES];
+        }
+        
+        settings.connections = connections;
+        
+        [settings save];
+        
+        [self loadConnections];
     }
 }
 

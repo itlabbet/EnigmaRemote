@@ -32,7 +32,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Setup event handling
+    [self.refreshControl addTarget:self
+                            action:@selector(loadBouquets)
+                  forControlEvents:UIControlEventValueChanged];
+
     self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"BrowseFilled"];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     [self loadBouquets];
 }
@@ -43,6 +53,7 @@
     
     dispatch_async(clientLoaderQueue, ^{
         
+        [self.refreshControl beginRefreshing];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         NSArray *bouquets = [[EnigmaClient sharedInstance] bouquets];
@@ -53,6 +64,7 @@
             // executed by main thread - OK to update UI
             self.bouquets = bouquets;
             
+            [self.refreshControl endRefreshing];
         });
     });
 

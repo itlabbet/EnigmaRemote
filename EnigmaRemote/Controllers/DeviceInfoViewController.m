@@ -54,12 +54,11 @@
     self.deviceInfo = nil;
     [self updateUserInterface]; // clear user interface
     
-    [self.refreshControl beginRefreshing];
-    
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
     dispatch_async(clientLoaderQueue, ^{
         
+        [self.refreshControl beginRefreshing];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         DeviceInfo *deviceInfo = [[EnigmaClient sharedInstance] deviceInfo];

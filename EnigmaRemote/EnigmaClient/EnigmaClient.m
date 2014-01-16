@@ -87,14 +87,17 @@
         
         [self observeConnections];
         
-        // TODO: Ska vi returnera annat än nil här?
-        // Om nil och singleton -> går ej skapa om den korrekt igen....
-        if (_baseUrl == nil)
-            return nil;
+        // TODO: fundera på om vi inte får en _baseUrl här -> hur ska detta handeras av de som använder klienten?
     }
     
     return self;
 }
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+     
 
 - (void)observeConnections
 {
@@ -114,7 +117,7 @@
 - (void)loadSettings
 {
     ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
-    _baseUrl = nil;
+    _baseUrl = @"";
 
     for (BoxConnection *connection in settings.connections)
     {
@@ -123,9 +126,13 @@
             // TODO: använd username + password
             _baseUrl = [NSString stringWithFormat:@"http://%@", connection.ipAddress];
             
+            NSLog(@"Favorite: %@", _baseUrl);
             return;
         }
+        
     }
+    
+    NSLog(@"No favorite found!");
     
 }
 
