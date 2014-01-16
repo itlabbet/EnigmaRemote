@@ -842,105 +842,105 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="f6Y-hc-5IP">
+                            <tableViewSection id="k4f-2j-qxS">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="96k-z2-uaL">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5l1-fH-6I3">
                                         <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="96k-z2-uaL" id="SHI-jb-AhA">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5l1-fH-6I3" id="Cvl-se-Zrl">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGw-4X-6oY">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kr-jy-2YM">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Växla standby">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="toggleStandBy:" destination="c6h-e5-qqG" eventType="touchUpInside" id="zhe-L4-ap3"/>
+                                                        <action selector="toggleStandBy:" destination="c6h-e5-qqG" eventType="touchUpInside" id="wCu-0t-W9Q"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xGw-4X-6oY" firstAttribute="top" secondItem="SHI-jb-AhA" secondAttribute="top" constant="7" id="48R-7W-egv"/>
-                                                <constraint firstItem="xGw-4X-6oY" firstAttribute="leading" secondItem="SHI-jb-AhA" secondAttribute="leading" constant="20" symbolic="YES" id="RJo-hS-vwV"/>
-                                                <constraint firstAttribute="trailing" secondItem="xGw-4X-6oY" secondAttribute="trailing" constant="20" symbolic="YES" id="ZJ4-H3-aBX"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Kr-jy-2YM" secondAttribute="trailing" constant="20" symbolic="YES" id="GpV-eI-fqZ"/>
+                                                <constraint firstItem="2Kr-jy-2YM" firstAttribute="top" secondItem="Cvl-se-Zrl" secondAttribute="top" constant="7" id="Xi5-BB-kXu"/>
+                                                <constraint firstItem="2Kr-jy-2YM" firstAttribute="leading" secondItem="Cvl-se-Zrl" secondAttribute="leading" constant="20" symbolic="YES" id="j7V-xc-7rv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mgw-aM-Klg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hbQ-CJ-RXM">
                                         <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mgw-aM-Klg" id="niy-DB-Od0">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbQ-CJ-RXM" id="frv-OH-tzV">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBW-KW-mG5">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8h8-KV-2Kq">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Snabb omstart">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="restart:" destination="c6h-e5-qqG" eventType="touchUpInside" id="xoG-Xh-25x"/>
+                                                        <action selector="restart:" destination="c6h-e5-qqG" eventType="touchUpInside" id="gXR-re-TWD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="CBW-KW-mG5" secondAttribute="trailing" constant="20" symbolic="YES" id="GeW-cJ-May"/>
-                                                <constraint firstItem="CBW-KW-mG5" firstAttribute="leading" secondItem="niy-DB-Od0" secondAttribute="leading" constant="20" symbolic="YES" id="Mnd-Se-18F"/>
-                                                <constraint firstItem="CBW-KW-mG5" firstAttribute="top" secondItem="niy-DB-Od0" secondAttribute="top" constant="7" id="xKm-J8-x82"/>
+                                                <constraint firstItem="8h8-KV-2Kq" firstAttribute="leading" secondItem="frv-OH-tzV" secondAttribute="leading" constant="20" symbolic="YES" id="4el-uC-aIW"/>
+                                                <constraint firstAttribute="trailing" secondItem="8h8-KV-2Kq" secondAttribute="trailing" constant="20" symbolic="YES" id="bnt-40-Avp"/>
+                                                <constraint firstItem="8h8-KV-2Kq" firstAttribute="top" secondItem="frv-OH-tzV" secondAttribute="top" constant="7" id="yrm-bo-UBi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="57m-vD-nRi">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="12D-q3-6jP">
                                         <rect key="frame" x="0.0" y="187" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="57m-vD-nRi" id="7IP-Nj-Afc">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="12D-q3-6jP" id="03s-l8-WhT">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQj-Ve-Gaz">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vi-M5-UnE">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Total omstart">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="reboot:" destination="c6h-e5-qqG" eventType="touchUpInside" id="Vk1-Ag-HVY"/>
+                                                        <action selector="reboot:" destination="c6h-e5-qqG" eventType="touchUpInside" id="Kru-tj-t7m"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="GQj-Ve-Gaz" secondAttribute="trailing" constant="20" symbolic="YES" id="CDV-ah-OYE"/>
-                                                <constraint firstItem="GQj-Ve-Gaz" firstAttribute="leading" secondItem="7IP-Nj-Afc" secondAttribute="leading" constant="20" symbolic="YES" id="F4f-5u-yoE"/>
-                                                <constraint firstItem="GQj-Ve-Gaz" firstAttribute="top" secondItem="7IP-Nj-Afc" secondAttribute="top" constant="7" id="qo2-6N-AbM"/>
+                                                <constraint firstItem="9Vi-M5-UnE" firstAttribute="top" secondItem="03s-l8-WhT" secondAttribute="top" constant="7" id="BgV-s8-j4e"/>
+                                                <constraint firstItem="9Vi-M5-UnE" firstAttribute="leading" secondItem="03s-l8-WhT" secondAttribute="leading" constant="20" symbolic="YES" id="Zg6-cr-VzL"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Vi-M5-UnE" secondAttribute="trailing" constant="20" symbolic="YES" id="suA-3J-aFs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2gX-aC-s79">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="f1s-Rp-6se">
                                         <rect key="frame" x="0.0" y="231" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2gX-aC-s79" id="vaJ-8o-RQf">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f1s-Rp-6se" id="Pu4-fB-s7u">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-t6-7ih">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzf-ku-bd6">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Total nerstängning">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="shutdown:" destination="c6h-e5-qqG" eventType="touchUpInside" id="siU-7M-cjp"/>
+                                                        <action selector="shutdown:" destination="c6h-e5-qqG" eventType="touchUpInside" id="d9M-ch-5qk"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3Fg-t6-7ih" firstAttribute="leading" secondItem="vaJ-8o-RQf" secondAttribute="leading" constant="20" symbolic="YES" id="9Rw-yj-tcK"/>
-                                                <constraint firstItem="3Fg-t6-7ih" firstAttribute="top" secondItem="vaJ-8o-RQf" secondAttribute="top" constant="7" id="Gib-hN-Zbd"/>
-                                                <constraint firstAttribute="trailing" secondItem="3Fg-t6-7ih" secondAttribute="trailing" constant="20" symbolic="YES" id="mvH-ua-zL7"/>
+                                                <constraint firstItem="tzf-ku-bd6" firstAttribute="top" secondItem="Pu4-fB-s7u" secondAttribute="top" constant="7" id="ILi-Pa-Z4L"/>
+                                                <constraint firstItem="tzf-ku-bd6" firstAttribute="leading" secondItem="Pu4-fB-s7u" secondAttribute="leading" constant="20" symbolic="YES" id="U68-Nr-sIP"/>
+                                                <constraint firstAttribute="trailing" secondItem="tzf-ku-bd6" secondAttribute="trailing" constant="20" symbolic="YES" id="sSp-aI-LUi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -953,12 +953,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fjärrstyr" id="dvE-f1-fgV"/>
-                    <connections>
-                        <outlet property="rebootCell" destination="57m-vD-nRi" id="caC-yt-ueK"/>
-                        <outlet property="restartCell" destination="mgw-aM-Klg" id="9J9-fJ-WqF"/>
-                        <outlet property="shutdownCell" destination="2gX-aC-s79" id="i74-D4-oDu"/>
-                        <outlet property="standbyCell" destination="96k-z2-uaL" id="HxZ-gO-Msz"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jr8-Tl-Gj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

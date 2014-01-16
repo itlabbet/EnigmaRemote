@@ -23,7 +23,6 @@
 		5D664694187DF89200DA1B1B /* BoxConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664693187DF89200DA1B1B /* BoxConnection.m */; };
 		5D6E068F18815531004C0AD1 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E068E18815531004C0AD1 /* ChannelViewController.m */; };
 		5D80853C188310E600396892 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D80853B188310E600396892 /* ConnectionViewController.m */; };
-		5D95C436187F259F00B54811 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D95C435187F259F00B54811 /* SettingsViewController.m */; };
 		5DC192951882B7A30023E612 /* EditConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC192941882B7A30023E612 /* EditConnectionViewController.m */; };
 		5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45718564C7100289D13 /* Foundation.framework */; };
 		5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45918564C7100289D13 /* CoreGraphics.framework */; };
@@ -91,8 +90,6 @@
 		5D6E068E18815531004C0AD1 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewController.m; path = Controllers/ChannelViewController.m; sourceTree = "<group>"; };
 		5D80853A188310E600396892 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionViewController.h; path = Controllers/ConnectionViewController.h; sourceTree = "<group>"; };
 		5D80853B188310E600396892 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionViewController.m; path = Controllers/ConnectionViewController.m; sourceTree = "<group>"; };
-		5D95C434187F259F00B54811 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Controllers/SettingsViewController.h; sourceTree = "<group>"; };
-		5D95C435187F259F00B54811 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Controllers/SettingsViewController.m; sourceTree = "<group>"; };
 		5DC192931882B7A30023E612 /* EditConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditConnectionViewController.h; path = Controllers/EditConnectionViewController.h; sourceTree = "<group>"; };
 		5DC192941882B7A30023E612 /* EditConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditConnectionViewController.m; path = Controllers/EditConnectionViewController.m; sourceTree = "<group>"; };
 		5DC192961882C1C80023E612 /* ConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConnectionDelegate.h; path = Controllers/ConnectionDelegate.h; sourceTree = "<group>"; };
@@ -315,8 +312,6 @@
 				5DFF706B187F211600F3CC04 /* RemoteViewController.m */,
 				5DFF706D187F21E100F3CC04 /* PlayingViewController.h */,
 				5DFF706E187F21E100F3CC04 /* PlayingViewController.m */,
-				5D95C434187F259F00B54811 /* SettingsViewController.h */,
-				5D95C435187F259F00B54811 /* SettingsViewController.m */,
 				5D549FC6187F5741004360C3 /* DeviceInfoViewController.h */,
 				5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */,
 				5DC192961882C1C80023E612 /* ConnectionDelegate.h */,
@@ -464,7 +459,6 @@
 				5D6E068F18815531004C0AD1 /* ChannelViewController.m in Sources */,
 				5D664691187DF81900DA1B1B /* ApplicationSettings.m in Sources */,
 				5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */,
-				5D95C436187F259F00B54811 /* SettingsViewController.m in Sources */,
 				5DF1E0D918829D2900887BA9 /* ConnectionsViewController.m in Sources */,
 				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
 				5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */,

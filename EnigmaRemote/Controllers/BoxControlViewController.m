@@ -10,6 +10,7 @@
 #import "EnigmaClient.h"
 
 @interface BoxControlViewController ()
+
 @property (weak, nonatomic) IBOutlet UITableViewCell *standbyCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *restartCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *rebootCell;
