@@ -13,6 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // TODO: Test av launch image - ta bort 
+    [NSThread sleepForTimeInterval:4.0];
     return YES;
 }
 							
