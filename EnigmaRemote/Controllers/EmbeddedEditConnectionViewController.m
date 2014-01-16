@@ -103,7 +103,6 @@
     self.tfPassword.text = _password;
 }
 
-// TODO: dismiss sheet if going to background
 - (void)showConfirmDelete
 {
     [self.actionSheet showInView:self.tableView];
@@ -116,13 +115,11 @@
 {
     if (buttonIndex == actionSheet.destructiveButtonIndex)
     {
-        // Clicked first button - Delete this contact
-        // Forward the deletion handling to our delete delegate
-        [self.delegate delete];
+        [self performSegueWithIdentifier:@"unwindDeleteConnection" sender:self];
     }
     else if (buttonIndex == actionSheet.cancelButtonIndex)
     {
-        // Clicked second button - i.e. canceled - Do nothing 
+        // Clicked second button - i.e. canceled - Do nothing
     }
 }
 

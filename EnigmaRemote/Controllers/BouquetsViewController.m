@@ -83,12 +83,10 @@
         {
             if ([[segue identifier] isEqualToString:@"showChannels" ])
             {
-                // TODO: bli kvitt denna varning!
                 if ([segue.destinationViewController respondsToSelector:@selector(setBouquet:)])
                 {
                     Bouquet *bouquet = [self.bouquets objectAtIndex:indexPath.row];
                     
-                    // TODO: bli kvitt denna varning!
                     [segue.destinationViewController performSelector:@selector(setBouquet:) withObject:bouquet];
                 }
             }

@@ -17,10 +17,6 @@
 
 @implementation NewConnectionViewController
 
-- (void)setDelegate:(id<ConnectionsDelegate>)delegate
-{
-    _delegate = delegate;
-}
 
 - (void)viewDidLoad
 {
@@ -31,45 +27,34 @@
 
 - (IBAction)save:(id)sender
 {
-    // A new connection was added
-    BoxConnection *newConnection = [self createConnection];
-   
-    [self.delegate addBoxConnection:newConnection];
-    
-    // TODO: för att dismissa en modal vy gör
-    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"unwindAddNewConnection" sender:nil];
 }
 
 - (IBAction)cancel:(id)sender
 {
-    // The new connection was canceled - dismiss
-    
-    // TODO: för att dismissa en modal vy gör
-    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (BoxConnection *)createConnection
-{
-    // Fetch data from UI and create model
-    BoxConnection *connection = [[BoxConnection alloc] initWithName:self.embeddedController.name
-                                                          ipAddress:self.embeddedController.ipAddress
-                                                               port:self.embeddedController.port
-                                                           username:self.embeddedController.username
-                                                           password:self.embeddedController.password
-                                                           favorite:NO];
-    
-    return connection;
+    [self performSegueWithIdentifier:@"unwindCancelNewConnection" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // The embedded UITableView controller
     if ([segue.identifier isEqualToString:@"embedded"])
     {
         self.embeddedController = segue.destinationViewController;
+    }
+    else if ([segue.identifier isEqualToString:@"unwindCancelNewConnection"])
+    {
+        // Do nothing - just let the unwind happen
+    }
+    else if ([segue.identifier isEqualToString:@"unwindAddNewConnection"])
+    {
+        // Get the properties of the new connection before unwinding
+        self.id = [[[NSUUID alloc] init] UUIDString];
+        self.name = self.embeddedController.name;
+        self.ipAddress = self.embeddedController.ipAddress;
+        self.port = self.embeddedController.port;
+        self.username = self.embeddedController.username;
+        self.password = self.embeddedController.password;
     }
 }
 

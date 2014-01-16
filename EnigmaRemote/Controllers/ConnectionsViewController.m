@@ -9,12 +9,13 @@
 #import "ConnectionsViewController.h"
 #import "NewConnectionViewController.h"
 #import "ConnectionViewController.h"
-#import "ApplicationSettings.h"
+#import "EditConnectionViewController.h"
+#import "EmbeddedEditConnectionViewController.h"
+#import "ConnectionsSerializer.h"
 
 @interface ConnectionsViewController ()
 
 @property (nonatomic, strong) NSArray *connections;
-@property (nonatomic, strong) ApplicationSettings *settings;
 
 @end
 
@@ -80,139 +81,31 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: låt inte sender vara en datamodell
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     
-    BoxConnection *selectedConnection = [self.connections objectAtIndex:indexPath.row];
-    
-    [self performSegueWithIdentifier:@"viewConnection" sender:selectedConnection];
+    [self performSegueWithIdentifier:@"viewConnection" sender:cell];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BoxConnection *selectedConnection = [self.connections objectAtIndex:indexPath.row];
-    [self changeFavoriteConnection:selectedConnection];
-}
-
-- (void)loadConnections
-{
-    [self.refreshControl beginRefreshing];
+   
+    selectedConnection.favorite = YES;
     
-    dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
+    [self updateConnection:selectedConnection.id
+                      name:selectedConnection.name
+                 ipAddress:selectedConnection.ipAddress
+                      port:selectedConnection.port
+                  username:selectedConnection.username
+                  password:selectedConnection.password
+                  favorite:selectedConnection.favorite];
     
-    dispatch_async(clientLoaderQueue, ^{
-        
-        ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-                                
-        NSArray *connections = settings.connections;
-        
-        // TODO: ta bort alla dessa kommentarer...
-        
-        // TODO: i detta fallet sortera i bokstavsordning...
-        //NSArray* sortedJobs = [self sort:unsortedJobs];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // executed by main thread - OK to update UI
-            self.connections = connections;
-            [self.refreshControl endRefreshing];
-        });
-    });
-    
-}
-
-#pragma mark - Implementation of ConnectionDelegate 
-// TODO: Gör om detta helt!
-// Skicka endast en komplett lista till settings och gör sedan save på hela listan!
-// På så sätt behövs endast save och clear metoderna....
-
-- (void)addBoxConnection:(BoxConnection *)connection
-{
-    /*
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-    
-    [settings addHost:connection];
-    
-    [settings save];
-    
-    [self loadConnections];
-     */
-    
-    NSMutableArray *connections = [self.connections mutableCopy];
-    [connections addObject:connection];
-    
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-    
-    settings.connections = connections;
-    
-    [settings save];
-    
-    [self loadConnections];
-}
-
-- (void)updateBoxConnection:(BoxConnection *)connection
-{
-    /*
-    // TODO: Gör detta bättre! Hur ska en update gå till? load laddar ju om listan och vi får nya pekare!
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-    
-    settings.connections = self.connections;
-    
-    [settings save];
-    
-    [self loadConnections];
-    */
-    
-    // TODO: fundera igenom denna - arrayen är redan uppdaterad då objektet som returnerats redan uppdaterats
-    // Behöver endast spara till disk och updatera mmi:et
-    
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-    
-    settings.connections = self.connections;
-    
-    [settings save];
-    
-    [self loadConnections];
-
-}
-
-- (void)removeBoxConnection:(BoxConnection *)connection
-{
-    /*
-    // TODO: Gör detta bättre! Hur ska en update gå till? load laddar ju om listan och vi får nya pekare!
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-    
-    //[settings removeHost:connection];
-    settings.connections = self.connections;
-    
-    [settings save];
-    
-    [self loadConnections];
-    */
-    
-    NSMutableArray *connections = [self.connections mutableCopy];
-    [connections removeObject:connection];
-    
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-    
-    settings.connections = connections;
-    [settings save];
-    
-    [self loadConnections];
-}
-
-- (void)clear
-{
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
-    
-    [settings clear];
-    
-    [self loadConnections];
 }
 
 #pragma mark - event handlers
 
 - (IBAction)add:(UIBarButtonItem *)sender
 {
-    // TODO: Verkar inte gå att sätta upp en modal segue via storyboarden direkt från knappen
     [self performSegueWithIdentifier:@"newConnection" sender:self];
 }
 
@@ -222,33 +115,129 @@
 {
     if ([segue.identifier isEqualToString:@"newConnection"])
     {
-        if ([segue.destinationViewController isKindOfClass:[NewConnectionViewController class]])
-        {
-            NewConnectionViewController *newCtrl = segue.destinationViewController;
-            newCtrl.delegate = self;
-        }
+        // Do nothing - just let the segue happen
     }
     else if ([segue.identifier isEqualToString:@"viewConnection"])
     {
-        // TODO: låt inte sender vara en datamodell
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
-        
-        if ([segue.destinationViewController isKindOfClass:[ConnectionViewController class]])
+        if ([sender isKindOfClass:[UITableViewCell class]])
         {
-            ConnectionViewController *viewCtrl = segue.destinationViewController;
-            viewCtrl.delegate = self;
-            viewCtrl.connection = connection;
+            UITableViewCell *cell = sender;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            
+            BoxConnection *connection = [self.connections objectAtIndex:indexPath.row];
+            
+            if ([segue.destinationViewController isKindOfClass:[ConnectionViewController class]])
+            {
+                ConnectionViewController *viewCtrl = segue.destinationViewController;
+                
+                viewCtrl.id = connection.id;
+                viewCtrl.name = connection.name;
+                viewCtrl.ipAddress = connection.ipAddress;
+                viewCtrl.port = connection.port;
+                viewCtrl.username = connection.username;
+                viewCtrl.password = connection.password;
+                
+                viewCtrl.delegate = self;
+            }
         }
     }
 }
 
-#pragma mark - unwind handling
+#pragma mark - unwind handlers
 
-- (IBAction)unWindToConnectionsView:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction)unwindCancelNewConnection:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [self loadConnections];
+    // Do nothing - the user canceled the "Add new connection" and was navigated back here
+}
+
+- (IBAction)unwindAddNewConnection:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // The user added a new connection - fetch the connection information
+    if ([segue.identifier isEqualToString:@"unwindAddNewConnection"])
+    {
+        if ([segue.sourceViewController isKindOfClass:[NewConnectionViewController class]])
+        {
+             NewConnectionViewController *newCtrl = segue.sourceViewController;
+             
+             BoxConnection *connection = [[BoxConnection alloc] initWithId:newCtrl.id
+                                                                      name:newCtrl.name
+                                                                 ipAddress:newCtrl.ipAddress
+                                                                      port:newCtrl.port
+                                                                  username:newCtrl.username
+                                                                  password:newCtrl.password
+                                                                  favorite:NO];
+             [self addBoxConnection:connection];
+
+        }
+    }
+}
+
+- (IBAction)unwindDeleteConnection:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // The user deleted a connection - find out which one and remove it
+    if ([segue.identifier isEqualToString:@"unwindDeleteConnection"])
+    {
+        if ([segue.sourceViewController isKindOfClass:[EmbeddedEditConnectionViewController class]])
+        {
+            EmbeddedEditConnectionViewController *ctrl = segue.sourceViewController;
+         
+            [self removeBoxConnection:ctrl.id];
+        }
+    }
+}
+
+#pragma mark - UpdateConnectionDelegate impl
+
+- (void)updateConnection:(NSString *)id
+                    name:(NSString *)name
+               ipAddress:(NSString* )ipAddress
+                    port:(NSUInteger)port
+                username:(NSString *)username
+                password:(NSString *)password
+               favorite:(BOOL)favorite
+{
+    // Get the connection that was updated
+    
+    BoxConnection *updatedConnection = nil;
+    
+    for (BoxConnection *connection in self.connections)
+    {
+        if ([connection.id isEqualToString:id])
+        {
+            updatedConnection = connection;
+            break; // no need to iterate any futher
+        }
+    }
+    
+    if (updatedConnection)
+    {
+        // Found connection to update -> set new values
+        updatedConnection.name = name;
+        updatedConnection.ipAddress = ipAddress;
+        updatedConnection.port = port;
+        updatedConnection.username = username;
+        updatedConnection.password = password;
+        
+        if (updatedConnection.favorite)
+        {
+            // Reset all other connections to be non favorite
+            for (BoxConnection *connection in self.connections)
+            {
+                connection.favorite = NO;
+            }
+            
+            // Set the updated connection to be the new favorite
+            updatedConnection.favorite = YES;
+        }
+        
+        // Save changes
+        ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
+        settings.connections = self.connections;
+        [settings save];
+        
+        // Update UI
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - helpers
@@ -265,24 +254,78 @@
     return [NSString stringWithFormat:@"\u2001 %@", connection.name];
 }
 
-- (void)changeFavoriteConnection:(BoxConnection *)newFavorite
+- (void)loadConnections
 {
-    // TODO: update model, update UI
+    [self.refreshControl beginRefreshing];
     
-    for (BoxConnection *connection in self.connections)
-    {
-        [connection setAsFavorite:NO];
-    }
+    dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
-    [newFavorite setAsFavorite:YES];
+    dispatch_async(clientLoaderQueue, ^{
+        
+        ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
+        
+        NSArray *connections = settings.connections;
+        
+        // TODO: ta bort alla dessa kommentarer...
+        
+        // TODO: i detta fallet sortera i bokstavsordning...
+        //NSArray* sortedJobs = [self sort:unsortedJobs];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // executed by main thread - OK to update UI
+            self.connections = connections;
+            [self.refreshControl endRefreshing];
+        });
+    });
     
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+}
+
+- (void)addBoxConnection:(BoxConnection *)connection
+{
+    NSMutableArray *connections = [self.connections mutableCopy];
+    [connections addObject:connection];
     
-    settings.connections = self.connections;
+    ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
+    
+    settings.connections = connections;
+    
     [settings save];
     
-    // TODO: Update UI
-    [self.tableView reloadData];
+    // TODO: hantera favorit om första som lades till - checkmark - skulle kunna hanteras i AppSettings istället
+    [self loadConnections];
+    
+}
+
+
+- (void)removeBoxConnection:(NSString *)connectionId
+{
+    NSMutableArray *connections = [self.connections mutableCopy];
+    
+    for (BoxConnection *connection in connections)
+    {
+        if ([connection.id isEqualToString:connectionId])
+        {
+            ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
+            
+            [connections removeObject:connection];
+            
+            settings.connections = connections;
+            
+            [settings save];
+            
+            // TODO: hantera favorit om första som lades till - checkmark - skulle kunna hanteras i AppSettings istället
+            [self loadConnections];
+        }
+    }
+}
+
+- (void)clear
+{
+    ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
+    
+    [settings clear];
+    
+    [self loadConnections];
 }
 
 @end

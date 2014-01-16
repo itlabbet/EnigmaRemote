@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConnectionDelegate.h"
+#import "UpdateConnectionDelegate.h"
 
-@interface ConnectionViewController : UITableViewController <ConnectionsDelegate>
+@interface ConnectionViewController : UITableViewController
 
-@property (nonatomic, weak) id<ConnectionsDelegate> delegate;
-@property (nonatomic, strong) BoxConnection *connection;
+// Used for input to set UI
+@property (nonatomic, copy) NSString *id;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *ipAddress;
+@property (nonatomic) NSUInteger port;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *password;
+
+// Delegate that handles connection updates
+@property (nonatomic, weak) id<UpdateConnectionDelegate> delegate;
 
 @end

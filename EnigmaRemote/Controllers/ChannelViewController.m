@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Niklas Andersson. All rights reserved.
 //
 
-// TODO: Hantera byte av kanal i denna vy på ett snyggt presenterat sätt... -> göra cellen till en knapp??
-
 #import "ChannelViewController.h"
 #import "EnigmaClient.h"
 

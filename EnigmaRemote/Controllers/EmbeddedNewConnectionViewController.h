@@ -11,6 +11,7 @@
 @interface EmbeddedNewConnectionViewController : UITableViewController
 
 // Output properties
+@property (nonatomic, copy) NSString *id;
 @property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *ipAddress;
 @property (nonatomic, readonly) NSUInteger port;

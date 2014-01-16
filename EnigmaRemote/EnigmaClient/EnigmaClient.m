@@ -45,7 +45,8 @@
 
 
 #import "EnigmaClient.h"
-#import "ApplicationSettings.h"
+#import "NotificationCenterConstants.h"
+#import "ConnectionsSerializer.h"
 #import "NSString+URLEncode.h"
 #import "GDataXMLNode.h"
 #import "Bouquet.h"
@@ -84,13 +85,10 @@
     {
         [self loadSettings];
         
-        // if not able to get settings - return nil
-        // TODO: Måste komma ur detta
-        // Hantera:
-        // 1)Ny server som favorit
-        // 2 Ingen server som favorit
-        // Skulle det funger med ett observer pattern där enigmaklienten observerar och detekterar att ny settings har laddats
-        // Notifiera med delegat? Eller hur funkar addObserver @selector...? 
+        [self observeConnections];
+        
+        // TODO: Ska vi returnera annat än nil här?
+        // Om nil och singleton -> går ej skapa om den korrekt igen....
         if (_baseUrl == nil)
             return nil;
     }
@@ -98,22 +96,37 @@
     return self;
 }
 
-- (void)reloadSettings
+- (void)observeConnections
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(connectionsDidUpdate:)
+                                                 name:kBoxConnectionsChanged
+                                               object:nil];
+}
+
+
+-(void)connectionsDidUpdate:(NSNotification *)notification
+{
+    // The connections have been modified - reload them from file
     [self loadSettings];
 }
 
 - (void)loadSettings
 {
-    // TODO: Det ska gå att byta box under körning - funkar ej såhär :)
-    ApplicationSettings *settings = [[ApplicationSettings alloc] init];
+    ConnectionsSerializer *settings = [[ConnectionsSerializer alloc] init];
     _baseUrl = nil;
 
-    if (settings.favorite)
+    for (BoxConnection *connection in settings.connections)
     {
-        // TODO: använd username + password
-        _baseUrl = [NSString stringWithFormat:@"http://%@", settings.favorite.ipAddress];
+        if (connection.favorite)
+        {
+            // TODO: använd username + password
+            _baseUrl = [NSString stringWithFormat:@"http://%@", connection.ipAddress];
+            
+            return;
+        }
     }
+    
 }
 
 - (DeviceInfo *)deviceInfo

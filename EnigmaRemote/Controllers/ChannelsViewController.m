@@ -11,9 +11,6 @@
 #import "EnigmaClient.h"
 #import "Channel.h"
 
-// TODO: hur visa aktuell kanal?
-// Bör funka vid tillbaka och framåt navigering också...
-
 @interface ChannelsViewController ()
 
 @property (strong, nonatomic) NSArray *epgEvents;

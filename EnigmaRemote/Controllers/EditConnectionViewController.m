@@ -22,30 +22,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = self.connection.name;
 }
 
 #pragma mark - Handling of UI events
 
 - (IBAction)save:(id)sender
 {
-    [self updateModel];
-    
-    [self.delegate updateBoxConnection:self.connection];
-    
-    // TODO: för att dismissa en modal vy gör
-    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"unwindUpdateConnection" sender:self];
 }
 
 - (IBAction)cancel:(id)sender
 {
-    // TODO: för att dismissa en modal vy gör
-    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Segue
@@ -57,40 +45,24 @@
         // Get embedded controller
         self.embeddedController = segue.destinationViewController;
         
-        // Setup deletion delegate
-        self.embeddedController.delegate = self;
-        
         // Set values in edit views
-        self.embeddedController.name = self.connection.name;
-        self.embeddedController.ipAddress = self.connection.ipAddress;
-        self.embeddedController.port = self.connection.port;
-        self.embeddedController.username = self.connection.username;
-        self.embeddedController.password = self.connection.password;
+        self.embeddedController.id   = self.id;
+        self.embeddedController.name = self.name;
+        self.embeddedController.ipAddress = self.ipAddress;
+        self.embeddedController.port = self.port;
+        self.embeddedController.username = self.username;
+        self.embeddedController.password = self.password;
     }
-}
-
-#pragma mark - internal helpers
-
-- (void)updateModel
-{
-    self.connection.name = self.embeddedController.name;
-    self.connection.ipAddress = self.embeddedController.ipAddress;
-    self.connection.port = self.embeddedController.port;
-    self.connection.username = self.embeddedController.username;
-    self.connection.password = self.embeddedController.password;
-}
-
-#pragma mark - DeleteDelegate implementation
-
-- (void)delete
-{
-    [self.delegate removeBoxConnection:self.connection];
-    
-    // We need to unwind to the view connections view controller (2 steps back)
-    // This is because the controller one step back is a view only controller
-    // and we have just deleted the connection for that view
-    
-    [self performSegueWithIdentifier:@"toConnections" sender:self];
+    else if ([segue.identifier isEqualToString:@"unwindUpdateConnection"])
+    {
+        // Get values from edit controller
+        self.id = self.embeddedController.id;
+        self.name = self.embeddedController.name;
+        self.ipAddress = self.embeddedController.ipAddress;
+        self.port = self.embeddedController.port;
+        self.username = self.embeddedController.username;
+        self.password = self.embeddedController.password;
+    }
 }
 
 @end

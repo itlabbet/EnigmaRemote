@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConnectionDelegate.h"
 
 
 @interface NewConnectionViewController : UIViewController
 
-@property (nonatomic, weak) id<ConnectionsDelegate> delegate;
-
+// Output properties to be read when a new connection has been created
+@property (nonatomic, copy) NSString *id;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *ipAddress;
+@property (nonatomic) NSUInteger port;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *password;
 
 @end

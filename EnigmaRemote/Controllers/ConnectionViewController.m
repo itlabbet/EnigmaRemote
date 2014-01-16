@@ -11,11 +11,11 @@
 
 @interface ConnectionViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *ipAddress;
-@property (weak, nonatomic) IBOutlet UITextField *port;
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *tfName;
+@property (weak, nonatomic) IBOutlet UITextField *tfIPAddress;
+@property (weak, nonatomic) IBOutlet UITextField *tfPort;
+@property (weak, nonatomic) IBOutlet UITextField *tfUsername;
+@property (weak, nonatomic) IBOutlet UITextField *tfPassword;
 
 @end
 
@@ -28,22 +28,6 @@
     [self updateUI];
 }
 
-#pragma mark - Implementation of ConnectionDelegate
-// TODO: hanteringen av dessa bör nog ligga i edit kontrollern...
-
-- (void)updateBoxConnection:(BoxConnection *)connection
-{
-    self.connection = connection;
-    
-    [self.delegate updateBoxConnection:self.connection];
-    
-    [self updateUI];
-}
-
-- (void)removeBoxConnection:(BoxConnection *)connection
-{
-    [self.delegate removeBoxConnection:connection];
-}
 
 #pragma mark - Segue
 
@@ -53,9 +37,47 @@
     {
         if ([segue.destinationViewController isKindOfClass:[EditConnectionViewController class]])
         {
+            // Set current values in the edit controller
+            
             EditConnectionViewController *editCtrl = segue.destinationViewController;
-            editCtrl.delegate = self;
-            editCtrl.connection = self.connection;
+            
+            editCtrl.id = self.id;
+            editCtrl.name = self.name;
+            editCtrl.ipAddress = self.ipAddress;
+            editCtrl.port = self.port;
+            editCtrl.username = self.username;
+            editCtrl.password = self.password;
+        }
+    }
+}
+
+#pragma mark - unwind handlers
+
+- (IBAction)unwindUpdateConnection:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"unwindUpdateConnection"])
+    {
+        if ([segue.sourceViewController isKindOfClass:[EditConnectionViewController class]])
+        {
+            EditConnectionViewController *editCtrl = segue.sourceViewController;
+            
+            self.id = editCtrl.id;
+            self.name = editCtrl.name;
+            self.ipAddress = editCtrl.ipAddress;
+            self.port = editCtrl.port;
+            self.username = editCtrl.username;
+            self.password = editCtrl.password;
+            
+            [self updateUI];
+            
+            // Delegate update handling
+            [self.delegate updateConnection:self.id
+                                       name:self.name
+                                  ipAddress:self.ipAddress
+                                       port:self.port
+                                   username:self.username
+                                   password:self.password
+                                   favorite:NO];
         }
     }
 }
@@ -64,11 +86,11 @@
 
 - (void)updateUI
 {
-    self.name.text = self.connection.name;
-    self.ipAddress.text = self.connection.ipAddress;
-    self.port.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.connection.port];
-    self.username.text = self.connection.username;
-    self.password.text = self.connection.password;
+    self.tfName.text = self.name;
+    self.tfIPAddress.text = self.ipAddress;
+    self.tfPort.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.port];
+    self.tfUsername.text = self.username;
+    self.tfPassword.text = self.password;
 }
 
 @end

@@ -10,21 +10,20 @@
 
 @interface BoxConnection : NSObject <NSCoding>
 
+@property (nonatomic, copy) NSString *id;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *ipAddress;
 @property (nonatomic) NSUInteger port;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *password;
-@property (nonatomic, readonly) BOOL favorite;
+@property (nonatomic) BOOL favorite;
 
-// TODO: ev property istället...? Skyddad hantering behövs så att inte två kan vara favorite samtidigt dock
-- (instancetype)initWithName:(NSString *)name
+- (instancetype)initWithId:(NSString *)id
+                    name:(NSString *)name
                    ipAddress:(NSString* )ipAddress
                         port:(NSUInteger)port
                     username:(NSString *)username
                     password:(NSString *)password
                     favorite:(BOOL)favorite;
-
-- (void)setAsFavorite:(BOOL)favorite;
 
 @end

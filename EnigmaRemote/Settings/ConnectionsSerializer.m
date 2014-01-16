@@ -1,5 +1,5 @@
 //
-//  ApplicationSettings.m
+//  ConnectionsSerializer
 //  EnigmaRemote
 //
 //  Created by Niklas Andersson on 08/01/14.
@@ -9,14 +9,25 @@
 
 // TODO: gör konstanter av strängnycklarna
 
-#import "ApplicationSettings.h"
+#import "ConnectionsSerializer.h"
+#import "NotificationCenterConstants.h"
 
-@interface ApplicationSettings ()
+@interface ConnectionsSerializer ()
 
 @end
 
 
-@implementation ApplicationSettings
+@implementation ConnectionsSerializer
+
+- (void)setConnections:(NSArray *)connections
+{
+    _connections = connections;
+    
+    if ([_connections count] == 1)
+    {
+        [self setFavorite:[_connections firstObject]];
+    }
+}
 
 - (BoxConnection *)favorite
 {
@@ -29,16 +40,6 @@
     return nil;
 }
 
-- (void)setConnections:(NSArray *)connections
-{
-    _connections = connections;
-    
-    if ([_connections count] == 1)
-    {
-        [[ _connections firstObject] setAsFavorite:YES];
-    }
-}
-
 - (void)setFavorite:(BoxConnection *)favorite
 {
     // Change favorite connection
@@ -46,8 +47,9 @@
     
     if ([self.connections containsObject:favorite])
     {
-        [favorite setAsFavorite:YES];
-        [currentFavorite setAsFavorite:NO];
+        currentFavorite.favorite = NO;
+
+        favorite.favorite = YES;
     }
 }
 
@@ -73,25 +75,6 @@
     return self;
 }
 
-
-- (void)addHost:(BoxConnection *)connection
-{
-    NSMutableArray *connections = [self.connections mutableCopy];
-    
-    [connections addObject:connection];
-    
-    self.connections = connections;
-}
-
-- (void)removeHost:(BoxConnection *)connection
-{
-    NSMutableArray *connections = [self.connections mutableCopy];
-    
-    [connections removeObject:connection];
-    
-    self.connections = connections;
-}
-
 - (void)clear
 {
     NSError *error;
@@ -101,12 +84,14 @@
 
 - (void)save
 {
-    // Save settings to file
+    // Save connections to file
 	NSMutableData *data = [[NSMutableData alloc] init];
 	NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
 	[archiver encodeObject:self.connections forKey:@"BoxConnections"];
 	[archiver finishEncoding];
 	[data writeToFile:[self dataFilePath] atomically:YES];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kBoxConnectionsChanged object:nil];
 }
 
 - (NSString *)dataFilePath

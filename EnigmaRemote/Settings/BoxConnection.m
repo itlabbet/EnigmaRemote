@@ -10,27 +10,22 @@
 
 @interface BoxConnection ()
 
-// Internally make properties writeable
-@property (nonatomic, readwrite) BOOL favorite;
-
 @end
+
 
 @implementation BoxConnection
 
-- (void)setAsFavorite:(BOOL)favorite
-{
-    self.favorite = favorite;
-}
-
-- (instancetype)initWithName:(NSString *)name
-                   ipAddress:(NSString* )ipAddress
+- (instancetype)initWithId:(NSString *)id
+                        name:(NSString *)name
+                        ipAddress:(NSString* )ipAddress
                         port:(NSUInteger)port
-                    username:(NSString *)username
-                    password:(NSString *)password
-                    favorite:(BOOL)favorite
+                        username:(NSString *)username
+                        password:(NSString *)password
+                        favorite:(BOOL)favorite
 {
     if (self = [super init])
     {
+        _id = id;
         _name = name;
         _ipAddress = ipAddress;
         _port = port;
@@ -48,7 +43,8 @@
 {
 	if ((self = [super init]))
     {
-		self.name = [aDecoder decodeObjectForKey:@"Name"];
+		self.id = [aDecoder decodeObjectForKey:@"Id"];
+        self.name = [aDecoder decodeObjectForKey:@"Name"];
 		self.ipAddress = [aDecoder decodeObjectForKey:@"IpAddress"];
         NSNumber *portNumber = [aDecoder decodeObjectForKey:@"Port"];
         self.port = [portNumber unsignedIntegerValue];
@@ -61,6 +57,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+    [aCoder encodeObject:self.id forKey:@"Id"];
 	[aCoder encodeObject:self.name forKey:@"Name"];
 	[aCoder encodeObject:self.ipAddress forKey:@"IpAddress"];
     NSNumber *portNumber = [NSNumber numberWithUnsignedLong:self.port];

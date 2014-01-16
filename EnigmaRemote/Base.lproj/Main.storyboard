@@ -635,7 +635,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="GA0-Se-X4n" kind="embed" identifier="embedded" id="vrG-jj-OAl"/>
+                                    <segue destination="GA0-Se-X4n" kind="embed" identifier="embedded" id="cQT-YU-IWF"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -650,8 +650,13 @@
                             <constraint firstItem="bRc-qn-cd8" firstAttribute="leading" secondItem="kqA-4A-tsH" secondAttribute="leading" id="pUt-sS-TVE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="9TJ-M4-drc" kind="unwind" identifier="unwindCancelNewConnection" unwindAction="unwindCancelNewConnection:sender:" id="Q72-SE-GoW"/>
+                        <segue destination="9TJ-M4-drc" kind="unwind" identifier="unwindAddNewConnection" unwindAction="unwindAddNewConnection:sender:" id="hqK-Mn-o3w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSa-6M-CaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9TJ-M4-drc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="226" y="954"/>
         </scene>
@@ -762,11 +767,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ipAddress" destination="ClX-W7-tor" id="FjB-6L-7tP"/>
-                        <outlet property="name" destination="q2R-cW-7d9" id="LmE-br-N2l"/>
-                        <outlet property="password" destination="LBZ-9k-zXf" id="T4R-5Z-9ZA"/>
-                        <outlet property="port" destination="JpD-Zc-sRC" id="4ez-6Z-G7k"/>
-                        <outlet property="username" destination="AOy-9x-Gx2" id="Ogk-is-B2v"/>
+                        <outlet property="tfIPAddress" destination="ClX-W7-tor" id="6bw-jP-OGf"/>
+                        <outlet property="tfName" destination="q2R-cW-7d9" id="VkK-Nf-Nh7"/>
+                        <outlet property="tfPassword" destination="LBZ-9k-zXf" id="EYJ-pz-2gO"/>
+                        <outlet property="tfPort" destination="JpD-Zc-sRC" id="3Rk-nv-QG1"/>
+                        <outlet property="tfUsername" destination="AOy-9x-Gx2" id="xaK-V7-h6k"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb5-1H-whV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -825,11 +830,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="Ll7-Zy-jCy" kind="unwind" identifier="toConnections" unwindAction="unWindToConnectionsView:sender:" id="IeC-db-H6B"/>
+                        <segue destination="yVM-jd-D3u" kind="unwind" identifier="unwindUpdateConnection" unwindAction="unwindUpdateConnection:sender:" id="Yk9-Vp-SPw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91F-j1-h1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ll7-Zy-jCy" userLabel="Exit" sceneMemberID="exit"/>
+                <exit id="yVM-jd-D3u" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="669" y="1712"/>
         </scene>
@@ -1407,9 +1412,11 @@
                         <outlet property="tfPassword" destination="lFp-SF-7x6" id="MSh-Dm-3NM"/>
                         <outlet property="tfPort" destination="gIg-kx-KHX" id="vFZ-2R-TB7"/>
                         <outlet property="tfUsername" destination="Slb-t7-LSE" id="Bei-Ha-28Y"/>
+                        <segue destination="7Ly-PY-uww" kind="unwind" identifier="unwindDeleteConnection" unwindAction="unwindDeleteConnection:sender:" id="63a-ze-cus"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnU-eg-UrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7Ly-PY-uww" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1201" y="1744"/>
         </scene>

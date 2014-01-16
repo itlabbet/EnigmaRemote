@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConnectionDelegate.h"
+#import "UpdateConnectionDelegate.h"
 
-@interface ConnectionsViewController : UITableViewController <ConnectionsDelegate>
+@interface ConnectionsViewController : UITableViewController <UpdateConnectionDelegate>
 
 @end

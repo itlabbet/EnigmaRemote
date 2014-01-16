@@ -37,9 +37,6 @@ typedef enum
 
 + (EnigmaClient *) sharedInstance;
 
-// TODO: hitta en bättre lösning!!
-- (void)reloadSettings;
-
 - (DeviceInfo *)deviceInfo;
 
 - (PowerState)powerState;
