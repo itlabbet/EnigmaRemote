@@ -38,13 +38,16 @@
                   forControlEvents:UIControlEventValueChanged];
 
     self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"BrowseFilled"];
+    
+    [self loadBouquets];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self loadBouquets];
+    // TODO: vyn buggar ur om man laddar här! Laddar i viewDidLoad ist...
+    //[self loadBouquets];
 }
 
 - (void)loadBouquets
