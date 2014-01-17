@@ -54,8 +54,11 @@
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             // executed by main thread - OK to update UI
+            
             self.epgEvents = epgEvents;
+            
             [self.refreshControl endRefreshing];
         });
     });

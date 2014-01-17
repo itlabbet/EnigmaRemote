@@ -964,6 +964,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fjärrstyr" id="dvE-f1-fgV"/>
+                    <connections>
+                        <outlet property="rebootCell" destination="12D-q3-6jP" id="YOW-Kf-Lo2"/>
+                        <outlet property="restartCell" destination="hbQ-CJ-RXM" id="GRQ-Nb-ruD"/>
+                        <outlet property="shutdownCell" destination="f1s-Rp-6se" id="mYc-eW-VkV"/>
+                        <outlet property="standbyCell" destination="5l1-fH-6I3" id="FLd-KL-QEc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jr8-Tl-Gj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

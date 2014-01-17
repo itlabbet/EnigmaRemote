@@ -38,25 +38,23 @@
                   forControlEvents:UIControlEventValueChanged];
 
     self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"BrowseFilled"];
-    
-    [self loadBouquets];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    // TODO: vyn buggar ur om man laddar här! Laddar i viewDidLoad ist...
-    //[self loadBouquets];
+    [self loadBouquets];
 }
 
 - (void)loadBouquets
 {
+    [self.refreshControl beginRefreshing];
+    
     dispatch_queue_t clientLoaderQueue = dispatch_queue_create("client fetch queue", NULL);
     
     dispatch_async(clientLoaderQueue, ^{
         
-        [self.refreshControl beginRefreshing];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         NSArray *bouquets = [[EnigmaClient sharedInstance] bouquets];
@@ -64,10 +62,13 @@
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             // executed by main thread - OK to update UI
+            
             self.bouquets = bouquets;
             
             [self.refreshControl endRefreshing];
+            
         });
     });
 
