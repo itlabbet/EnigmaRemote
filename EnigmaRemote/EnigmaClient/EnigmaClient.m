@@ -123,8 +123,7 @@
     {
         if (connection.favorite)
         {
-            // TODO: använd username + password
-            _baseUrl = [NSString stringWithFormat:@"http://%@", connection.ipAddress];
+            _baseUrl = [NSString stringWithFormat:@"http://%@:%@@%@", connection.username, connection.password, connection.ipAddress];
             
             NSLog(@"Favorite: %@", _baseUrl);
             return;
