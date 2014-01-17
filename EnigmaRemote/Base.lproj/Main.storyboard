@@ -1013,7 +1013,7 @@
             </objects>
             <point key="canvasLocation" x="-1381" y="589"/>
         </scene>
-        <!--Channel View Controller - Kanal-->
+        <!--Channel View Controller - EPG-->
         <scene sceneID="yCF-00-g2I">
             <objects>
                 <tableViewController id="can-Nm-8Ed" customClass="ChannelViewController" sceneMemberID="viewController">
@@ -1022,10 +1022,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Kanal" id="Us0-lp-JXQ">
+                            <tableViewSection id="Us0-lp-JXQ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IlV-3n-1jv">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IlV-3n-1jv" id="sqM-JW-9Tj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1054,7 +1054,7 @@
                             <tableViewSection headerTitle="Just nu" id="VJE-oJ-jPO">
                                 <cells>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="DVI-es-3iZ" detailTextLabel="l6H-pR-zjr" style="IBUITableViewCellStyleSubtitle" id="weM-ib-o2B">
-                                        <rect key="frame" x="0.0" y="211" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="191" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="weM-ib-o2B" id="nAG-nu-h09">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1078,7 +1078,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="Dtm-EX-cod">
-                                        <rect key="frame" x="0.0" y="255" width="320" height="150"/>
+                                        <rect key="frame" x="0.0" y="235" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dtm-EX-cod" id="nDP-MS-3xE">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
@@ -1100,7 +1100,7 @@
                             <tableViewSection headerTitle="Nästa" id="ezO-aI-tQS">
                                 <cells>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="faf-ik-o7N" detailTextLabel="rf7-8z-mNR" style="IBUITableViewCellStyleSubtitle" id="eYn-vT-RnG">
-                                        <rect key="frame" x="0.0" y="453" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="433" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eYn-vT-RnG" id="O9A-Bp-J0t">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1124,7 +1124,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="7zx-Fg-Flk">
-                                        <rect key="frame" x="0.0" y="497" width="320" height="150"/>
+                                        <rect key="frame" x="0.0" y="477" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7zx-Fg-Flk" id="HRU-ij-gZK">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
@@ -1150,7 +1150,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Kanal" id="mPK-gx-tzZ"/>
+                    <navigationItem key="navigationItem" title="EPG" id="mPK-gx-tzZ"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ric-le-fjv">
                         <autoresizingMask key="autoresizingMask"/>
