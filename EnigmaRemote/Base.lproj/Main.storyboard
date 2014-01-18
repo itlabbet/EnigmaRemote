@@ -182,8 +182,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp2-6C-HyX">
-                                                    <rect key="frame" x="15" y="5" width="290" height="139"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp2-6C-HyX">
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -191,6 +191,12 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bp2-6C-HyX" firstAttribute="leading" secondItem="Iwr-N8-5Yb" secondAttribute="leading" constant="20" symbolic="YES" id="5Ld-2p-jd8"/>
+                                                <constraint firstItem="Bp2-6C-HyX" firstAttribute="top" secondItem="Iwr-N8-5Yb" secondAttribute="top" id="QUx-C9-4mf"/>
+                                                <constraint firstItem="Bp2-6C-HyX" firstAttribute="centerY" secondItem="Iwr-N8-5Yb" secondAttribute="centerY" id="pUJ-Fp-QYD"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bp2-6C-HyX" secondAttribute="trailing" constant="20" symbolic="YES" id="vGX-cd-QUX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -228,8 +234,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3T-yb-dtg">
-                                                    <rect key="frame" x="15" y="5" width="290" height="139"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3T-yb-dtg">
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="129"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -237,6 +243,12 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b3T-yb-dtg" firstAttribute="top" secondItem="dss-h1-sMI" secondAttribute="top" id="Hfk-k8-Z3B"/>
+                                                <constraint firstItem="b3T-yb-dtg" firstAttribute="leading" secondItem="dss-h1-sMI" secondAttribute="leading" constant="20" symbolic="YES" id="Nrn-Up-0Bh"/>
+                                                <constraint firstAttribute="bottom" secondItem="b3T-yb-dtg" secondAttribute="bottom" constant="20" symbolic="YES" id="ZH4-gO-Wzs"/>
+                                                <constraint firstAttribute="trailing" secondItem="b3T-yb-dtg" secondAttribute="trailing" constant="20" symbolic="YES" id="ra0-8a-SGK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1086,8 +1098,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E11-9r-fXo">
-                                                    <rect key="frame" x="15" y="5" width="290" height="139"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E11-9r-fXo">
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="149"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1095,6 +1107,12 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="E11-9r-fXo" secondAttribute="trailing" constant="20" symbolic="YES" id="8Il-p1-p1m"/>
+                                                <constraint firstAttribute="bottom" secondItem="E11-9r-fXo" secondAttribute="bottom" id="egl-Wc-tMs"/>
+                                                <constraint firstItem="E11-9r-fXo" firstAttribute="leading" secondItem="nDP-MS-3xE" secondAttribute="leading" constant="20" symbolic="YES" id="mhF-WK-8jV"/>
+                                                <constraint firstItem="E11-9r-fXo" firstAttribute="top" secondItem="nDP-MS-3xE" secondAttribute="top" id="o9f-Z5-bPP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1132,8 +1150,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f67-Xb-FY1">
-                                                    <rect key="frame" x="15" y="5" width="290" height="139"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f67-Xb-FY1">
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="149"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1141,6 +1159,12 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="f67-Xb-FY1" secondAttribute="trailing" constant="20" symbolic="YES" id="Mxa-im-keO"/>
+                                                <constraint firstAttribute="bottom" secondItem="f67-Xb-FY1" secondAttribute="bottom" id="aYY-cg-x03"/>
+                                                <constraint firstItem="f67-Xb-FY1" firstAttribute="top" secondItem="HRU-ij-gZK" secondAttribute="top" id="kCa-ce-6RA"/>
+                                                <constraint firstItem="f67-Xb-FY1" firstAttribute="leading" secondItem="HRU-ij-gZK" secondAttribute="leading" constant="20" symbolic="YES" id="lcb-Kv-DvA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
