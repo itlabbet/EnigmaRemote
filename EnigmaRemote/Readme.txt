@@ -5,7 +5,7 @@ Momentet ger betyget 3 om resultatet:
 - Är ett körbart program
 - Innehåller de delar som specificerades i projektförslaget
 - Skriftlig redovisning av projektet, rapport och post-mortem.
-    - Post-mortem: http://www.ehow.com/how_6516661_write-postmortem-report.html
+- Post-mortem: http://www.ehow.com/how_6516661_write-postmortem-report.html
 - Muntlig presentation/video. Inspelad film (max 3 minuter) som laddas upp i mappen ”App project - video”.
 
 
@@ -51,8 +51,8 @@ Applikationen skall ha ett tilltalande användargränssnitt, med ikoner, grafi
 
 Applikationen ska testas och verifieras på riktig hårdvara för att kunna verifiera sin funktion mot flera mjukvaruversioner av digitalboxen, som finns utspridda på olika geografiska områden.
 
-Använda referenser:
-------------------
+Använda referenser under research:
+---------------------------------
 - http://www.stewgleadow.com/blog/2012/05/18/tolerant-json-parsing-for-ios/ - funkar ej med json
 - https://developer.apple.com/library/ios/samplecode/SeismicXML/Introduction/Intro.html
 - http://www.raywenderlich.com/553/xml-tutorial-for-ios-how-to-choose-the-best-xml-parser-for-your-iphone-project
@@ -60,16 +60,3 @@ Använda referenser:
 - http://dream.reichholf.net/e2web/
 - http://www.raywenderlich.com/46988/ios-design-patterns 
 - http://www.raywenderlich.com/49311/advanced-table-view-animations-tutorial-drop-in-cards
-
-TODO:s
-------
- - När PlayingViewController skrollas hamnar batteri mm bakom skrollen - ser inte snyggt ut.
- - Hantera singleton-fallet där Enigmaklienten fått en setting efter det att den skapats, då är baseUrl nil.
- - Fixa till dismiss av keyboard där det används.
- - Ikoner tab bar
- - Hantera ingen lagrad connection -> navigera till fyll i
- - Hantera "connection finns", men ej kontakt med servern -> felmeddelande
- - Hantera byte av favorit - appen måste fatta att en ny connection ska användas.
- - Uppstädning av ConnectionDelegate - ingen bra lösning idag.
- - Remove all warnings
- - Handle responses from web server
