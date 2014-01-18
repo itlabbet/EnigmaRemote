@@ -86,8 +86,6 @@
         [self loadSettings];
         
         [self observeConnections];
-        
-        // TODO: fundera på om vi inte får en _baseUrl här -> hur ska detta handeras av de som använder klienten?
     }
     
     return self;
@@ -137,8 +135,6 @@
 
 - (DeviceInfo *)deviceInfo
 {
-    // TODO: dokumentera upp denna ordentligt
-    
     DeviceInfo *deviceInfo = nil;
     NSURL *infoUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/deviceinfo"]];
     NSData *infoData = [[NSData alloc] initWithContentsOfURL:infoUrl];

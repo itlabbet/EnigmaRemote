@@ -70,7 +70,6 @@
     }
     else
     {
-        // TODO: is it possible to set textcolor to a default (instead of black) as in Interface Builder?
         UIFont *font = [cell.textLabel.font copy];
         cell.textLabel.font = [UIFont systemFontOfSize:font.pointSize];
         cell.textLabel.textColor = [UIColor blackColor];
@@ -266,9 +265,6 @@
         
         NSArray *connections = settings.connections;
         
-        // TODO: i detta fallet sortera i bokstavsordning...
-        //NSArray* sortedJobs = [self sort:unsortedJobs];
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             // executed by main thread - OK to update UI
@@ -292,11 +288,8 @@
     
     [settings save];
     
-    // TODO: hantera favorit om första som lades till - checkmark - skulle kunna hanteras i AppSettings istället
     [self loadConnections];
-    
 }
-
 
 - (void)removeBoxConnection:(NSString *)connectionId
 {

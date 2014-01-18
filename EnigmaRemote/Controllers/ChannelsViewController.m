@@ -85,8 +85,6 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: låt inte sender vara en datamodell
-    
     EPGEvent *selectedChannel = [self.epgEvents objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"showChannel" sender:selectedChannel];
@@ -115,13 +113,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([sender isKindOfClass:[EPGEvent class]])
+    if ([[segue identifier] isEqualToString:@"showChannel" ])
     {
-        // TODO: låt inte sender vara en datamodell
-        EPGEvent *epgEvent = sender;
-        
-        if ([[segue identifier] isEqualToString:@"showChannel" ])
+        if ([sender isKindOfClass:[EPGEvent class]])
         {
+            EPGEvent *epgEvent = sender;
+            
             if ([segue.destinationViewController respondsToSelector:@selector(setEpgEvent:)])
             {
                 [segue.destinationViewController performSelector:@selector(setEpgEvent:) withObject:epgEvent];

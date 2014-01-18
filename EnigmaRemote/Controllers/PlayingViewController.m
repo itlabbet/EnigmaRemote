@@ -9,8 +9,6 @@
 #import "PlayingViewController.h"
 #import "EnigmaClient.h"
 
-// TODO: Hantera fallet då boxen är avstängd - då returneras
-
 @interface PlayingViewController ()
 
 @property (nonatomic, strong) ChannelEPG *epg;

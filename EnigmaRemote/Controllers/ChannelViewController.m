@@ -71,8 +71,6 @@
             
             // executed by main thread - OK to update UI
             
-            // TODO: if epg is nil notify user that no epg could be fetched
-            
             self.epg = epg;
             
             [self.refreshControl endRefreshing];
