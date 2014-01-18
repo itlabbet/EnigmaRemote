@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Niklas Andersson. All rights reserved.
 //
 
-// API for the http communication with dreambox 800hd se running Enigma 2
+// API for the http communication version 1.6.5 with dreambox 800hd se running Enigma 2
 
 // State
 // http://192.168.10.12/web/powerstate            // Get powerstate

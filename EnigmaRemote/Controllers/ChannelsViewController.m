@@ -31,6 +31,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.title = self.bouquet.name;
+    
     // Setup event handling
     [self.refreshControl addTarget:self
                             action:@selector(loadEpgEvents)
