@@ -51,7 +51,9 @@
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
-        NSArray *epgEvents = [[EnigmaClient sharedInstance] channelsWithEpgFor:self.bouquet.reference];
+        //NSArray *epgEvents = [[EnigmaClient sharedInstance] channelsWithEpgFor:self.bouquet.reference];
+        
+        NSArray *epgEvents = [[EnigmaClient sharedInstance] channelsWithEpgFixedFor:self.bouquet.reference];
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
@@ -138,12 +140,20 @@
 
 - (NSString *)timeSpanForEvent:(EPGEvent *)event
 {
-    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    timeFormatter.dateFormat = @"HH:mm";
     
-    NSString *span = [NSString stringWithFormat:@"%@ - %@", [timeFormatter stringFromDate:event.startTime], [timeFormatter stringFromDate:[NSDate dateWithTimeInterval:event.duration sinceDate:event.startTime]]];
+    if (event.startTime != nil)
+    {
+        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+        timeFormatter.dateFormat = @"HH:mm";
+        
+        
+        NSString *span = [NSString stringWithFormat:@"%@ - %@", [timeFormatter stringFromDate:event.startTime], [timeFormatter stringFromDate:[NSDate dateWithTimeInterval:event.duration sinceDate:event.startTime]]];
     
-    return span;
+        return span;
+        
+    }
+    
+    return @"";
 }
 
 - (void)zapAnimation:(UITableViewCell *)cell

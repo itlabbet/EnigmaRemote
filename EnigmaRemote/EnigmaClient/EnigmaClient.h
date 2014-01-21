@@ -43,11 +43,18 @@ typedef enum
 
 - (void)performAction:(BoxCommandAction)command;
 
+// Return all bouquets
 - (NSArray *)bouquets;
 
+// Return all channels within a bouquet
 - (NSArray *)channelsFor:(NSString *)serviceReference;
 
+// Return all channels that has epg data
+// Channel that is missing epg data will not be included
 - (NSArray *)channelsWithEpgFor:(NSString *)serviceReference;
+
+// Returns all channels even if they dont have any epg data
+- (NSArray *)channelsWithEpgFixedFor:(NSString *)serviceReference;
 
 - (void)zapTo:(NSString *)serviceReference;
 

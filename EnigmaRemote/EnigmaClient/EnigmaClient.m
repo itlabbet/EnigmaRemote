@@ -523,6 +523,44 @@
     return epgs;
 }
 
+- (NSArray *)channelsWithEpgFixedFor:(NSString *)serviceReference
+{
+    NSMutableArray *channelsWithEpg = [[NSMutableArray alloc] init];
+    
+    NSArray *channels = [self channelsFor:serviceReference];
+    NSArray *epgs = [self channelsWithEpgFor:serviceReference];
+    
+    
+    for (Channel *channel in channels)
+    {
+        BOOL channelHasEPG = NO;
+        EPGEvent *channelWithEpg = nil;
+        
+        for (EPGEvent *epg in epgs)
+        {
+            if ([channel.reference isEqualToString:epg.serviceReference])
+            {
+                channelHasEPG = YES;
+                channelWithEpg = epg;
+                break;
+            }
+        }
+        
+        if (channelWithEpg)
+        {
+            [channelsWithEpg addObject:channelWithEpg];
+        }
+        else
+        {
+            channelWithEpg = [[EPGEvent alloc] initWith:0 startTime:nil duration:0 currentTime:nil title:@"Epg saknas" description:@"" extendedDescription:@"" reference:channel.reference serviceName:channel.name];
+            
+            [channelsWithEpg addObject:channelWithEpg];
+            
+        }
+    }
+    
+    return channelsWithEpg;
+}
 
 - (void)zapTo:(NSString *)serviceReference
 {
