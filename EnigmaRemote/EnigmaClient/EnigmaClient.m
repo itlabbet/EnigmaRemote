@@ -654,9 +654,14 @@
     }
     
     // TODO: verify size == 2 of epgs
-    
-    channelEPG = [[ChannelEPG alloc] initWithCurrentEvent:[epgs firstObject] andNextEvent:[epgs lastObject]];
-    
+    if ([epgs count] >= 2)
+    {
+        channelEPG = [[ChannelEPG alloc] initWithCurrentEvent:[epgs firstObject] andNextEvent:[epgs objectAtIndex:1]];
+    }
+    else
+    {
+        channelEPG = [[ChannelEPG alloc] initWithCurrentEvent:[epgs firstObject] andNextEvent:nil];
+    }
     
     return channelEPG;
 }
