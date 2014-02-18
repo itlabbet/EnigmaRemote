@@ -32,11 +32,6 @@
 		5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF46718564C7100289D13 /* AppDelegate.m */; };
 		5DDDF46B18564C7100289D13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF46918564C7100289D13 /* Main.storyboard */; };
 		5DDDF47018564C7100289D13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF46F18564C7100289D13 /* Images.xcassets */; };
-		5DDDF47718564C7100289D13 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF47618564C7100289D13 /* XCTest.framework */; };
-		5DDDF47818564C7100289D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45718564C7100289D13 /* Foundation.framework */; };
-		5DDDF47918564C7100289D13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45B18564C7100289D13 /* UIKit.framework */; };
-		5DDDF48118564C7100289D13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF47F18564C7100289D13 /* InfoPlist.strings */; };
-		5DDDF48318564C7100289D13 /* EnigmaRemoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF48218564C7100289D13 /* EnigmaRemoteTests.m */; };
 		5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF48C18564DEF00289D13 /* Readme.txt */; };
 		5DF1E0D918829D2900887BA9 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */; };
 		5DF1E0DC18829D3C00887BA9 /* NewConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1E0DB18829D3C00887BA9 /* NewConnectionViewController.m */; };
@@ -46,16 +41,6 @@
 		5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */; };
 		5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF706E187F21E100F3CC04 /* PlayingViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5DDDF47A18564C7100289D13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5DDDF44C18564C7000289D13 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5DDDF45318564C7000289D13;
-			remoteInfo = EnigmaRemote;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5D0B11F61883BF5300E6B258 /* EmbeddedNewConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbeddedNewConnectionViewController.h; path = Controllers/EmbeddedNewConnectionViewController.h; sourceTree = "<group>"; };
@@ -105,7 +90,6 @@
 		5DDDF46718564C7100289D13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5DDDF46A18564C7100289D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DDDF46F18564C7100289D13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5DDDF47518564C7100289D13 /* EnigmaRemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnigmaRemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDDF47618564C7100289D13 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5DDDF47E18564C7100289D13 /* EnigmaRemoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnigmaRemoteTests-Info.plist"; sourceTree = "<group>"; };
 		5DDDF48018564C7100289D13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -136,16 +120,6 @@
 				5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */,
 				5DDDF45C18564C7100289D13 /* UIKit.framework in Frameworks */,
 				5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5DDDF47218564C7100289D13 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DDDF47718564C7100289D13 /* XCTest.framework in Frameworks */,
-				5DDDF47918564C7100289D13 /* UIKit.framework in Frameworks */,
-				5DDDF47818564C7100289D13 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				5DDDF45418564C7100289D13 /* Enigma.app */,
-				5DDDF47518564C7100289D13 /* EnigmaRemoteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,24 +339,6 @@
 			productReference = 5DDDF45418564C7100289D13 /* Enigma.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5DDDF47418564C7100289D13 /* EnigmaRemoteTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5DDDF48918564C7100289D13 /* Build configuration list for PBXNativeTarget "EnigmaRemoteTests" */;
-			buildPhases = (
-				5DDDF47118564C7100289D13 /* Sources */,
-				5DDDF47218564C7100289D13 /* Frameworks */,
-				5DDDF47318564C7100289D13 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5DDDF47B18564C7100289D13 /* PBXTargetDependency */,
-			);
-			name = EnigmaRemoteTests;
-			productName = EnigmaRemoteTests;
-			productReference = 5DDDF47518564C7100289D13 /* EnigmaRemoteTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -394,10 +349,7 @@
 				ORGANIZATIONNAME = "Niklas Andersson";
 				TargetAttributes = {
 					5DDDF45318564C7000289D13 = {
-						DevelopmentTeam = 36WB7WTQX2;
-					};
-					5DDDF47418564C7100289D13 = {
-						TestTargetID = 5DDDF45318564C7000289D13;
+						DevelopmentTeam = F8LLRNWT42;
 					};
 				};
 			};
@@ -415,7 +367,6 @@
 			projectRoot = "";
 			targets = (
 				5DDDF45318564C7000289D13 /* Enigma */,
-				5DDDF47418564C7100289D13 /* EnigmaRemoteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -429,14 +380,6 @@
 				5DDDF46218564C7100289D13 /* InfoPlist.strings in Resources */,
 				5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */,
 				5DDDF46B18564C7100289D13 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5DDDF47318564C7100289D13 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DDDF48118564C7100289D13 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,23 +418,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DDDF47118564C7100289D13 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DDDF48318564C7100289D13 /* EnigmaRemoteTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5DDDF47B18564C7100289D13 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5DDDF45318564C7000289D13 /* Enigma */;
-			targetProxy = 5DDDF47A18564C7100289D13 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DDDF46018564C7100289D13 /* InfoPlist.strings */ = {
@@ -538,7 +465,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Niklas Andersson (QZLP2PN3Y8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Niklas Andersson (QZLP2PN3Y8)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -561,7 +489,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -583,7 +511,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Niklas Andersson (QZLP2PN3Y8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Niklas Andersson (QZLP2PN3Y8)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -599,7 +528,7 @@
 					/usr/include/libxml2,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -616,7 +545,7 @@
 				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
 				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -633,51 +562,9 @@
 				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
 				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		5DDDF48A18564C7100289D13 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EnigmaRemote.app/EnigmaRemote";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "EnigmaRemoteTests/EnigmaRemoteTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		5DDDF48B18564C7100289D13 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EnigmaRemote.app/EnigmaRemote";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
-				INFOPLIST_FILE = "EnigmaRemoteTests/EnigmaRemoteTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -698,15 +585,6 @@
 			buildConfigurations = (
 				5DDDF48718564C7100289D13 /* Debug */,
 				5DDDF48818564C7100289D13 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5DDDF48918564C7100289D13 /* Build configuration list for PBXNativeTarget "EnigmaRemoteTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5DDDF48A18564C7100289D13 /* Debug */,
-				5DDDF48B18564C7100289D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
