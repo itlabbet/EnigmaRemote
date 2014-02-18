@@ -54,6 +54,12 @@
 
 #pragma mark - inherited
 
+#define ACTION_CONNECTION_CONFIRM_DELETE NSLocalizedStringFromTable(@"ACTION_CONNECTION_CONFIRM_DELETE", @"EmbeddedEditConnectionViewController", @"User is requested to confirm the deletion of a connection")
+
+#define ACTION_CONNECTION_CANCEL NSLocalizedStringFromTable(@"ACTION_CONNECTION_CANCEL", @"EmbeddedEditConnectionViewController", @"User is requested to confirm the deletion of a connection")
+
+#define ACTION_CONNECTION_DELETE NSLocalizedStringFromTable(@"ACTION_CONNECTION_DELETE", @"EmbeddedEditConnectionViewController", @"User is requested to confirm the deletion of a connection")
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -65,10 +71,10 @@
                                                object: nil];
     
     // Create the action sheet for confirm delete - but do not display it yet
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Bekräfta ta bort"
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:ACTION_CONNECTION_CONFIRM_DELETE
                                                        delegate:self
-                                              cancelButtonTitle:@"Avbryt"
-                                         destructiveButtonTitle:@"Radera"
+                                              cancelButtonTitle:ACTION_CONNECTION_CANCEL
+                                         destructiveButtonTitle:ACTION_CONNECTION_DELETE
                                               otherButtonTitles:nil];
 
     // Hook up delegates

@@ -144,7 +144,7 @@
     if (event.startTime != nil)
     {
         NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-        timeFormatter.dateFormat = @"HH:mm";
+        timeFormatter.dateFormat = @"HH:mm"; // TODO: Hantera tiden med AM och PM för engelsk tid!
         
         
         NSString *span = [NSString stringWithFormat:@"%@ - %@", [timeFormatter stringFromDate:event.startTime], [timeFormatter stringFromDate:[NSDate dateWithTimeInterval:event.duration sinceDate:event.startTime]]];

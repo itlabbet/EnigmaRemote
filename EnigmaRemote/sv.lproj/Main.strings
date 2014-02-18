@@ -1,0 +1,261 @@
+
+/* Class = "IBUIBarButtonItem"; title = "Klar"; ObjectID = "05F-QH-QH5"; */
+"05F-QH-QH5.title" = "Klar";
+
+/* Class = "IBUIBarButtonItem"; title = "Ändra"; ObjectID = "1Eu-LJ-o0E"; */
+"1Eu-LJ-o0E.title" = "Ändra";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "217-GM-Yzl"; */
+"217-GM-Yzl.text" = "Title";
+
+/* Class = "IBUIButton"; normalTitle = "Växla standby"; ObjectID = "2Kr-jy-2YM"; */
+"2Kr-jy-2YM.normalTitle" = "Växla standby";
+
+/* Class = "IBUINavigationItem"; title = "Anslutningar"; ObjectID = "3aH-uq-rGF"; */
+"3aH-uq-rGF.title" = "Anslutningar";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "3nF-4U-eJL"; */
+"3nF-4U-eJL.text" = "Subtitle";
+
+/* Class = "IBUIBarButtonItem"; title = "Avbryt"; ObjectID = "4Ev-pJ-DuK"; */
+"4Ev-pJ-DuK.title" = "Avbryt";
+
+/* Class = "IBUILabel"; text = "Namn"; ObjectID = "4dQ-Z3-PHb"; */
+"4dQ-Z3-PHb.text" = "Namn";
+
+/* Class = "IBUINavigationItem"; title = "Anslutning"; ObjectID = "4nA-w7-Xcc"; */
+"4nA-w7-Xcc.title" = "Anslutning";
+
+/* Class = "IBUILabel"; text = "Imageversion"; ObjectID = "5Ge-8J-NFk"; */
+"5Ge-8J-NFk.text" = "Imageversion";
+
+/* Class = "IBUILabel"; text = "Information om boxen"; ObjectID = "5fC-6B-hXc"; */
+"5fC-6B-hXc.text" = "Information om boxen";
+
+/* Class = "IBUIButton"; normalTitle = "Kanal"; ObjectID = "6rD-LL-g23"; */
+"6rD-LL-g23.normalTitle" = "Kanal";
+
+/* Class = "IBUITextField"; placeholder = "Port - vanligtvis 80"; ObjectID = "7HK-0x-z1C"; */
+"7HK-0x-z1C.placeholder" = "Port - vanligtvis 80";
+
+/* Class = "IBUIButton"; normalTitle = "Snabb omstart"; ObjectID = "8h8-KV-2Kq"; */
+"8h8-KV-2Kq.normalTitle" = "Snabb omstart";
+
+/* Class = "IBUIButton"; normalTitle = "Total omstart"; ObjectID = "9Vi-M5-UnE"; */
+"9Vi-M5-UnE.normalTitle" = "Total omstart";
+
+/* Class = "IBUITextField"; placeholder = "Användarnamn - vanligtvis root"; ObjectID = "AOy-9x-Gx2"; */
+"AOy-9x-Gx2.placeholder" = "Användarnamn - vanligtvis root";
+
+/* Class = "IBUINavigationItem"; title = "Information"; ObjectID = "AUd-pg-rgl"; */
+"AUd-pg-rgl.title" = "Information";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "B2u-3T-NKS"; */
+"B2u-3T-NKS.text" = "Title";
+
+/* Class = "IBUIButton"; normalTitle = "Radera"; ObjectID = "BgH-yY-fRd"; */
+"BgH-yY-fRd.normalTitle" = "Radera";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "Bp2-6C-HyX"; */
+"Bp2-6C-HyX.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUILabel"; text = "Model"; ObjectID = "C9n-kh-kLH"; */
+"C9n-kh-kLH.text" = "Model";
+
+/* Class = "IBUINavigationItem"; title = "Kategorier"; ObjectID = "CdZ-Gl-L2Q"; */
+"CdZ-Gl-L2Q.title" = "Kategorier";
+
+/* Class = "IBUITextField"; placeholder = "IP address för din box"; ObjectID = "ClX-W7-tor"; */
+"ClX-W7-tor.placeholder" = "IP address för din box";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "DVI-es-3iZ"; */
+"DVI-es-3iZ.text" = "Title";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "E11-9r-fXo"; */
+"E11-9r-fXo.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUITextField"; placeholder = "IP address för din box"; ObjectID = "E8F-RV-Imm"; */
+"E8F-RV-Imm.placeholder" = "IP address för din box";
+
+/* Class = "IBUILabel"; text = "Inställningar"; ObjectID = "Fzx-3d-Qsk"; */
+"Fzx-3d-Qsk.text" = "Inställningar";
+
+/* Class = "IBUINavigationItem"; title = "Ändra"; ObjectID = "GS8-gu-1z1"; */
+"GS8-gu-1z1.title" = "Ändra";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "Hi3-P0-hlZ"; */
+"Hi3-P0-hlZ.text" = "Title";
+
+/* Class = "IBUIBarButtonItem"; title = "Avbryt"; ObjectID = "IFB-BG-4cU"; */
+"IFB-BG-4cU.title" = "Avbryt";
+
+/* Class = "IBUITextField"; placeholder = "Port - vanligtvis 80"; ObjectID = "JpD-Zc-sRC"; */
+"JpD-Zc-sRC.placeholder" = "Port - vanligtvis 80";
+
+/* Class = "IBUILabel"; text = "Hårdvara och mjukvara"; ObjectID = "KlQ-jg-0XJ"; */
+"KlQ-jg-0XJ.text" = "Hårdvara och mjukvara";
+
+/* Class = "IBUIBarButtonItem"; title = "Klar"; ObjectID = "Kzp-9Q-hld"; */
+"Kzp-9Q-hld.title" = "Klar";
+
+/* Class = "IBUITextField"; placeholder = "Lösenord"; ObjectID = "LBZ-9k-zXf"; */
+"LBZ-9k-zXf.placeholder" = "Lösenord";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Mottagare"; ObjectID = "LJW-vh-svA"; */
+"LJW-vh-svA.headerTitle" = "Mottagare";
+
+/* Class = "IBUILabel"; text = "Model"; ObjectID = "NMJ-b2-3Hg"; */
+"NMJ-b2-3Hg.text" = "Model";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "PDe-YS-wbs"; */
+"PDe-YS-wbs.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Enigmaversion"; ObjectID = "PKl-I4-znM"; */
+"PKl-I4-znM.text" = "Enigmaversion";
+
+/* Class = "IBUIBarButtonItem"; title = "Ändra"; ObjectID = "Pxq-qf-QSq"; */
+"Pxq-qf-QSq.title" = "Ändra";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "QK0-UA-xQh"; */
+"QK0-UA-xQh.text" = "Subtitle";
+
+/* Class = "IBUINavigationItem"; title = "Ny"; ObjectID = "Rev-4Y-hrn"; */
+"Rev-4Y-hrn.title" = "Ny";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Nästa"; ObjectID = "SQu-hw-cVe"; */
+"SQu-hw-cVe.headerTitle" = "Nästa";
+
+/* Class = "IBUITextField"; placeholder = "Användarnamn - vanligtvis root"; ObjectID = "Slb-t7-LSE"; */
+"Slb-t7-LSE.placeholder" = "Användarnamn - vanligtvis root";
+
+/* Class = "IBUITextField"; placeholder = "Användarnamn - vanligtvis root"; ObjectID = "T1O-Bl-AWh"; */
+"T1O-Bl-AWh.placeholder" = "Användarnamn - vanligtvis root";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "UtE-j6-y2W"; */
+"UtE-j6-y2W.text" = "Subtitle";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Just nu"; ObjectID = "VJE-oJ-jPO"; */
+"VJE-oJ-jPO.headerTitle" = "Just nu";
+
+/* Class = "IBUINavigationItem"; title = "Anslutning"; ObjectID = "Vjd-g9-2A2"; */
+"Vjd-g9-2A2.title" = "Anslutning";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "WBv-FV-5sW"; */
+"WBv-FV-5sW.text" = "Title";
+
+/* Class = "IBUITextField"; placeholder = "Namn på din box"; ObjectID = "XHS-Bg-ZcR"; */
+"XHS-Bg-ZcR.placeholder" = "Namn på din box";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Kanal"; ObjectID = "YD0-VK-0Yp"; */
+"YD0-VK-0Yp.headerTitle" = "Kanal";
+
+/* Class = "IBUINavigationItem"; title = "Visas just nu"; ObjectID = "Z84-bi-he8"; */
+"Z84-bi-he8.title" = "Visas just nu";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "b3T-yb-dtg"; */
+"b3T-yb-dtg.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUITableViewController"; title = "Anslutningar"; ObjectID = "cvB-RL-ApK"; */
+"cvB-RL-ApK.title" = "Anslutningar";
+
+/* Class = "IBUINavigationItem"; title = "Fjärrstyr"; ObjectID = "dvE-f1-fgV"; */
+"dvE-f1-fgV.title" = "Fjärrstyr";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Nästa"; ObjectID = "ezO-aI-tQS"; */
+"ezO-aI-tQS.headerTitle" = "Nästa";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "f67-Xb-FY1"; */
+"f67-Xb-FY1.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "fXp-Ay-Jiw"; */
+"fXp-Ay-Jiw.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "faf-ik-o7N"; */
+"faf-ik-o7N.text" = "Title";
+
+/* Class = "IBUITextField"; placeholder = "Port - vanligtvis 80"; ObjectID = "gIg-kx-KHX"; */
+"gIg-kx-KHX.placeholder" = "Port - vanligtvis 80";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "gpD-LD-6cz"; */
+"gpD-LD-6cz.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "i9h-Z3-mcG"; */
+"i9h-Z3-mcG.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "iEw-Ty-d3d"; */
+"iEw-Ty-d3d.text" = "Title";
+
+/* Class = "IBUINavigationItem"; title = "Mer"; ObjectID = "iib-xv-ZP1"; */
+"iib-xv-ZP1.title" = "Mer";
+
+/* Class = "IBUITextField"; placeholder = "IP address för din box"; ObjectID = "jBg-7N-Tsx"; */
+"jBg-7N-Tsx.placeholder" = "IP address för din box";
+
+/* Class = "IBUINavigationItem"; title = "Kanaler"; ObjectID = "kN0-Or-YSD"; */
+"kN0-Or-YSD.title" = "Kanaler";
+
+/* Class = "IBUITabBarItem"; title = "Visas nu"; ObjectID = "kXo-9Q-dKj"; */
+"kXo-9Q-dKj.title" = "Visas nu";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "l6H-pR-zjr"; */
+"l6H-pR-zjr.text" = "Subtitle";
+
+/* Class = "IBUITextField"; placeholder = "Lösenord"; ObjectID = "lFp-SF-7x6"; */
+"lFp-SF-7x6.placeholder" = "Lösenord";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "lvW-JZ-H7m"; */
+"lvW-JZ-H7m.text" = "Subtitle";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Just nu"; ObjectID = "mBi-mK-K3C"; */
+"mBi-mK-K3C.headerTitle" = "Just nu";
+
+/* Class = "IBUIBarButtonItem"; title = "Ändra"; ObjectID = "mFv-NO-bb6"; */
+"mFv-NO-bb6.title" = "Ändra";
+
+/* Class = "IBUINavigationItem"; title = "EPG"; ObjectID = "mPK-gx-tzZ"; */
+"mPK-gx-tzZ.title" = "EPG";
+
+/* Class = "IBUILabel"; text = "Hantera anslutningar"; ObjectID = "pjA-Up-rxk"; */
+"pjA-Up-rxk.text" = "Hantera anslutningar";
+
+/* Class = "IBUITextField"; placeholder = "Namn på din box"; ObjectID = "q2R-cW-7d9"; */
+"q2R-cW-7d9.placeholder" = "Namn på din box";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "rf7-8z-mNR"; */
+"rf7-8z-mNR.text" = "Subtitle";
+
+/* Class = "IBUITabBarItem"; title = "Bläddra"; ObjectID = "s9p-am-5pw"; */
+"s9p-am-5pw.title" = "Bläddra";
+
+/* Class = "IBUIButton"; normalTitle = "Total nerstängning"; ObjectID = "tzf-ku-bd6"; */
+"tzf-ku-bd6.normalTitle" = "Total nerstängning";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Tuner"; ObjectID = "uZn-jA-cDU"; */
+"uZn-jA-cDU.headerTitle" = "Tuner";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "v1w-0f-7zC"; */
+"v1w-0f-7zC.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Webinterfaceversion"; ObjectID = "vRB-TR-6S8"; */
+"vRB-TR-6S8.text" = "Webinterfaceversion";
+
+/* Class = "IBUITabBarItem"; title = "Mer"; ObjectID = "vmx-ME-CBk"; */
+"vmx-ME-CBk.title" = "Mer";
+
+/* Class = "IBUITextField"; placeholder = "Namn på din box"; ObjectID = "vqQ-8A-A9c"; */
+"vqQ-8A-A9c.placeholder" = "Namn på din box";
+
+/* Class = "IBUINavigationItem"; title = "Anslutning"; ObjectID = "vtH-Q2-lLB"; */
+"vtH-Q2-lLB.title" = "Anslutning";
+
+/* Class = "IBUILabel"; text = "Slå av/på boxen"; ObjectID = "wTU-Er-KhD"; */
+"wTU-Er-KhD.text" = "Slå av/på boxen";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "xCm-2O-N1E"; */
+"xCm-2O-N1E.text" = "Subtitle";
+
+/* Class = "IBUITextField"; placeholder = "Lösenord"; ObjectID = "yO0-AQ-EsM"; */
+"yO0-AQ-EsM.placeholder" = "Lösenord";
+
+/* Class = "IBUILabel"; text = "Fjärrstyr"; ObjectID = "zOX-QN-Lxo"; */
+"zOX-QN-Lxo.text" = "Fjärrstyr";

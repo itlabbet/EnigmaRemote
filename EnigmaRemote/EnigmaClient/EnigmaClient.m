@@ -523,6 +523,9 @@
     return epgs;
 }
 
+#define EPG_DATA_IS_MISSING NSLocalizedStringFromTable(@"EPG_DATA_IS_MISSING", @"EnigmaClient", @"EPG information was missing for the current channel.")
+
+
 - (NSArray *)channelsWithEpgFixedFor:(NSString *)serviceReference
 {
     NSMutableArray *channelsWithEpg = [[NSMutableArray alloc] init];
@@ -552,7 +555,7 @@
         }
         else
         {
-            channelWithEpg = [[EPGEvent alloc] initWith:0 startTime:nil duration:0 currentTime:nil title:@"Epg saknas" description:@"" extendedDescription:@"" reference:channel.reference serviceName:channel.name];
+            channelWithEpg = [[EPGEvent alloc] initWith:0 startTime:nil duration:0 currentTime:nil title:EPG_DATA_IS_MISSING description:@"" extendedDescription:@"" reference:channel.reference serviceName:channel.name];
             
             [channelsWithEpg addObject:channelWithEpg];
             
