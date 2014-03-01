@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Bouquets View Controller - Kategorier-->
+        <!--Bouquets View Controller - Categories-->
         <scene sceneID="VAZ-KZ-ZJW">
             <objects>
                 <tableViewController id="CCi-a7-KUB" customClass="BouquetsViewController" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="-935" y="-1264"/>
         </scene>
-        <!--Channels View Controller - Kanaler-->
+        <!--Channels View Controller - Channels-->
         <scene sceneID="Xme-kw-Lg9">
             <objects>
                 <tableViewController id="aZ9-wq-qd1" customClass="ChannelsViewController" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="-1915" y="-981"/>
         </scene>
-        <!--Playing View Controller - Visas just nu-->
+        <!--Playing View Controller - Now on display-->
         <scene sceneID="y5a-KQ-Mks">
             <objects>
                 <tableViewController id="Tki-AP-IeT" customClass="PlayingViewController" sceneMemberID="viewController">
@@ -277,7 +277,7 @@
             </objects>
             <point key="canvasLocation" x="-935" y="-536"/>
         </scene>
-        <!--More View Controller - Mer-->
+        <!--More View Controller - More-->
         <scene sceneID="ifF-a3-DFK">
             <objects>
                 <tableViewController id="eOR-iw-1Cl" customClass="MoreViewController" sceneMemberID="viewController">
@@ -567,7 +567,7 @@
             </objects>
             <point key="canvasLocation" x="-312" y="-145"/>
         </scene>
-        <!--Connections View Controller - Anslutningar-->
+        <!--Connections View Controller - Connections-->
         <scene sceneID="Qya-Kq-jdh">
             <objects>
                 <tableViewController title="Connections" id="cvB-RL-ApK" customClass="ConnectionsViewController" sceneMemberID="viewController">
@@ -679,7 +679,7 @@
             </objects>
             <point key="canvasLocation" x="226" y="954"/>
         </scene>
-        <!--Connection View Controller - Anslutning-->
+        <!--Connection View Controller - Connection-->
         <scene sceneID="myo-gV-YBq">
             <objects>
                 <tableViewController id="aJI-hI-iwL" customClass="ConnectionViewController" sceneMemberID="viewController">
@@ -858,7 +858,7 @@
             </objects>
             <point key="canvasLocation" x="669" y="1712"/>
         </scene>
-        <!--Box Control View Controller - Fjärrstyr-->
+        <!--Box Control View Controller - Manage-->
         <scene sceneID="pTY-7w-l0P">
             <objects>
                 <tableViewController id="c6h-e5-qqG" customClass="BoxControlViewController" sceneMemberID="viewController">
@@ -989,7 +989,7 @@
             </objects>
             <point key="canvasLocation" x="-312" y="589"/>
         </scene>
-        <!--Navigation Controller - Visas nu-->
+        <!--Navigation Controller - Now-->
         <scene sceneID="BMd-8t-0Oq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coM-6e-YVk" sceneMemberID="viewController">
@@ -1008,7 +1008,7 @@
             </objects>
             <point key="canvasLocation" x="-1381" y="-536"/>
         </scene>
-        <!--Navigation Controller - Mer-->
+        <!--Navigation Controller - More-->
         <scene sceneID="ODd-RF-lDf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OU6-7l-5d7" sceneMemberID="viewController">
@@ -1196,7 +1196,7 @@
             </objects>
             <point key="canvasLocation" x="7" y="-1264"/>
         </scene>
-        <!--Embedded New Connection View Controller - Anslutning-->
+        <!--Embedded New Connection View Controller - Connection-->
         <scene sceneID="Ues-VD-Nes">
             <objects>
                 <tableViewController id="GA0-Se-X4n" customClass="EmbeddedNewConnectionViewController" sceneMemberID="viewController">
@@ -1310,7 +1310,7 @@
             </objects>
             <point key="canvasLocation" x="723" y="986"/>
         </scene>
-        <!--Embedded Edit Connection View Controller - Anslutning-->
+        <!--Embedded Edit Connection View Controller - Connection-->
         <scene sceneID="a5i-8s-Zc3">
             <objects>
                 <tableViewController id="9ft-aX-qXs" customClass="EmbeddedEditConnectionViewController" sceneMemberID="viewController">
@@ -1458,7 +1458,7 @@
             </objects>
             <point key="canvasLocation" x="1201" y="1744"/>
         </scene>
-        <!--Navigation Controller - Bläddra-->
+        <!--Navigation Controller - Browse-->
         <scene sceneID="0iU-vm-lku">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iFh-BS-KsH" sceneMemberID="viewController">
