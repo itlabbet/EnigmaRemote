@@ -332,6 +332,121 @@
     NSData *resultData = [[NSData alloc] initWithContentsOfURL:bouquetsUrl];
 }
 
+// Volume can be in interval 0 - 100
+- (NSUInteger)volume
+{
+    Volume *volume = [self volumeInfo];
+    
+    if (volume == nil)
+    {
+        return INVALID_VOLUME;
+    }
+    
+    return volume.volume;
+
+}
+
+- (void)setVolume:(NSUInteger)volume
+{
+    if (volume > 100)
+    {
+        volume = 100;
+    }
+    
+    NSString *volUrlStr = [NSString stringWithFormat:@"/web/vol?set=set%d",
+                           volume];
+    
+    NSURL *volUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:volUrlStr]];
+    NSData *resultData = [[NSData alloc] initWithContentsOfURL:volUrl];
+}
+
+- (BOOL)muted
+{
+    Volume *volume = [self volumeInfo];
+    
+    if (volume == nil)
+    {
+        return NO; // What to return if not sure...?
+    }
+    
+    return volume.muted;
+}
+
+- (void)mute:(BOOL)mute
+{
+    NSString *volUrlStr = [NSString stringWithFormat:@"/web/vol?set=mute"];
+    
+    // TODO: verkar bara gå att toggla mute, inte sätta till ett visst värde
+    
+    NSURL *volUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:volUrlStr]];
+    NSData *resultData = [[NSData alloc] initWithContentsOfURL:volUrl];
+
+}
+
+- (Volume *)volumeInfo
+{
+    NSURL *volUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/vol"]];
+    NSData *volData = [[NSData alloc] initWithContentsOfURL:volUrl];
+    
+    if (volData == nil)
+    {
+        return nil;
+    }
+    
+    
+    NSError *error = nil;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:volData options:0 error:&error];
+    
+    if (doc == nil)
+    {
+        return nil;
+    }
+    
+    // Should be only one entry in this array
+    NSMutableArray *volumes = [[NSMutableArray alloc] init];
+    
+    NSArray *volumeElements = [doc nodesForXPath:@"//e2volume" error:nil];
+    
+    for (GDataXMLElement *volumeElement in volumeElements)
+    {
+        Volume *volume = nil;
+        NSString *currentVolume;
+        NSString *muted;
+        
+        // Current Volume
+        NSArray *currentVolumes = [volumeElement elementsForName:@"e2current"];
+        if (currentVolumes.count > 0)
+        {
+            GDataXMLElement *firstCurrentVolume = (GDataXMLElement *) [currentVolumes objectAtIndex:0];
+            currentVolume = firstCurrentVolume.stringValue;
+        } else continue;
+        
+        // Muted
+        NSArray *muteds = [volumeElement elementsForName:@"e2ismuted"];
+        if (muteds.count > 0)
+        {
+            GDataXMLElement *firstMuted = (GDataXMLElement *) [muteds objectAtIndex:0];
+            muted = firstMuted.stringValue;
+        } else continue;
+        
+        volume = [[Volume alloc] init:[currentVolume integerValue] andMuted:[muted boolValue]];
+        
+        [volumes addObject:volume];
+        
+    }
+    
+    if ([volumes count] != 1)
+    {
+        return nil;
+    }
+    
+    Volume *v = [volumes firstObject];
+    
+    return v;
+    
+}
+
+
 - (NSArray *)bouquets
 {
     NSURL *bouquetsUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:@"/web/getservices"]];

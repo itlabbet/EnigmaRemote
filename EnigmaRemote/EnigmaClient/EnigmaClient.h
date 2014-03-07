@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DeviceInfo.h"
 #import "ChannelEPG.h"
+#import "Volume.h"
 
 // TODO: Perform full documentation of all API:s
 // Använd eventuellt ett specifikt kommentarsspråk för att gena dokumentation...
@@ -32,6 +33,8 @@ typedef enum
 
 }BoxCommandAction;
 
+const NSUInteger INVALID_VOLUME = 1000;
+
 // All calls to EnigmaClient will block and should be perfomed in a separate queue.
 @interface EnigmaClient : NSObject
 
@@ -42,6 +45,14 @@ typedef enum
 - (PowerState)powerState;
 
 - (void)performAction:(BoxCommandAction)command;
+
+// Volume can be in interval 0 - 100
+- (NSUInteger)volume;
+- (void)setVolume:(NSUInteger)volume;
+
+- (BOOL)muted;
+- (void)mute:(BOOL)mute;
+
 
 // Return all bouquets
 - (NSArray *)bouquets;
