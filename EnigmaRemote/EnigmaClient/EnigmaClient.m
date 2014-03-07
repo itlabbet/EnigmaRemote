@@ -353,8 +353,8 @@
         volume = 100;
     }
     
-    NSString *volUrlStr = [NSString stringWithFormat:@"/web/vol?set=set%d",
-                           volume];
+    NSString *volUrlStr = [NSString stringWithFormat:@"/web/vol?set=set%lu",
+                           (unsigned long)volume];
     
     NSURL *volUrl = [[NSURL alloc] initWithString:[_baseUrl stringByAppendingString:volUrlStr]];
     NSData *resultData = [[NSData alloc] initWithContentsOfURL:volUrl];
