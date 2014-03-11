@@ -54,6 +54,7 @@
 #import "ChannelEPG.h"
 
 // TODO: gör konstanter av alla strängar som används i koden
+const NSUInteger INVALID_VOLUME = 1000;
 
 @interface EnigmaClient ()
 {

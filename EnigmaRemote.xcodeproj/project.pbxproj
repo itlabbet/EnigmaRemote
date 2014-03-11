@@ -515,7 +515,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/include/libxml2,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
 				SDKROOT = iphoneos;
@@ -555,7 +555,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/include/libxml2,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -572,6 +572,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
 				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -589,6 +590,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
 				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
 				TARGETED_DEVICE_FAMILY = 1;

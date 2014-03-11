@@ -33,7 +33,7 @@ typedef enum
 
 }BoxCommandAction;
 
-const NSUInteger INVALID_VOLUME = 1000;
+extern const NSUInteger INVALID_VOLUME;
 
 // All calls to EnigmaClient will block and should be perfomed in a separate queue.
 @interface EnigmaClient : NSObject
