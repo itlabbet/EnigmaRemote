@@ -16,7 +16,7 @@
 @property (nonatomic, readwrite) NSTimeInterval duration;
 @property (nonatomic, strong, readwrite) NSDate *currentTime;
 @property (nonatomic, copy, readwrite) NSString *title;
-@property (nonatomic, copy, readwrite) NSString *description;
+@property (nonatomic, copy, readwrite) NSString *shortDescription;
 @property (nonatomic, copy, readwrite) NSString *extendedDescription;
 @property (nonatomic, copy, readwrite) NSString *serviceReference;
 @property (nonatomic, copy, readwrite) NSString *serviceName;
@@ -46,7 +46,7 @@
         _duration = duration;
         _currentTime = currentTime;
         _title = title;
-        _description = description;
+        _shortDescription = description;
         _extendedDescription = extendedDescription;
         _serviceReference = serviceReference;
         _serviceName = serviceName;

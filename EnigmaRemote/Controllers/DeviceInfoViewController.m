@@ -91,12 +91,12 @@
     }
     else
     {
-        self.boxModel.text = @"";
-        self.enigmaVersion.text = @"";
-        self.imageVersion.text = @"";
-        self.webInterfaceVersion.text = @"";
-        self.tunerName.text = @"";
-        self.tunerModel.text = @"";
+        self.boxModel.text = @" ";
+        self.enigmaVersion.text = @" ";
+        self.imageVersion.text = @" ";
+        self.webInterfaceVersion.text = @" ";
+        self.tunerName.text = @" ";
+        self.tunerModel.text = @" ";
     }
     
     [self.tableView reloadData];
