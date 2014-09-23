@@ -159,13 +159,6 @@
 			name = URLEncode;
 			sourceTree = "<group>";
 		};
-		5D4E1FBB1878280E004FCDD5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		5D4E1FD1187828AB004FCDD5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +244,6 @@
 				5D2501BE188887920037465C /* Common */,
 				5D66468E187DF7ED00DA1B1B /* Settings */,
 				5D4E1FD1187828AB004FCDD5 /* Utilities */,
-				5D4E1FBB1878280E004FCDD5 /* Views */,
 				5D69182C18777479004EEBEE /* Models */,
 				5DFDC3EC1876F5CE00703E54 /* EnigmaClient */,
 				5DFDC3DB1876F54D00703E54 /* Controllers */,
