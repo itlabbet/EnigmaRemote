@@ -101,14 +101,14 @@
         [self.channelButton setTitle:self.epgEvent.serviceName forState:UIControlStateNormal];
         
         // Current event on this channel
-        self.currentProgramTitle.text = @"";
-        self.currentProgramTime.text = @"";
-        self.currentProgramDescription.text = @"";
+        self.currentProgramTitle.text = @" ";
+        self.currentProgramTime.text = @" ";
+        self.currentProgramDescription.text = @" ";
         
         // Next event on this channel
-        self.nextProgramTitle.text = @"";
-        self.nextProgramTime.text = @"";
-        self.nextProgramDescription.text = @"";
+        self.nextProgramTitle.text = @" ";
+        self.nextProgramTime.text = @" ";
+        self.nextProgramDescription.text = @" ";
         
     }
     

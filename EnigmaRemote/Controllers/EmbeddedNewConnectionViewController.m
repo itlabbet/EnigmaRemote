@@ -53,6 +53,8 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     // Hook up delegates
     self.tfName.delegate = self;
     self.tfIPAddress.delegate = self;
