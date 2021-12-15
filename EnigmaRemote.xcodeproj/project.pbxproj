@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D0B11F81883BF5300E6B258 /* EmbeddedNewConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */; };
+		5D278F1B1887355C002448C7 /* ChannelEPG.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D278F1A1887355C002448C7 /* ChannelEPG.m */; };
+		5D278F621887448E002448C7 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D278F611887448E002448C7 /* MoreViewController.m */; };
+		5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A3187C7DF60047F20C /* EPGEvent.m */; };
+		5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D40B6A6187C992F0047F20C /* DeviceInfo.m */; };
+		5D443213187B004200A098F1 /* BoxControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D443212187B004200A098F1 /* BoxControlViewController.m */; };
+		5D46505418C9A14700ACA281 /* Volume.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D46505318C9A14700ACA281 /* Volume.m */; };
+		5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBD1878287F004FCDD5 /* Bouquet.m */; };
+		5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FBF1878287F004FCDD5 /* Channel.m */; };
+		5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */; };
+		5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */; };
+		5D52A6CD187850E800BF03EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D52A6CC187850E800BF03EF /* libxml2.dylib */; };
+		5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */; };
+		5D664691187DF81900DA1B1B /* ConnectionsSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664690187DF81900DA1B1B /* ConnectionsSerializer.m */; };
+		5D664694187DF89200DA1B1B /* BoxConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664693187DF89200DA1B1B /* BoxConnection.m */; };
+		5D6E068F18815531004C0AD1 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E068E18815531004C0AD1 /* ChannelViewController.m */; };
+		5D80853C188310E600396892 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D80853B188310E600396892 /* ConnectionViewController.m */; };
+		5DB7786218B3F04F004EC448 /* EnigmaClient.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7786418B3F04F004EC448 /* EnigmaClient.strings */; };
+		5DB7786918B3F0D6004EC448 /* EmbeddedEditConnectionViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7786B18B3F0D6004EC448 /* EmbeddedEditConnectionViewController.strings */; };
+		5DC192951882B7A30023E612 /* EditConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC192941882B7A30023E612 /* EditConnectionViewController.m */; };
+		5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45718564C7100289D13 /* Foundation.framework */; };
+		5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45918564C7100289D13 /* CoreGraphics.framework */; };
+		5DDDF45C18564C7100289D13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDDF45B18564C7100289D13 /* UIKit.framework */; };
+		5DDDF46218564C7100289D13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF46018564C7100289D13 /* InfoPlist.strings */; };
+		5DDDF46418564C7100289D13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF46318564C7100289D13 /* main.m */; };
+		5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF46718564C7100289D13 /* AppDelegate.m */; };
+		5DDDF46B18564C7100289D13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF46918564C7100289D13 /* Main.storyboard */; };
+		5DDDF47018564C7100289D13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF46F18564C7100289D13 /* Images.xcassets */; };
+		5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDF48C18564DEF00289D13 /* Readme.txt */; };
+		5DF1E0D918829D2900887BA9 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */; };
+		5DF1E0DC18829D3C00887BA9 /* NewConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF1E0DB18829D3C00887BA9 /* NewConnectionViewController.m */; };
+		5DF4641B18844B4400578B76 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4641A18844B4400578B76 /* GDataXMLNode.m */; };
+		5DF4641E18844B6600578B76 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4641D18844B6600578B76 /* NSString+URLEncode.m */; };
+		5DF464211884610A00578B76 /* EmbeddedEditConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF464201884610A00578B76 /* EmbeddedEditConnectionViewController.m */; };
+		5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */; };
+		5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF706E187F21E100F3CC04 /* PlayingViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5D0B11F61883BF5300E6B258 /* EmbeddedNewConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbeddedNewConnectionViewController.h; path = Controllers/EmbeddedNewConnectionViewController.h; sourceTree = "<group>"; };
+		5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbeddedNewConnectionViewController.m; path = Controllers/EmbeddedNewConnectionViewController.m; sourceTree = "<group>"; };
+		5D2501BD18887F120037465C /* UpdateConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UpdateConnectionDelegate.h; path = Controllers/UpdateConnectionDelegate.h; sourceTree = "<group>"; };
+		5D2501BF188888190037465C /* NotificationCenterConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationCenterConstants.h; path = Common/NotificationCenterConstants.h; sourceTree = "<group>"; };
+		5D278F191887355C002448C7 /* ChannelEPG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelEPG.h; path = Models/ChannelEPG.h; sourceTree = "<group>"; };
+		5D278F1A1887355C002448C7 /* ChannelEPG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelEPG.m; path = Models/ChannelEPG.m; sourceTree = "<group>"; };
+		5D278F601887448E002448C7 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreViewController.h; path = Controllers/MoreViewController.h; sourceTree = "<group>"; };
+		5D278F611887448E002448C7 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreViewController.m; path = Controllers/MoreViewController.m; sourceTree = "<group>"; };
+		5D40B6A2187C7DF60047F20C /* EPGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPGEvent.h; path = Models/EPGEvent.h; sourceTree = "<group>"; };
+		5D40B6A3187C7DF60047F20C /* EPGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPGEvent.m; path = Models/EPGEvent.m; sourceTree = "<group>"; };
+		5D40B6A5187C992F0047F20C /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfo.h; path = Models/DeviceInfo.h; sourceTree = "<group>"; };
+		5D40B6A6187C992F0047F20C /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInfo.m; path = Models/DeviceInfo.m; sourceTree = "<group>"; };
+		5D443211187B004200A098F1 /* BoxControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxControlViewController.h; path = Controllers/BoxControlViewController.h; sourceTree = "<group>"; };
+		5D443212187B004200A098F1 /* BoxControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxControlViewController.m; path = Controllers/BoxControlViewController.m; sourceTree = "<group>"; };
+		5D46505218C9A14700ACA281 /* Volume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Volume.h; path = Models/Volume.h; sourceTree = "<group>"; };
+		5D46505318C9A14700ACA281 /* Volume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Volume.m; path = Models/Volume.m; sourceTree = "<group>"; };
+		5D4E1FBC1878287F004FCDD5 /* Bouquet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bouquet.h; path = Models/Bouquet.h; sourceTree = "<group>"; };
+		5D4E1FBD1878287F004FCDD5 /* Bouquet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bouquet.m; path = Models/Bouquet.m; sourceTree = "<group>"; };
+		5D4E1FBE1878287F004FCDD5 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Models/Channel.h; sourceTree = "<group>"; };
+		5D4E1FBF1878287F004FCDD5 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Models/Channel.m; sourceTree = "<group>"; };
+		5D4E1FC218782890004FCDD5 /* BouquetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BouquetsViewController.h; path = Controllers/BouquetsViewController.h; sourceTree = "<group>"; };
+		5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BouquetsViewController.m; path = Controllers/BouquetsViewController.m; sourceTree = "<group>"; };
+		5D4E1FC418782890004FCDD5 /* ChannelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelsViewController.h; path = Controllers/ChannelsViewController.h; sourceTree = "<group>"; };
+		5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelsViewController.m; path = Controllers/ChannelsViewController.m; sourceTree = "<group>"; };
+		5D52A6CC187850E800BF03EF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		5D549FC6187F5741004360C3 /* DeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfoViewController.h; path = Controllers/DeviceInfoViewController.h; sourceTree = "<group>"; };
+		5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInfoViewController.m; path = Controllers/DeviceInfoViewController.m; sourceTree = "<group>"; };
+		5D66468F187DF81900DA1B1B /* ConnectionsSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsSerializer.h; sourceTree = "<group>"; };
+		5D664690187DF81900DA1B1B /* ConnectionsSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsSerializer.m; sourceTree = "<group>"; };
+		5D664692187DF89200DA1B1B /* BoxConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxConnection.h; sourceTree = "<group>"; };
+		5D664693187DF89200DA1B1B /* BoxConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxConnection.m; sourceTree = "<group>"; };
+		5D6E068D18815531004C0AD1 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelViewController.h; path = Controllers/ChannelViewController.h; sourceTree = "<group>"; };
+		5D6E068E18815531004C0AD1 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelViewController.m; path = Controllers/ChannelViewController.m; sourceTree = "<group>"; };
+		5D80853A188310E600396892 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionViewController.h; path = Controllers/ConnectionViewController.h; sourceTree = "<group>"; };
+		5D80853B188310E600396892 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionViewController.m; path = Controllers/ConnectionViewController.m; sourceTree = "<group>"; };
+		5DB7785C18B3E2C8004EC448 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		5DB7785D18B3E2C8004EC448 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DB7785F18B3E318004EC448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		5DB7786318B3F04F004EC448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/EnigmaClient.strings; sourceTree = "<group>"; };
+		5DB7786518B3F055004EC448 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/EnigmaClient.strings; sourceTree = "<group>"; };
+		5DB7786618B3F056004EC448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EnigmaClient.strings; sourceTree = "<group>"; };
+		5DB7786A18B3F0D6004EC448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/EmbeddedEditConnectionViewController.strings; sourceTree = "<group>"; };
+		5DB7786C18B3F0D9004EC448 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/EmbeddedEditConnectionViewController.strings; sourceTree = "<group>"; };
+		5DB7786D18B3F0DA004EC448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmbeddedEditConnectionViewController.strings; sourceTree = "<group>"; };
+		5DC192931882B7A30023E612 /* EditConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditConnectionViewController.h; path = Controllers/EditConnectionViewController.h; sourceTree = "<group>"; };
+		5DC192941882B7A30023E612 /* EditConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditConnectionViewController.m; path = Controllers/EditConnectionViewController.m; sourceTree = "<group>"; };
+		5DDDF45418564C7100289D13 /* Enigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDDF45718564C7100289D13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5DDDF45918564C7100289D13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5DDDF45B18564C7100289D13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5DDDF45F18564C7100289D13 /* EnigmaRemote-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnigmaRemote-Info.plist"; sourceTree = "<group>"; };
+		5DDDF46318564C7100289D13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5DDDF46518564C7100289D13 /* EnigmaRemote-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EnigmaRemote-Prefix.pch"; sourceTree = "<group>"; };
+		5DDDF46618564C7100289D13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5DDDF46718564C7100289D13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5DDDF46A18564C7100289D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DDDF46F18564C7100289D13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5DDDF47618564C7100289D13 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5DDDF48C18564DEF00289D13 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Readme.txt; path = EnigmaRemote/Readme.txt; sourceTree = "<group>"; };
+		5DE1512918BDD70600F361A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DE1512A18BDD70D00F361A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DE1512B18BDD72300F361A2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		5DE1512C18BDD72300F361A2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/EnigmaClient.strings; sourceTree = "<group>"; };
+		5DE1512D18BDD72300F361A2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/EmbeddedEditConnectionViewController.strings; sourceTree = "<group>"; };
+		5DE1512E18BDD72300F361A2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DF1E0D718829D2900887BA9 /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionsViewController.h; path = Controllers/ConnectionsViewController.h; sourceTree = "<group>"; };
+		5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionsViewController.m; path = Controllers/ConnectionsViewController.m; sourceTree = "<group>"; };
+		5DF1E0DA18829D3C00887BA9 /* NewConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewConnectionViewController.h; path = Controllers/NewConnectionViewController.h; sourceTree = "<group>"; };
+		5DF1E0DB18829D3C00887BA9 /* NewConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewConnectionViewController.m; path = Controllers/NewConnectionViewController.m; sourceTree = "<group>"; };
+		5DF4641918844B4400578B76 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDataXMLNode.h; path = EnigmaRemote/Utilities/GDataXML/GDataXMLNode.h; sourceTree = SOURCE_ROOT; };
+		5DF4641A18844B4400578B76 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDataXMLNode.m; path = EnigmaRemote/Utilities/GDataXML/GDataXMLNode.m; sourceTree = SOURCE_ROOT; };
+		5DF4641C18844B6600578B76 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncode.h"; path = "Utilities/URLEncode/NSString+URLEncode.h"; sourceTree = "<group>"; };
+		5DF4641D18844B6600578B76 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncode.m"; path = "Utilities/URLEncode/NSString+URLEncode.m"; sourceTree = "<group>"; };
+		5DF4641F1884610A00578B76 /* EmbeddedEditConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmbeddedEditConnectionViewController.h; path = Controllers/EmbeddedEditConnectionViewController.h; sourceTree = "<group>"; };
+		5DF464201884610A00578B76 /* EmbeddedEditConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmbeddedEditConnectionViewController.m; path = Controllers/EmbeddedEditConnectionViewController.m; sourceTree = "<group>"; };
+		5DFDC3ED1876F5EF00703E54 /* EnigmaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnigmaClient.h; path = EnigmaClient/EnigmaClient.h; sourceTree = "<group>"; };
+		5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnigmaClient.m; path = EnigmaClient/EnigmaClient.m; sourceTree = "<group>"; };
+		5DFF706D187F21E100F3CC04 /* PlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingViewController.h; path = Controllers/PlayingViewController.h; sourceTree = "<group>"; };
+		5DFF706E187F21E100F3CC04 /* PlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingViewController.m; path = Controllers/PlayingViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DDDF45118564C7000289D13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D52A6CD187850E800BF03EF /* libxml2.dylib in Frameworks */,
+				5DDDF45A18564C7100289D13 /* CoreGraphics.framework in Frameworks */,
+				5DDDF45C18564C7100289D13 /* UIKit.framework in Frameworks */,
+				5DDDF45818564C7100289D13 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D2501BE188887920037465C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5D2501BF188888190037465C /* NotificationCenterConstants.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		5D26DBFC18786B4E00CAD0B6 /* URLEncode */ = {
+			isa = PBXGroup;
+			children = (
+				5DF4641C18844B6600578B76 /* NSString+URLEncode.h */,
+				5DF4641D18844B6600578B76 /* NSString+URLEncode.m */,
+			);
+			name = URLEncode;
+			sourceTree = "<group>";
+		};
+		5D4E1FD1187828AB004FCDD5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5D26DBFC18786B4E00CAD0B6 /* URLEncode */,
+				5D52A6C818784D6100BF03EF /* GDataXML */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		5D52A6C818784D6100BF03EF /* GDataXML */ = {
+			isa = PBXGroup;
+			children = (
+				5DF4641918844B4400578B76 /* GDataXMLNode.h */,
+				5DF4641A18844B4400578B76 /* GDataXMLNode.m */,
+			);
+			name = GDataXML;
+			path = External/GDataXML;
+			sourceTree = "<group>";
+		};
+		5D66468E187DF7ED00DA1B1B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5D664692187DF89200DA1B1B /* BoxConnection.h */,
+				5D664693187DF89200DA1B1B /* BoxConnection.m */,
+				5D66468F187DF81900DA1B1B /* ConnectionsSerializer.h */,
+				5D664690187DF81900DA1B1B /* ConnectionsSerializer.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5D69182C18777479004EEBEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D278F191887355C002448C7 /* ChannelEPG.h */,
+				5D278F1A1887355C002448C7 /* ChannelEPG.m */,
+				5D40B6A5187C992F0047F20C /* DeviceInfo.h */,
+				5D40B6A6187C992F0047F20C /* DeviceInfo.m */,
+				5D4E1FBC1878287F004FCDD5 /* Bouquet.h */,
+				5D4E1FBD1878287F004FCDD5 /* Bouquet.m */,
+				5D4E1FBE1878287F004FCDD5 /* Channel.h */,
+				5D4E1FBF1878287F004FCDD5 /* Channel.m */,
+				5D40B6A2187C7DF60047F20C /* EPGEvent.h */,
+				5D40B6A3187C7DF60047F20C /* EPGEvent.m */,
+				5D46505218C9A14700ACA281 /* Volume.h */,
+				5D46505318C9A14700ACA281 /* Volume.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5DDDF44B18564C7000289D13 = {
+			isa = PBXGroup;
+			children = (
+				5DDDF48C18564DEF00289D13 /* Readme.txt */,
+				5DDDF45D18564C7100289D13 /* EnigmaRemote */,
+				5DDDF45618564C7100289D13 /* Frameworks */,
+				5DDDF45518564C7100289D13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DDDF45518564C7100289D13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DDDF45418564C7100289D13 /* Enigma.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DDDF45618564C7100289D13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D52A6CC187850E800BF03EF /* libxml2.dylib */,
+				5DDDF45718564C7100289D13 /* Foundation.framework */,
+				5DDDF45918564C7100289D13 /* CoreGraphics.framework */,
+				5DDDF45B18564C7100289D13 /* UIKit.framework */,
+				5DDDF47618564C7100289D13 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DDDF45D18564C7100289D13 /* EnigmaRemote */ = {
+			isa = PBXGroup;
+			children = (
+				5D2501BE188887920037465C /* Common */,
+				5D66468E187DF7ED00DA1B1B /* Settings */,
+				5D4E1FD1187828AB004FCDD5 /* Utilities */,
+				5D69182C18777479004EEBEE /* Models */,
+				5DFDC3EC1876F5CE00703E54 /* EnigmaClient */,
+				5DFDC3DB1876F54D00703E54 /* Controllers */,
+				5DDDF46618564C7100289D13 /* AppDelegate.h */,
+				5DDDF46718564C7100289D13 /* AppDelegate.m */,
+				5DDDF46918564C7100289D13 /* Main.storyboard */,
+				5DDDF46F18564C7100289D13 /* Images.xcassets */,
+				5DDDF45E18564C7100289D13 /* Supporting Files */,
+			);
+			path = EnigmaRemote;
+			sourceTree = "<group>";
+		};
+		5DDDF45E18564C7100289D13 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DDDF45F18564C7100289D13 /* EnigmaRemote-Info.plist */,
+				5DDDF46018564C7100289D13 /* InfoPlist.strings */,
+				5DDDF46318564C7100289D13 /* main.m */,
+				5DDDF46518564C7100289D13 /* EnigmaRemote-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DFDC3DB1876F54D00703E54 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7786B18B3F0D6004EC448 /* EmbeddedEditConnectionViewController.strings */,
+				5D443211187B004200A098F1 /* BoxControlViewController.h */,
+				5D443212187B004200A098F1 /* BoxControlViewController.m */,
+				5D4E1FC218782890004FCDD5 /* BouquetsViewController.h */,
+				5D4E1FC318782890004FCDD5 /* BouquetsViewController.m */,
+				5D4E1FC418782890004FCDD5 /* ChannelsViewController.h */,
+				5D4E1FC518782890004FCDD5 /* ChannelsViewController.m */,
+				5D6E068D18815531004C0AD1 /* ChannelViewController.h */,
+				5D6E068E18815531004C0AD1 /* ChannelViewController.m */,
+				5DFF706D187F21E100F3CC04 /* PlayingViewController.h */,
+				5DFF706E187F21E100F3CC04 /* PlayingViewController.m */,
+				5D549FC6187F5741004360C3 /* DeviceInfoViewController.h */,
+				5D549FC7187F5741004360C3 /* DeviceInfoViewController.m */,
+				5DF1E0D718829D2900887BA9 /* ConnectionsViewController.h */,
+				5DF1E0D818829D2900887BA9 /* ConnectionsViewController.m */,
+				5DF1E0DA18829D3C00887BA9 /* NewConnectionViewController.h */,
+				5DF1E0DB18829D3C00887BA9 /* NewConnectionViewController.m */,
+				5D0B11F61883BF5300E6B258 /* EmbeddedNewConnectionViewController.h */,
+				5D0B11F71883BF5300E6B258 /* EmbeddedNewConnectionViewController.m */,
+				5D80853A188310E600396892 /* ConnectionViewController.h */,
+				5D80853B188310E600396892 /* ConnectionViewController.m */,
+				5D2501BD18887F120037465C /* UpdateConnectionDelegate.h */,
+				5DC192931882B7A30023E612 /* EditConnectionViewController.h */,
+				5DC192941882B7A30023E612 /* EditConnectionViewController.m */,
+				5DF4641F1884610A00578B76 /* EmbeddedEditConnectionViewController.h */,
+				5DF464201884610A00578B76 /* EmbeddedEditConnectionViewController.m */,
+				5D278F601887448E002448C7 /* MoreViewController.h */,
+				5D278F611887448E002448C7 /* MoreViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5DFDC3EC1876F5CE00703E54 /* EnigmaClient */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7786418B3F04F004EC448 /* EnigmaClient.strings */,
+				5DFDC3ED1876F5EF00703E54 /* EnigmaClient.h */,
+				5DFDC3EE1876F5EF00703E54 /* EnigmaClient.m */,
+			);
+			name = EnigmaClient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DDDF45318564C7000289D13 /* Enigma */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DDDF48618564C7100289D13 /* Build configuration list for PBXNativeTarget "Enigma" */;
+			buildPhases = (
+				5DDDF45018564C7000289D13 /* Sources */,
+				5DDDF45118564C7000289D13 /* Frameworks */,
+				5DDDF45218564C7000289D13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Enigma;
+			productName = EnigmaRemote;
+			productReference = 5DDDF45418564C7100289D13 /* Enigma.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DDDF44C18564C7000289D13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Niklas Andersson";
+				TargetAttributes = {
+					5DDDF45318564C7000289D13 = {
+						DevelopmentTeam = F8LLRNWT42;
+					};
+				};
+			};
+			buildConfigurationList = 5DDDF44F18564C7000289D13 /* Build configuration list for PBXProject "EnigmaRemote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				sv,
+				de,
+			);
+			mainGroup = 5DDDF44B18564C7000289D13;
+			productRefGroup = 5DDDF45518564C7100289D13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DDDF45318564C7000289D13 /* Enigma */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DDDF45218564C7000289D13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDDF47018564C7100289D13 /* Images.xcassets in Resources */,
+				5DDDF46218564C7100289D13 /* InfoPlist.strings in Resources */,
+				5DB7786218B3F04F004EC448 /* EnigmaClient.strings in Resources */,
+				5DB7786918B3F0D6004EC448 /* EmbeddedEditConnectionViewController.strings in Resources */,
+				5DDDF48D18564DEF00289D13 /* Readme.txt in Resources */,
+				5DDDF46B18564C7100289D13 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DDDF45018564C7000289D13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D664694187DF89200DA1B1B /* BoxConnection.m in Sources */,
+				5DFF706F187F21E100F3CC04 /* PlayingViewController.m in Sources */,
+				5D278F1B1887355C002448C7 /* ChannelEPG.m in Sources */,
+				5D80853C188310E600396892 /* ConnectionViewController.m in Sources */,
+				5D278F621887448E002448C7 /* MoreViewController.m in Sources */,
+				5DF4641E18844B6600578B76 /* NSString+URLEncode.m in Sources */,
+				5D4E1FCC18782890004FCDD5 /* BouquetsViewController.m in Sources */,
+				5D549FC8187F5741004360C3 /* DeviceInfoViewController.m in Sources */,
+				5D40B6A7187C992F0047F20C /* DeviceInfo.m in Sources */,
+				5DF464211884610A00578B76 /* EmbeddedEditConnectionViewController.m in Sources */,
+				5D0B11F81883BF5300E6B258 /* EmbeddedNewConnectionViewController.m in Sources */,
+				5DF1E0DC18829D3C00887BA9 /* NewConnectionViewController.m in Sources */,
+				5D6E068F18815531004C0AD1 /* ChannelViewController.m in Sources */,
+				5D664691187DF81900DA1B1B /* ConnectionsSerializer.m in Sources */,
+				5D40B6A4187C7DF60047F20C /* EPGEvent.m in Sources */,
+				5DF1E0D918829D2900887BA9 /* ConnectionsViewController.m in Sources */,
+				5DFDC3EF1876F5EF00703E54 /* EnigmaClient.m in Sources */,
+				5D4E1FCD18782890004FCDD5 /* ChannelsViewController.m in Sources */,
+				5D4E1FC11878287F004FCDD5 /* Channel.m in Sources */,
+				5DF4641B18844B4400578B76 /* GDataXMLNode.m in Sources */,
+				5DDDF46818564C7100289D13 /* AppDelegate.m in Sources */,
+				5DC192951882B7A30023E612 /* EditConnectionViewController.m in Sources */,
+				5D4E1FC01878287F004FCDD5 /* Bouquet.m in Sources */,
+				5D443213187B004200A098F1 /* BoxControlViewController.m in Sources */,
+				5DDDF46418564C7100289D13 /* main.m in Sources */,
+				5D46505418C9A14700ACA281 /* Volume.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5DB7786418B3F04F004EC448 /* EnigmaClient.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DB7786318B3F04F004EC448 /* Base */,
+				5DB7786518B3F055004EC448 /* sv */,
+				5DB7786618B3F056004EC448 /* en */,
+				5DE1512C18BDD72300F361A2 /* de */,
+			);
+			name = EnigmaClient.strings;
+			path = EnigmaClient;
+			sourceTree = "<group>";
+		};
+		5DB7786B18B3F0D6004EC448 /* EmbeddedEditConnectionViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DB7786A18B3F0D6004EC448 /* Base */,
+				5DB7786C18B3F0D9004EC448 /* sv */,
+				5DB7786D18B3F0DA004EC448 /* en */,
+				5DE1512D18BDD72300F361A2 /* de */,
+			);
+			name = EmbeddedEditConnectionViewController.strings;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5DDDF46018564C7100289D13 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DB7785D18B3E2C8004EC448 /* sv */,
+				5DE1512918BDD70600F361A2 /* Base */,
+				5DE1512A18BDD70D00F361A2 /* en */,
+				5DE1512E18BDD72300F361A2 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5DDDF46918564C7100289D13 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DDDF46A18564C7100289D13 /* Base */,
+				5DB7785C18B3E2C8004EC448 /* sv */,
+				5DB7785F18B3E318004EC448 /* en */,
+				5DE1512B18BDD72300F361A2 /* de */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DDDF48418564C7100289D13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Niklas Andersson (QZLP2PN3Y8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Niklas Andersson (QZLP2PN3Y8)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5DDDF48518564C7100289D13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Niklas Andersson (QZLP2PN3Y8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Niklas Andersson (QZLP2PN3Y8)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE = "D70A47D8-F373-40A3-A188-E931FF7C872D";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DDDF48718564C7100289D13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
+				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5DDDF48818564C7100289D13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EnigmaRemote/EnigmaRemote-Prefix.pch";
+				INFOPLIST_FILE = "EnigmaRemote/EnigmaRemote-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DDDF44F18564C7000289D13 /* Build configuration list for PBXProject "EnigmaRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDDF48418564C7100289D13 /* Debug */,
+				5DDDF48518564C7100289D13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DDDF48618564C7100289D13 /* Build configuration list for PBXNativeTarget "Enigma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDDF48718564C7100289D13 /* Debug */,
+				5DDDF48818564C7100289D13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5DDDF44C18564C7000289D13 /* Project object */;
+}
